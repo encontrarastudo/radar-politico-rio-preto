@@ -91,7 +91,11 @@ def lista_sessoes():
 
 def parse_sessao(sid):
     t = texto(get(f"{SIS}/Sessoes/Sessao/{sid}"))
-    if "Frequências" not in t and "Frequencias" not in nrm(t): return None, []
+    titm = re.search(r"Sessões\s*-\s*(.+?)\s*Data:", t)
+    titulo = titm.group(1).strip() if titm else f"Sessão {sid}"
+    dm = re.search(r"Data:\s*(\d{2}/\d{2}/\d{4})", t)
+    data = dm.group(1) if dm else ""
+    if "Frequências" not in t and "frequencias" not in nrm(t): return titulo, data, None, []
     # presença: cada "Chamada X - HH:MM" seguida de Presentes (n) - ... / Ausentes (n) - ...
     chamadas=[]
     for m in re.finditer(r"(Chamada[^-\n]*?-\s*\d{1,2}:\d{2})(.*?)(?=Chamada[^-\n]*?-\s*\d{1,2}:\d{2}|Votações|Voltar|$)", t):
@@ -113,22 +117,36 @@ def parse_sessao(sid):
         if vd:
             votos.append({"sid":sid,"materia":f"{mv.group(1)} nº {mv.group(2)}",
                           "assunto":assunto.strip()[:220],"autoria":autoria.strip(),"votos":vd})
-    return chamadas, votos
+    return titulo, data, chamadas, votos
 
-def coletar_sessoes(maxn=18):
+def coletar_sessoes(limite=55):
+    # começa pela lista recente e caminha para trás pelos ids, cobrindo o ano
+    base = lista_sessoes(); ids=[x[0] for x in base]
+    if ids:
+        mx=max(ids)
+        for sid in range(mx, mx-limite, -1):
+            if sid not in ids: ids.append(sid)
+    ids = sorted(set(ids), reverse=True)[:limite]
     presenca=[]; votacoes=[]
-    for sid,titulo,data in lista_sessoes()[:maxn]:
+    for sid in ids:
         try:
-            chamadas,votos = parse_sessao(sid)
-        except Exception as e:
-            print(f"  sessão {sid}: erro ({e}) — pulando"); continue
+            titulo,data,chamadas,votos = parse_sessao(sid)
+        except Exception:
+            continue
+        # apenas mandato atual (2025+)
+        ano = data.split("/")[-1] if data else ""
+        if ano and ano < "2025": continue
         if chamadas:
             presenca.append({"sid":sid,"titulo":titulo,"data":data,"chamadas":chamadas})
         for v in votos:
-            snome,sdata = titulo, data
-            votacoes.append({"sid":sid,"sessao":snome,"data":sdata,"materia":v["materia"],
+            votacoes.append({"sid":sid,"sessao":titulo,"data":data,"materia":v["materia"],
                              "assunto":v["assunto"],"votos":v["votos"]})
         time.sleep(PAUSA)
+    # ordena por data (mais recente primeiro)
+    def chave(s):
+        try: d=s["data"].split("/"); return (d[2],d[1],d[0])
+        except: return ("0","0","0")
+    presenca.sort(key=chave, reverse=True)
     print(f"  sessões com presença: {len(presenca)} | votações nominais: {len(votacoes)}")
     return presenca, votacoes
 

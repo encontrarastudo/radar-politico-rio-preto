@@ -111,3 +111,55 @@ footer .wrap>div{margin-bottom:8px}
 .alerta{background:#fff8ec;border:1px solid #f0d9a8;border-left:4px solid #d89a2a;border-radius:12px;padding:12px 15px;font-size:.9rem;color:#5a4412;margin:10px 0}
 nav.secnav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin:0 -16px 18px;padding:10px 16px;display:flex;gap:14px;overflow-x:auto;font-size:.86rem}
 nav.secnav a{white-space:nowrap;text-decoration:none;color:var(--accent-ink);font-weight:600}
+
+/* ===== v3: fotos, frequência, tiles, redesign ===== */
+h1,h2,.card-nome,.detalhe-head h2,.rep-loc,.g-nome,.tile b,.freq-txt strong{font-family:'Archivo',system-ui,sans-serif}
+h1{font-weight:900;letter-spacing:-.02em}
+h2{font-weight:800}
+.ao-vivo{display:inline-block;width:9px;height:9px;border-radius:50%;background:#ff5a45;animation:pulse 2s infinite;vertical-align:baseline}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,90,69,.5)}70%{box-shadow:0 0 0 7px rgba(255,90,69,0)}100%{box-shadow:0 0 0 0 rgba(255,90,69,0)}}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0 4px}
+.tile{background:rgba(255,255,255,.14);border-radius:12px;padding:11px 13px}
+.tile b{display:block;font-size:1.45rem;font-weight:900;line-height:1}
+.tile span{font-size:.75rem;opacity:.92;display:block;margin-top:3px}
+.freshness{font-size:.82rem;opacity:.92;margin:12px 0 0}
+@media(min-width:640px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.card{padding:0;overflow:hidden}
+.card-link{display:block;padding:0}
+.card-head{display:flex;gap:12px;align-items:center;padding:16px}
+.foto{flex:none;width:58px;height:58px;border-radius:50%;overflow:hidden;background:#fff;border:3px solid rgba(0,0,0,.08);display:block}
+.foto img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.foto-ini{width:100%;height:100%;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-weight:800;font-family:'Archivo'}
+.foto-lg{width:88px;height:88px;border-width:4px}
+.card-id{min-width:0}
+.card-nome{margin:0;font-size:1.18rem;font-weight:800;line-height:1.1}
+.card-sub{margin:2px 0 7px;font-size:.78rem;color:var(--muted)}
+.card-body{padding:14px 16px 16px}
+.card-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:14px 0 8px;font-weight:700}
+.freq{display:flex;align-items:center;gap:12px}
+.donut{width:54px;height:54px;flex:none}
+.freq-lg .donut{width:74px;height:74px}
+.d-bg{fill:none;stroke:#e6eaf0;stroke-width:5}
+.d-fg{fill:none;stroke:#1a7a44;stroke-width:5;stroke-linecap:round}
+.d-txt{font-size:11px;font-weight:800;fill:var(--ink);text-anchor:middle;dominant-baseline:central;font-family:'Archivo'}
+.freq-txt strong{display:block;font-size:1rem}
+.freq-txt .muted{font-size:.78rem}
+.freq-lg .freq-txt strong{font-size:1.25rem}
+.destaque-freq .freq{background:#f4f8f5;border:1px solid #d9ebe0;border-radius:14px;padding:14px}
+.barra{display:flex;height:10px;border-radius:6px;overflow:hidden;background:#eef1f4;margin-bottom:8px}
+.barra span{display:block;height:100%}
+.cats{list-style:none;margin:0;padding:0}
+.cats li{display:flex;align-items:center;gap:8px;font-size:.9rem;padding:5px 0;border-top:1px solid var(--line)}
+.cats li b{margin-left:auto;font-weight:800;font-variant-numeric:tabular-nums}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.rep>summary{align-items:center;gap:12px}
+.rep>summary::before{display:none}
+.rep-n{font-family:'Archivo';font-weight:900;font-size:1.7rem;color:#e8422e;line-height:1;flex:none;min-width:46px}
+.rep-n small{font-size:.8rem;font-weight:700}
+.rep-main{flex:1;min-width:0}
+.rep-loc{font-size:1.05rem;font-weight:800;display:block}
+.rep-meta2{font-size:.82rem;color:var(--muted);margin-top:2px}
+.rep-tag{background:#eaf1fb;color:#2f6fd0;border-radius:999px;padding:2px 9px;font-size:.74rem;font-weight:700}
+.rep-cta{color:#e8422e;font-weight:700;font-size:.82rem;white-space:nowrap}
+.contato-vereador{font-size:.95rem;margin:0 0 6px}
+.contato-vereador a{font-weight:600;text-decoration:none}

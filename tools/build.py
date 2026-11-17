@@ -92,18 +92,60 @@ def repeticoes(chave):
     out=[(l,s,it) for (l,s),it in b.items() if len(it)>=2]; out.sort(key=lambda x:-len(x[2])); return out
 REP_BAIRRO=repeticoes("bairro")
 
-# ---------- render vereadores ----------
-def card(v):
+# ---------- frequência, foto, rosca, barra ----------
+FOTO = "https://riopreto.siscam.com.br/Vereadores/Foto/{id}"
+PASTEIS = ["#efe7fb","#fde9ef","#fdeede","#e6f3ec","#e7eefb","#fbeede","#eafaf2","#f3e9fb"]
+# cores por tipo de propositura
+TCOR = {"pl":"#1a7a44","ind":"#2f6fd0","req":"#e07b2a","moc":"#c9398f"}
+TLAB = {"pl":"Projetos de lei","ind":"Indicações","req":"Requerimentos","moc":"Moções"}
+
+def iniciais(nome): return "".join([p[0] for p in nome.split()[:2]]).upper()
+
+def freq(vid):
+    if not PRES: return None
+    pres = sum(1 for s in PRES if any(vid in ch["presentes"] for ch in s["chamadas"]))
+    tot = len(PRES)
+    return {"pct": round(100*pres/tot) if tot else 0, "pres":pres, "tot":tot, "aus":tot-pres}
+
+def donut(pct):
+    import math
+    r=15.9; c=2*math.pi*r; off=c*(1-pct/100)
+    return (f'<svg class="donut" viewBox="0 0 40 40" role="img" aria-label="{pct}% de presença">'
+            f'<circle cx="20" cy="20" r="{r}" class="d-bg"/>'
+            f'<circle cx="20" cy="20" r="{r}" class="d-fg" stroke-dasharray="{c:.1f}" stroke-dashoffset="{off:.2f}" transform="rotate(-90 20 20)"/>'
+            f'<text x="20" y="21" class="d-txt">{pct}%</text></svg>')
+
+def foto_html(vid, nome, lg=False):
+    cls = "foto foto-lg" if lg else "foto"
+    return (f'<span class="{cls}"><img loading="lazy" src="{FOTO.format(id=vid)}" alt="Foto oficial de {esc(nome)}" '
+            f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+            f'<span class="foto-ini" style="display:none" aria-hidden="true">{esc(iniciais(nome))}</span></span>')
+
+def freq_block(vid, grande=False):
+    f = freq(vid)
+    if not f: return ""
+    aus = f"{f['aus']} ausência" + ("s" if f["aus"]!=1 else "")
+    return (f'<div class="freq{" freq-lg" if grande else ""}">{donut(f["pct"])}'
+            f'<div class="freq-txt"><strong>{f["pres"]} de {f["tot"]} sessões</strong>'
+            f'<span class="muted">{aus} · nas sessões com chamada registrada</span></div></div>')
+
+def barra_tipos(vid):
+    vals = {"pl":ci(C["pl"],vid)+ci(C["plc"],vid),"ind":ci(C["ind"],vid),"req":ci(C["req"],vid),"moc":ci(C["moc"],vid)}
+    tot = sum(vals.values()) or 1
+    seg = "".join(f'<span style="width:{100*vals[k]/tot:.1f}%;background:{TCOR[k]}"></span>' for k in ["ind","req","moc","pl"] if vals[k])
+    linhas = "".join(f'<li><span class="dot" style="background:{TCOR[k]}"></span>{TLAB[k]}<b>{vals[k]}</b></li>' for k in ["ind","req","moc","pl"])
+    return f'<div class="barra">{seg}</div><ul class="cats">{linhas}</ul>'
+
+def card(v, idx):
     vid,slug,nome,part,mesa = v["id"],v["slug"],v["nome"],v["partido"],v["mesa"]
     mesa_chip=f'<span class="chip chip-mesa">{esc(mesa)}</span>' if mesa else ""
-    ini="".join([p[0] for p in nome.split()[:2]]).upper()
+    pastel = PASTEIS[idx % len(PASTEIS)]
     return f'''<article class="card" id="card-{slug}"><a class="card-link" href="#v-{slug}" aria-label="Ver detalhes de {esc(nome)}">
-  <div class="avatar" aria-hidden="true">{esc(ini)}</div>
-  <div class="card-body"><h3 class="card-nome">{esc(nome)}</h3><p class="card-sub">{esc(v["nome_completo"])}</p>
-  <div class="chips"><span class="chip chip-part">{esc(part)}</span>{mesa_chip}</div>
-  <dl class="mini"><div><dt>Projetos de lei</dt><dd>{ci(C["pl"],vid)+ci(C["plc"],vid)}</dd></div>
-  <div><dt>Indicações</dt><dd>{ci(C["ind"],vid)}</dd></div><div><dt>Requerimentos</dt><dd>{ci(C["req"],vid)}</dd></div>
-  <div><dt>Moções</dt><dd>{ci(C["moc"],vid)}</dd></div></dl></div></a></article>'''
+  <div class="card-head" style="background:{pastel}">{foto_html(vid,nome)}
+    <div class="card-id"><h3 class="card-nome">{esc(nome)}</h3><p class="card-sub">{esc(v["nome_completo"])}</p>
+    <div class="chips"><span class="chip chip-part">{esc(part)}</span>{mesa_chip}</div></div></div>
+  <div class="card-body">{freq_block(vid)}
+    <p class="card-label">O que apresentou no mandato</p>{barra_tipos(vid)}</div></a></article>'''
 
 def fonte(label,url): return f'<a class="fonte" href="{url}" target="_blank" rel="noopener">{esc(label)} <span aria-hidden="true">↗</span></a>'
 
@@ -142,9 +184,10 @@ def detalhe(v):
     mesa_line=f'<p class="detalhe-mesa">{esc(mesa)} da Mesa Diretora</p>' if mesa else ""
     return f'''<article class="detalhe" id="v-{slug}" aria-labelledby="h-{slug}">
   <a class="voltar" href="#vereadores">← Voltar para a lista</a>
-  <header class="detalhe-head"><div class="avatar avatar-lg" aria-hidden="true">{esc(ini)}</div>
+  <header class="detalhe-head">{foto_html(vid,nome,lg=True)}
   <div><h2 id="h-{slug}">{esc(nome)}</h2><p class="detalhe-nome">{esc(v["nome_completo"])}</p>
   <div class="chips"><span class="chip chip-part">{esc(part)}</span></div>{mesa_line}</div></header>
+  <section class="bloco destaque-freq"><h3>Frequência nas sessões <button class="ajuda" data-termo="sessao" aria-label="O que é sessão?">?</button></h3>{freq_block(vid,grande=True)}</section>
   <section class="bloco"><h3>Contato e perfil oficial</h3>{contato_html(vid)}
   <p>{fonte("ver o perfil oficial de "+nome+" na Câmara",prof)}</p>
   <p class="muted">Contato geral da Câmara: camara@riopreto.sp.leg.br · (17) 3214-7777.</p></section>
@@ -160,7 +203,7 @@ def detalhe(v):
   <section class="bloco"><h3>Verba de gabinete e despesas</h3><p>Informação não disponível nesta versão. Consulte no {fonte("Portal da Transparência",'https://www.riopreto.sp.leg.br/Home/PortalTransparencia')}.</p></section>
 </article>'''
 
-cards_html="\n".join(card(v) for v in VERS)
+cards_html="\n".join(card(v,i) for i,v in enumerate(VERS))
 detalhes_html="\n".join(detalhe(v) for v in VERS)
 partidos=sorted(set(v["partido"] for v in VERS))
 options="".join(f'<option value="{esc(p)}">{esc(p)}</option>' for p in partidos)
@@ -182,16 +225,40 @@ def item_html(r):
     sub=f'<span class="it-sub">{esc(r["sub"])}</span>' if r["sub"] else ""
     return (f'<li class="it"><div class="it-top"><span class="it-tipo">{esc(r["tipo"])} {esc(r["n"])}</span><span class="it-data">{esc(r["data"])}</span></div>'
             f'<div class="it-ass">{esc(r["assunto"])}</div>{local}<div class="it-aut">por <strong>{esc(r["autor"])}</strong> {sub}</div></li>')
+CAP=60
 grupos_html=""
 for k in ["melhorias","cobrancas","homenagens","leis","outros"]:
     regs=POR_GRUPO[k]
     if not regs and k=="outros": continue
-    itens="".join(item_html(r) for r in regs) or "<li class='it'>Sem itens nesta amostra.</li>"
-    grupos_html+=f'<details class="grupo"><summary><span class="g-nome">{esc(GRUPOS[k])}</span><span class="g-cont">{len(regs)} na amostra</span></summary><ul class="lista-itens">{itens}</ul></details>'
+    mostra=regs[:CAP]
+    itens="".join(item_html(r) for r in mostra) or "<li class='it'>Sem itens nesta amostra.</li>"
+    extra=f'<li class="it muted">+ {len(regs)-CAP} outros na amostra — use a busca por rua/bairro acima.</li>' if len(regs)>CAP else ""
+    grupos_html+=f'<details class="grupo"><summary><span class="g-nome">{esc(GRUPOS[k])}</span><span class="g-cont">{len(regs)} na amostra</span></summary><ul class="lista-itens">{itens}{extra}</ul></details>'
+def periodo(items):
+    ds=sorted(set(i["data"] for i in items), key=lambda x:(x[6:],x[3:5],x[0:2]))
+    return ds[0] if len(ds)==1 else f"{ds[0]} a {ds[-1]}"
 rep_html=""
-for loc,sub,items in REP_BAIRRO[:8]:
-    datas=sorted(set(i["data"] for i in items)); autores=sorted(set(i["autor"] for i in items))
-    rep_html+=f'<details class="rep"><summary><span class="rep-loc">{esc(loc)}</span><span class="rep-tag">{esc(sub)}</span><span class="rep-n">{len(items)}×</span></summary><p class="rep-meta">Datas: {esc(", ".join(datas))} · Por: {esc(", ".join(autores))}</p><ul class="lista-itens">{"".join(item_html(i) for i in items)}</ul></details>'
+for loc,sub,items in REP_BAIRRO[:12]:
+    nver=len(set(i["autor"] for i in items))
+    rep_html+=(f'<details class="rep"><summary><span class="rep-n">{len(items)}<small>×</small></span>'
+               f'<div class="rep-main"><span class="rep-loc">{esc(loc)}</span>'
+               f'<div class="rep-meta2"><span class="rep-tag">{esc(sub)}</span> · {nver} vereador(es) pediram · {esc(periodo(items))}</div></div>'
+               f'<span class="rep-cta">ver e cobrar →</span></summary>'
+               f'<ul class="lista-itens">{"".join(item_html(i) for i in items)}</ul></details>')
+if not rep_html: rep_html='<p class="muted">Nenhuma repetição na amostra atual.</p>'
+
+# totais para os tiles do topo
+T_IND=sum(ci(C["ind"],v["id"]) for v in VERS)
+T_REQ=sum(ci(C["req"],v["id"]) for v in VERS)
+T_MOC=sum(ci(C["moc"],v["id"]) for v in VERS)
+T_LEIS=sum(ci(C["pl"],v["id"])+ci(C["plc"],v["id"]) for v in VERS)
+T_PROPS=T_IND+T_REQ+T_MOC+T_LEIS
+def fmt(n): return f"{n:,}".replace(",",".")
+tiles_html=(f'<div class="tiles">'
+ f'<div class="tile"><b style="color:#2f6fd0">{fmt(T_IND)}</b><span>pedidos nos bairros (indicações)</span></div>'
+ f'<div class="tile"><b style="color:#e07b2a">{fmt(T_REQ)}</b><span>requerimentos</span></div>'
+ f'<div class="tile"><b style="color:#c9398f">{fmt(T_MOC)}</b><span>homenagens (moções)</span></div>'
+ f'<div class="tile"><b style="color:#1a7a44">{fmt(T_LEIS)}</b><span>projetos de lei</span></div></div>')
 busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"])} for r in REGS], ensure_ascii=False)
 
 # contagens para verificação
@@ -232,7 +299,7 @@ page = (TPL.replace("__TITLE__",esc(TITLE)).replace("__DESC__",esc(DESC)).replac
  .replace("__REP__",rep_html).replace("__GRUPOS__",grupos_html).replace("__OPTIONS__",options)
  .replace("__CARDS__",cards_html).replace("__GLOSS__",gloss_html).replace("__VERIF__",verif_html)
  .replace("__DETALHES__",detalhes_html).replace("__GLOSSJS__",gloss_js).replace("__BUSCADATA__",busca_data)
- .replace("__NAOCONF__",naoconf_html))
+ .replace("__NAOCONF__",naoconf_html).replace("__TILES__",tiles_html))
 open(os.path.join(OUT,"index.html"),"w",encoding="utf-8").write(page)
 
 # robots / sitemap / llms
