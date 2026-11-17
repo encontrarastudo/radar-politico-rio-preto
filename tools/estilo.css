@@ -289,3 +289,61 @@ nav.secnav a{color:var(--navy)}
 .efet-txt{font-size:.92rem}
 .efet-txt .muted{display:block;margin-top:3px}
 .rank-tab td.r-strong{font-weight:800;font-family:'Archivo';color:#1a7a44;font-variant-numeric:tabular-nums}
+
+/* ===== v5: abas ===== */
+.tabs{display:flex;gap:8px;margin-bottom:14px;border-bottom:2px solid var(--line)}
+.tab-btn{background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;padding:9px 6px;font-size:.95rem;font-weight:700;color:var(--muted);cursor:pointer;font-family:inherit}
+.tab-btn.active{color:var(--navy);border-bottom-color:var(--red)}
+.tab-btn:hover{color:var(--navy)}
+
+/* ===== v5: cards de bairro/repetição padronizados ===== */
+.rep-grid{align-items:stretch}
+.rep{align-self:stretch;display:flex;flex-direction:column}
+.rep>summary{flex-wrap:nowrap;align-items:center;gap:12px;min-height:82px}
+.rep-n{min-width:46px;text-align:center}
+.rep-main{flex:1;min-width:0}
+.rep-loc{font-size:1rem;font-weight:800;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2}
+.rep-meta2{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.8rem;margin-top:3px}
+.rep-cta{flex:none}
+.rep[open] .rep-loc,.rep[open] .rep-meta2{white-space:normal;overflow:visible}
+/* grupos padronizados */
+.grupos-grid{align-items:stretch}
+.grupo-card{display:flex;flex-direction:column}
+.grupo-card>summary{min-height:92px;align-items:center}
+
+/* ===== v5: caixa de busca em destaque (degradê + relevo) ===== */
+#busca{background:linear-gradient(135deg,#0C324A 0%,#15557f 55%,#1d6a9c 100%);border-radius:20px;padding:24px 22px 26px;color:#fff;
+  box-shadow:0 14px 34px rgba(12,50,74,.32), inset 0 1px 0 rgba(255,255,255,.22), inset 0 -2px 10px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.12)}
+#busca h2{color:#fff}
+#busca .sub{color:#eaf2f8;opacity:.95}
+#busca .buscaRua{margin-top:4px}
+#busca .buscaRua input{border:none;border-radius:14px;padding:17px 18px;font-size:1.05rem;
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.18), 0 2px 0 rgba(255,255,255,.35);background:#fff}
+#busca .buscaRua input:focus{outline:3px solid #FEF1D5;outline-offset:2px}
+#rua-info{color:#eaf2f8;opacity:.95;font-weight:600}
+#busca .it{box-shadow:0 4px 14px rgba(0,0,0,.14)}
+
+/* ===== v6: topo com profundidade ===== */
+header.top{
+  background:
+    radial-gradient(900px 340px at 12% -25%, rgba(255,255,255,.75), transparent 62%),
+    radial-gradient(700px 300px at 100% 0%, rgba(103,156,188,.22), transparent 55%),
+    linear-gradient(165deg,#FFF8E7 0%,#FEF1D5 52%,#F6E1BA 100%);
+  border-bottom:none;position:relative;padding:30px 0 30px;
+  box-shadow:0 10px 26px rgba(12,50,74,.12)}
+header.top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;
+  background:linear-gradient(90deg,var(--navy) 0%,var(--blue) 45%,var(--red) 100%)}
+header.top .wrap{position:relative;z-index:1}
+header.top h1{text-shadow:0 1px 0 rgba(255,255,255,.5)}
+.salario-card{box-shadow:0 12px 30px rgba(12,50,74,.28), inset 0 1px 0 rgba(255,255,255,.12)}
+.tiles .tile{box-shadow:0 6px 16px rgba(12,50,74,.10)}
+
+/* ===== v6: menu em destaque, sem rolagem ===== */
+nav.secnav{background:linear-gradient(180deg,#0C324A 0%,#0a2b40 100%);backdrop-filter:none;
+  margin:0 -16px 22px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:6px 8px;justify-content:center;
+  overflow:visible;border-bottom:none;box-shadow:0 6px 16px rgba(12,50,74,.22)}
+nav.secnav a{white-space:nowrap;text-decoration:none;color:#eef5fa;font-weight:800;
+  font-family:'Archivo',system-ui,sans-serif;font-size:.92rem;letter-spacing:.005em;
+  padding:8px 15px;border-radius:999px;transition:background .15s,color .15s}
+nav.secnav a:hover,nav.secnav a:focus{background:rgba(255,255,255,.15);color:#fff}
+nav.secnav a.on{background:var(--red);color:#fff}

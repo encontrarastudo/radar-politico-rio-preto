@@ -32,10 +32,9 @@ __JSONLD__
 <main id="conteudo" class="wrap">
 <div id="lista-view">
   <nav class="secnav" aria-label="Seções">
-    <a href="#panorama">A cidade em números</a><a href="#busca">Busca por rua</a><a href="#problema">Problema que não some</a>
+    <a href="#panorama">A cidade em números</a><a href="#busca">Busca por rua</a>
     <a href="#trabalho">Trabalho da Câmara</a><a href="#vereadores">Vereadores</a>
     <a href="#ranking">Ranking</a><a href="#comparar">Comparar</a>
-    <a href="#numeros">De onde vêm os números</a><a href="#erro">Achou um erro?</a>
   </nav>
 
   <section class="sec2" id="panorama">
@@ -54,11 +53,10 @@ __JSONLD__
     <ul class="lista-itens" id="rua-result"></ul>
   </section>
 
-  <section class="sec2" id="problema">
-    <h2>O problema que não some</h2>
-    <p class="sub">Lugares onde o mesmo tipo de pedido aparece mais de uma vez na amostra. Pode indicar um problema que ainda não foi resolvido.</p>
-    <div class="alerta">⚠️ Pedido repetido <strong>não prova</strong> que a Prefeitura ignorou. Pode ser outro trecho da mesma rua, um novo morador pedindo, ou o serviço já em andamento. Abra cada caso e leia os pedidos.</div>
-    __REP__
+  <section class="sec2" id="bairros">
+    <h2>Bairros com mais pedidos</h2>
+    <p class="sub">Os bairros que mais aparecem nas solicitações da amostra recente. Mais menções <strong>não significam o mesmo problema</strong> — são pedidos diferentes sobre o mesmo bairro. Abra cada um e leia o que foi pedido, e por quem.</p>
+    __BAIRROS__
   </section>
 
   <section class="sec2" id="trabalho">
@@ -84,8 +82,8 @@ __JSONLD__
 
   <section class="sec2" id="ranking">
     <h2>Ranking por dimensões</h2>
-    <p class="sub">Não é nota de “bom” ou “ruim”: é uma nota que combina vários fatores comparáveis — efetividade (projetos aprovados), presença, participação em votações, produção e articulação —, calculados só com dado oficial. <a href="#numeros">Veja como o índice é calculado</a> e suas limitações.</p>
-    <div class="alerta">⚠️ O índice é uma leitura <strong>parcial</strong>: a presença ainda cobre poucas sessões e a dimensão de economia/gastos de gabinete ainda entrará numa próxima rodada. Use como ponto de partida, não como veredito.</div>
+    <p class="sub">Não é nota de “bom” ou “ruim”: é uma nota que combina seis fatores comparáveis — efetividade (projetos aprovados), presença, participação em votações, produção, economia (gastos com viagens) e articulação —, calculados só com dado oficial. <a href="#numeros">Veja como o índice é calculado</a> e suas limitações.</p>
+    <div class="alerta">⚠️ O índice é uma leitura <strong>parcial</strong>: a presença ainda cobre poucas sessões e a economia mede só os gastos com viagens (o único gasto publicado por vereador). Use como ponto de partida, não como veredito.</div>
     __RANKING__
   </section>
 
@@ -182,13 +180,26 @@ const cmpSels=Array.from(document.querySelectorAll('.cmp-sel')),cmpRes=document.
 function fotoCmp(m){return '<span class="foto"><img loading="lazy" src="'+m.foto+'" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span class="foto-ini" style="display:none">'+esc(m.ini)+'</span></span>';}
 function renderCmp(){const sel=cmpSels.map(s=>s.value).filter(Boolean),uniq=[];sel.forEach(id=>{const m=VMbyId[id];if(m&&!uniq.find(x=>x.id===m.id))uniq.push(m);});
   if(uniq.length<2){cmpRes.innerHTML='<p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p>';return;}
-  const linhas=[['Partido',m=>esc(m.partido)+(m.mesa?' · '+esc(m.mesa):'')],['Projetos de lei aprovados',m=>'<b>'+m.aprov+'</b> <small>de '+m.pl+' apresentados</small>'],['Presença',m=>m.presenca+'% <small>('+m.presx+' de '+m.prest+' sessões)</small>'],['Participação em votações',m=>m.partic+'% <small>('+m.cast+' de '+m.votost+')</small>'],['Projetos de lei apresentados',m=>m.pl],['Indicações',m=>m.ind],['Requerimentos',m=>m.req],['Moções',m=>m.moc],['Índice geral',m=>'<b>'+m.indice+'</b>']];
+  const linhas=[['Partido',m=>esc(m.partido)+(m.mesa?' · '+esc(m.mesa):'')],['Projetos de lei aprovados',m=>'<b>'+m.aprov+'</b> <small>de '+m.pl+' apresentados</small>'],['Presença',m=>m.presenca+'% <small>('+m.presx+' de '+m.prest+' sessões)</small>'],['Participação em votações',m=>m.partic+'% <small>('+m.cast+' de '+m.votost+')</small>'],['Projetos de lei apresentados',m=>m.pl],['Indicações',m=>m.ind],['Requerimentos',m=>m.req],['Moções',m=>m.moc],['Gastos com viagens oficiais',m=>'R$ '+(m.gasto||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' <small>('+(m.viagens||0)+' viagem(ns))</small>'],['Índice geral',m=>'<b>'+m.indice+'</b>']];
   let h='<div class="tab-wrap"><table class="cmp-tab"><thead><tr><th></th>';
   uniq.forEach(m=>{h+='<th><a href="#v-'+m.slug+'">'+fotoCmp(m)+'<span>'+esc(m.nome)+'</span></a></th>';});
   h+='</tr></thead><tbody>';
   linhas.forEach(l=>{h+='<tr><th scope="row">'+l[0]+'</th>';uniq.forEach(m=>{h+='<td>'+l[1](m)+'</td>';});h+='</tr>';});
   h+='</tbody></table></div>';cmpRes.innerHTML=h;}
 cmpSels.forEach(s=>s.addEventListener('change',renderCmp));
+// menu: destacar a seção atual
+(function(){const links=[...document.querySelectorAll('.secnav a')];
+ const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+ function spy(){let i=0;const y=window.scrollY+130;
+   secs.forEach((s,k)=>{if(s&&s.offsetTop<=y)i=k;});
+   links.forEach((a,k)=>a.classList.toggle('on',k===i));}
+ window.addEventListener('scroll',spy,{passive:true});spy();})();
+// abas (bairros / recentes)
+document.querySelectorAll('.tab-btn').forEach(b=>b.addEventListener('click',()=>{
+  const t=b.dataset.tab,group=b.parentElement;
+  group.querySelectorAll('.tab-btn').forEach(x=>{const on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-selected',on);});
+  ['t-bairros','t-recentes'].forEach(id=>{const p=document.getElementById(id);if(p)p.hidden=(id!==t);});
+}));
 // contador de salário (estimativa, sobe ao vivo)
 (function(){const el=document.getElementById('sal-valor');if(!el)return;
   const card=document.querySelector('.salario-card');const mensal=+card.dataset.mensal||0;

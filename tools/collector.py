@@ -223,6 +223,63 @@ def coletar_efetividade():
     print(f"  efetividade (vereadores com dado): {len(out)}/23")
     return out
 
+# ============ 6) GASTOS COM VIAGENS (despesas de viagem por vereador) ============
+PORTAL = "https://www.riopreto.sp.leg.br"
+# tokens distintivos -> id (nome de exibição oficial de cada vereador)
+VIAG_KEYS = [("abner",27253),("alex de carvalho",27258),("alexandre montenegro",27250),
+ ("anderson branco",19428),("bruno marinho",23565),("bruno moura",23566),("celso peixao",71),
+ ("celso luiz",71),("felipe alcala",27249),("francisco junior",73),("francisco savio",73),
+ ("jean dornelas",19430),("joao paulo rillo",46),("jonathan",27252),("jorge menezes",53),
+ ("julio donizete",23568),("klebinho",27256),("luciano juliao",27257),("luciano de oliveira",27257),
+ ("marcia caldas",27251),("odelio",23569),("paulera",24556),("paulo roberto ambrosio",24556),
+ ("pedro roberto",15231),("renato pupo",77),("rossini",23571),("tadeu",27255)]
+def viag_match(frag):
+    f = nrm(frag)
+    for tok,i in VIAG_KEYS:
+        if tok in f: return i
+    return None
+
+def coletar_gastos_viagens(anos=("2025","2026")):
+    """Soma o 'Total da despesa' das viagens oficiais por vereador solicitante.
+    Viagem de grupo: custo dividido igualmente entre participantes. Suplentes/ex e
+    servidores não entram. Complementar (não bloqueia o gate)."""
+    por = {}; nviag = {}; total_viag = 0; sem_valor = 0
+    rec = re.compile(r"Total da despesa[\s\S]{0,40}?R\$\s*([\d.]+,\d{2})", re.I)
+    for ano in anos:
+        try:
+            html_ = get(f"{PORTAL}/paginas/despesas-de-viagens-{ano}")
+        except Exception as ex:
+            print(f"  viagens {ano}: lista falhou ({ex})"); continue
+        soup = BeautifulSoup(html_, "html.parser")
+        for tr in soup.find_all("tr"):
+            a = tr.find("a", href=re.compile(r"viagem-"))
+            if not a: continue
+            tds = tr.find_all("td")
+            sol = tds[1].get_text(" ").strip() if len(tds) > 1 else ""
+            slug = a.get("href","").strip()
+            if re.match(r"^(Contador|Diretor|Comiss|Assessor|Procurador|Secret)", sol, re.I): continue
+            try:
+                det = get(f"{PORTAL}/paginas/{slug}"); time.sleep(PAUSA)
+            except Exception: continue
+            total_viag += 1
+            m = rec.search(det); valor = float(m.group(1).replace(".","").replace(",",".")) if m else 0.0
+            if not m: sem_valor += 1
+            corpo = re.sub(r"^Vereadores?:?\s*", "", sol, flags=re.I)
+            frags = [x.strip() for x in re.split(r",| e ", corpo) if x.strip()]
+            n = len(frags) or 1; per = valor/n
+            for fr in frags:
+                i = viag_match(fr)
+                if i is None: continue
+                por[i] = round(por.get(i,0.0)+per, 2); nviag[i] = nviag.get(i,0)+1
+    if not por: return {}
+    out = {"meta":{"periodo":"-".join(anos),"viagens_total":total_viag,"viagens_sem_valor_publicado":sem_valor,
+                    "fonte":f"{PORTAL}/paginas/despesas-de-viagens"},
+           "por_vereador":{}}
+    for aid in IDS:
+        out["por_vereador"][str(aid)] = {"total":por.get(aid,0.0), "viagens":nviag.get(aid,0)}
+    print(f"  gastos com viagens: {total_viag} viagens, {len([1 for v in out['por_vereador'].values() if v['total']>0])} vereadores com gasto")
+    return out
+
 # ============ VALIDAÇÃO (o gate) ============
 def carrega_anterior(nome):
     try: return json.load(open(os.path.join(DATA,nome),encoding="utf-8"))
@@ -269,7 +326,15 @@ def main():
     if len(efetividade) < 23 and len(ant_ef) >= len(efetividade):
         print(f"  efetividade incompleta ({len(efetividade)}/23) — mantendo versão anterior ({len(ant_ef)})")
         efetividade = ant_ef
-    print("6/6 validando...")
+    print("6/7 gastos com viagens...")
+    try: gastos = coletar_gastos_viagens()
+    except Exception as ex:
+        print("  coleta de gastos com viagens falhou inteira:", ex); gastos = {}
+    ant_gv = carrega_anterior("gastos_viagens.json") or {}
+    if (not gastos or len(gastos.get("por_vereador",{}))<23) and ant_gv:
+        print("  gastos com viagens incompletos — mantendo versão anterior")
+        gastos = ant_gv
+    print("7/7 validando...")
     erros = valida(contagens, presenca, votacoes, propostas, vereadores)
     if erros:
         print("\n❌ VALIDAÇÃO FALHOU — NADA será publicado. Motivos:")
@@ -284,6 +349,7 @@ def main():
     dump("propostas.json", propostas)
     if contatos: dump("contatos.json", contatos)
     if efetividade: dump("efetividade.json", efetividade)
+    if gastos: dump("gastos_viagens.json", gastos)
     dump("meta.json", {"atualizado":datetime.date.today().isoformat(),"periodo_dados":"2025-2026",
                        "fonte":"SISCAM / Câmara Municipal de São José do Rio Preto","origem":"coleta automática diária"})
     print("\n✅ Coleta válida e gravada. Pronto para reconstruir o site.")

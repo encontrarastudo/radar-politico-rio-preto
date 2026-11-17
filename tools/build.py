@@ -21,6 +21,11 @@ except Exception: CONTATOS = {}
 try: EF = load("efetividade.json")
 except Exception: EF = {}
 def ef_aprov(vid): return (EF.get(str(vid)) or {}).get("aprovados", 0)
+try: GV = load("gastos_viagens.json")
+except Exception: GV = {"meta":{},"por_vereador":{}}
+GVP = GV.get("por_vereador", {})
+def gv_total(vid): return (GVP.get(str(vid)) or {}).get("total", 0) or 0
+def gv_viagens(vid): return (GVP.get(str(vid)) or {}).get("viagens", 0) or 0
 
 def esc(s): return html.escape(str(s), quote=True)
 def nrm(s):
@@ -211,7 +216,11 @@ def detalhe(v):
   <section class="bloco"><h3>Como votou (votações nominais) <button class="ajuda" data-termo="nominal" aria-label="O que é votação nominal?">?</button></h3>
   <p class="muted">Apenas o registro do voto. Em votações simbólicas o voto individual não é registrado.</p>
   <table class="tab"><thead><tr><th>Matéria</th><th>Voto</th><th>Fonte</th></tr></thead><tbody>{vrows}</tbody></table></section>
-  <section class="bloco"><h3>Verba de gabinete e despesas</h3><p>Informação não disponível nesta versão. Consulte no {fonte("Portal da Transparência",'https://www.riopreto.sp.leg.br/Home/PortalTransparencia')}.</p></section>
+  <section class="bloco"><h3>Gastos com viagens oficiais ({PERIODO_DADOS})</h3>
+  <div class="efet-box"><div class="efet-num" style="color:var(--red);font-size:1.5rem">R$ {("%.2f"%gv_total(vid)).replace(".",",")}</div>
+  <div class="efet-txt"><strong>em {gv_viagens(vid)} viagem(ns)</strong> custeada(s) com dinheiro público <button class="ajuda" data-termo="viagens" aria-label="O que é isso?">?</button>
+  <span class="muted">diárias e despesas de deslocamento · {fonte("ver as viagens na fonte",'https://www.riopreto.sp.leg.br/paginas/despesas-de-viagens')}</span></div></div>
+  <p class="muted">Verba de gabinete e remuneração de assessores não são publicadas separadamente por vereador; quando a Câmara divulgar, entram aqui.</p></section>
 </article>'''
 
 cards_html="\n".join(card(v,i) for i,v in enumerate(VERS))
@@ -227,6 +236,7 @@ GLOSS=[
  ("sessao","O que é uma Sessão?","A reunião em que os vereadores debatem e votam. As ordinárias costumam ser semanais. Cada uma tem duas listas de presença: a Chamada Regimental (na abertura) e a Chamada da Ordem do Dia (na hora de votar)."),
  ("nominal","O que é votação nominal?","Quando fica registrado o voto de cada vereador, um por um. Na votação simbólica a Câmara registra só o resultado geral, sem o nome de cada um — nesses casos não dá para saber como cada um votou."),
  ("aprovados","O que é um projeto aprovado?","É um Projeto de Lei (ou Projeto de Lei Complementar) de autoria do vereador que já foi aprovado pela Câmara — ou seja, saiu do papel e virou (ou está prestes a virar) lei. Diferente da quantidade de projetos apresentados, aqui conta o que de fato foi adiante. Contamos só os projetos com situação “APROVADO” no sistema da Câmara, no mandato atual."),
+ ("viagens","O que são os gastos com viagens?","É quanto de dinheiro público a Câmara pagou em diárias e despesas de deslocamento (transporte, hospedagem) de cada vereador em viagens oficiais — reuniões em São Paulo, Brasília, etc. Somamos o “Total da despesa” de cada viagem publicada no Portal da Transparência da Câmara. Em viagens de grupo, o custo é dividido igualmente entre os participantes. No ranking, gastar menos pontua mais (critério de economia)."),
  ("quantos","Quantos vereadores tem São José do Rio Preto?","A Câmara Municipal de São José do Rio Preto tem 23 vereadores no mandato de 2025 a 2028."),
 ]
 gloss_html="".join(f'<div class="gloss-item"><h3>{esc(q)}</h3><p>{esc(a)}</p></div>' for k,q,a in GLOSS)
@@ -259,16 +269,37 @@ grupos_html+='</div>'
 def periodo(items):
     ds=sorted(set(i["data"] for i in items), key=lambda x:(x[6:],x[3:5],x[0:2]))
     return ds[0] if len(ds)==1 else f"{ds[0]} a {ds[-1]}"
-rep_html='<div class="rep-grid">'
-for loc,sub,items in REP_BAIRRO[:12]:
+def dkey_d(d):
+    try: p=d.split("/"); return (p[2],p[1],p[0])
+    except: return ("0","0","0")
+# --- Bairros com mais solicitações (contagem por bairro, sem alegar que é o mesmo problema) ---
+bairro_items={}
+for r in REGS:
+    if r["bairro"]: bairro_items.setdefault(r["bairro"],[]).append(r)
+bairros_rank=sorted(bairro_items.items(), key=lambda kv:(-len(kv[1]), kv[0]))
+bairro_cards=""
+for loc,items in bairros_rank[:15]:
+    items2=sorted(items, key=lambda i:dkey_d(i["data"]), reverse=True)
     nver=len(set(i["autor"] for i in items))
-    rep_html+=(f'<details class="rep"><summary><span class="rep-n">{len(items)}<small>×</small></span>'
-               f'<div class="rep-main"><span class="rep-loc">{esc(loc)}</span>'
-               f'<div class="rep-meta2"><span class="rep-tag">{esc(sub)}</span> · {nver} vereador(es) pediram · {esc(periodo(items))}</div></div>'
-               f'<span class="rep-cta">ver e cobrar →</span></summary>'
-               f'<ul class="lista-itens">{"".join(item_html(i) for i in items)}</ul></details>')
-rep_html+='</div>'
-if not REP_BAIRRO: rep_html='<p class="muted">Nenhuma repetição na amostra atual.</p>'
+    locd=re.sub(r'^(Bairro|Res\.?|Residencial)\s+','',loc).strip()
+    top_sub=Counter(i["sub"] for i in items if i["sub"] and i["sub"]!="Outros serviços").most_common(1)
+    tag=f'<span class="rep-tag">{esc(top_sub[0][0])}</span>' if top_sub else ""
+    bairro_cards+=(f'<details class="rep"><summary><span class="rep-n">{len(items)}<small>×</small></span>'
+       f'<div class="rep-main"><span class="rep-loc">{esc(locd)}</span>'
+       f'<div class="rep-meta2">{tag}{" · " if tag else ""}{nver} vereador(es) · {esc(periodo(items))}</div></div>'
+       f'<span class="rep-cta">ver →</span></summary>'
+       f'<ul class="lista-itens">{"".join(item_html(i) for i in items2)}</ul></details>')
+if not bairro_cards: bairro_cards='<p class="muted">Sem bairros identificados na amostra atual.</p>'
+# --- Solicitações recentes (pedidos de melhoria/cobrança, mais novos primeiro) ---
+recs_tab=sorted([r for r in REGS if r["grupo"] in ("melhorias","cobrancas")], key=lambda i:dkey_d(i["data"]), reverse=True)[:30]
+recentes_cards="".join(item_html(r) for r in recs_tab) or '<li class="it muted">Sem solicitações recentes na amostra.</li>'
+bairros_html=(
+ '<div class="tabs" role="tablist">'
+ '<button class="tab-btn active" data-tab="t-bairros" role="tab" aria-selected="true">Por bairro</button>'
+ '<button class="tab-btn" data-tab="t-recentes" role="tab" aria-selected="false">Solicitações recentes</button>'
+ '</div>'
+ f'<div class="tab-panel" id="t-bairros" role="tabpanel"><div class="rep-grid">{bairro_cards}</div></div>'
+ f'<div class="tab-panel" id="t-recentes" role="tabpanel" hidden><ul class="lista-itens">{recentes_cards}</ul></div>')
 
 # totais para os tiles do topo
 T_IND=sum(ci(C["ind"],v["id"]) for v in VERS)
@@ -304,13 +335,12 @@ def participacao(vid):
     return (round(100*cast/tot) if tot else 0, cast, tot)
 maxpl = max((ci(C["pl"],v["id"])+ci(C["plc"],v["id"]) for v in VERS), default=1) or 1
 maxef = max((ef_aprov(v["id"]) for v in VERS), default=1) or 1
+maxgv = max((gv_total(v["id"]) for v in VERS), default=0) or 0   # maior gasto com viagens
 # Articulação institucional: ocupar cargo na Mesa Diretora (peso pequeno)
 ARTIC_PTS={"presidente":100,"vice-presidente":70,"1º secretário":55,"1 secretario":55,
            "2º secretário":50,"3º secretário":45}
 def artic_pts(mesa): return ARTIC_PTS.get(nrm(mesa),0) if mesa else 0
-# Pesos aprovados: Efetividade 25 · Presença 20 · Participação 20 · Produção 20 · Articulação 5
-# (Economia/gastos 10% fica para a 2ª rodada — depende dos PDFs mensais de despesa.)
-PESO_SOMA=0.25+0.20+0.20+0.20+0.05  # = 0.90, renormaliza p/ 0–100
+# Pesos: Efetividade 25 · Presença 20 · Participação 20 · Produção 20 · Economia 10 · Articulação 5 = 100
 VM=[]
 for v in VERS:
     vid=v["id"]; f=freq(vid); pl=ci(C["pl"],vid)+ci(C["plc"],vid)
@@ -320,20 +350,23 @@ for v in VERS:
     efet = round(100*aprov/maxef)          # efetividade: projetos aprovados / maior
     producao = round(100*pl/maxpl)         # produção: projetos de lei / maior
     artic = artic_pts(v["mesa"])           # articulação institucional (Mesa)
-    indice = round((0.25*efet + 0.20*presenca + 0.20*partic + 0.20*producao + 0.05*artic)/PESO_SOMA)
+    gasto = gv_total(vid)                   # gastos com viagens oficiais (R$)
+    econ = round(100*(1 - gasto/maxgv)) if maxgv else 100   # economia: menos gasto = mais pontos
+    indice = round(0.25*efet + 0.20*presenca + 0.20*partic + 0.20*producao + 0.10*econ + 0.05*artic)
     VM.append({"id":vid,"slug":v["slug"],"nome":v["nome"],"partido":v["partido"],"mesa":v["mesa"],
                "foto":FOTO.format(id=vid),"ini":iniciais(v["nome"]),
                "presenca":presenca,"presx":f["pres"] if f else 0,"prest":f["tot"] if f else 0,
                "partic":partic,"cast":cast,"votost":totv,
                "pl":pl,"ind":ci(C["ind"],vid),"req":ci(C["req"],vid),"moc":ci(C["moc"],vid),
                "aprov":aprov,"efet":efet,"producao":producao,"artic":artic,
+               "gasto":gasto,"viagens":gv_viagens(vid),"econ":econ,
                "inic":producao,"indice":indice})
 VM_JS=json.dumps(VM, ensure_ascii=False)
 rank_ordenado=sorted(VM, key=lambda x:-x["indice"])
 def mini_foto(m):
     return (f'<span class="foto foto-sm"><img loading="lazy" src="{m["foto"]}" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span class="foto-ini" style="display:none">{esc(m["ini"])}</span></span>')
 rank_rows="".join(
-  f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-aprov="{m["aprov"]}" data-nome="{esc(m["nome"])}">'
+  f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-aprov="{m["aprov"]}" data-econ="{m["econ"]}" data-nome="{esc(m["nome"])}">'
   f'<td class="r-pos">{i+1}</td><td class="r-nome"><a href="#v-{m["slug"]}">{mini_foto(m)}<span>{esc(m["nome"])}<small>{esc(m["partido"])}</small></span></a></td>'
   f'<td class="r-strong">{m["aprov"]}</td><td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td><td class="r-indice">{m["indice"]}</td></tr>'
   for i,m in enumerate(rank_ordenado))
@@ -341,6 +374,7 @@ ranking_html=(f'<div class="rank-head"><label for="rank-sort">Ordenar por</label
  f'<select id="rank-sort"><option value="indice">Índice geral</option><option value="aprov">Projetos aprovados</option>'
  f'<option value="presenca">Presença</option>'
  f'<option value="partic">Participação em votações</option><option value="pl">Projetos de lei</option>'
+ f'<option value="econ">Mais econômico (viagens)</option>'
  f'<option value="nome">Nome (A–Z)</option></select></div>'
  f'<div class="tab-wrap"><table class="rank-tab"><thead><tr><th>#</th><th>Vereador</th>'
  f'<th>Projetos aprovados <button class="ajuda" data-termo="aprovados" aria-label="O que é projeto aprovado?">?</button></th>'
@@ -407,8 +441,9 @@ verif_html=f'''<div class="met">
 • <strong>Presença</strong> (peso 20%): % de comparecimento nas sessões com chamada registrada.<br>
 • <strong>Participação em votações</strong> (peso 20%): das votações nominais, em quantas o vereador registrou voto (a favor, contra ou abstenção) — ausências contam contra; quando o presidente não vota por função, isso não entra na conta.<br>
 • <strong>Produção legislativa</strong> (peso 20%): quantidade de projetos de lei apresentados (os de conteúdo substantivo), comparada a quem mais apresentou.<br>
+• <strong>Economia</strong> (peso 10%): gasto com viagens oficiais custeadas com dinheiro público (diárias e deslocamento) no mandato. Aqui a lógica se inverte — <strong>gastar menos pontua mais</strong>. Quem mais gastou pontua 0; quem não teve gasto de viagem pontua 100.<br>
 • <strong>Articulação institucional</strong> (peso 5%): ocupar um cargo na Mesa Diretora (Presidência, Vice, Secretarias), responsabilidade de condução dos trabalhos. Quem não está na Mesa pontua 0 aqui — é o fator de menor peso, de propósito.</p>
-<p class="muted">De propósito, o índice <strong>não usa o volume de indicações e requerimentos</strong> — eles são apresentados em massa e inchariam a conta sem medir qualidade. Uma dimensão prevista, <strong>Economia/gastos de gabinete</strong> (peso 10%), ainda <strong>não entra</strong>: depende dos PDFs mensais de despesa, que serão incorporados numa próxima rodada; enquanto isso, os outros cinco fatores são renormalizados para somar 100%. O índice é uma leitura parcial — a presença ainda cobre poucas sessões. Use como ponto de partida, não como veredito, e confira sempre a ficha de cada um.</p>
+<p class="muted">De propósito, o índice <strong>não usa o volume de indicações e requerimentos</strong> — eles são apresentados em massa e inchariam a conta sem medir qualidade. A dimensão de economia mede só as viagens, porque é o único gasto publicado por vereador: verba de gabinete e salários de assessores não saem separados por vereador na Câmara. O índice é uma leitura parcial — a presença ainda cobre poucas sessões. Use como ponto de partida, não como veredito, e confira sempre a ficha de cada um.</p>
 <p class="muted">Origem desta carga de dados: {esc(META.get("origem","—"))}. Total de proposituras contabilizadas (mandato): {tot_props:,}.</p></div>'''.replace(",", ".")
 
 naoconf_html='''<ul class="aviso-lista">
@@ -435,7 +470,7 @@ jsonld_html="\n".join(f'<script type="application/ld+json">{json.dumps(x,ensure_
 TPL = open(os.path.join(os.path.dirname(__file__), "template.html"), encoding="utf-8").read()
 page = (TPL.replace("__TITLE__",esc(TITLE)).replace("__DESC__",esc(DESC)).replace("__BASE__",BASE)
  .replace("__JSONLD__",jsonld_html).replace("__CSS__",CSS).replace("__ATUALIZADO__",ATUALIZADO)
- .replace("__REP__",rep_html).replace("__GRUPOS__",grupos_html).replace("__OPTIONS__",options)
+ .replace("__BAIRROS__",bairros_html).replace("__GRUPOS__",grupos_html).replace("__OPTIONS__",options)
  .replace("__CARDS__",cards_html).replace("__GLOSS__",gloss_html).replace("__VERIF__",verif_html)
  .replace("__DETALHES__",detalhes_html).replace("__GLOSSJS__",gloss_js).replace("__BUSCADATA__",busca_data)
  .replace("__NAOCONF__",naoconf_html).replace("__TILES__",tiles_html)

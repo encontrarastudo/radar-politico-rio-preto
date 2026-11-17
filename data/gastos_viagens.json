@@ -1,0 +1,34 @@
+{
+ "meta": {
+  "periodo": "2025-2026",
+  "viagens_total": 110,
+  "viagens_sem_valor_publicado": 7,
+  "fonte": "https://www.riopreto.sp.leg.br/paginas/despesas-de-viagens",
+  "observacao": "Soma de 'Total da despesa' de cada viagem oficial por vereador solicitante. Viagens compartilhadas: custo dividido igualmente entre os participantes. Viagens de suplentes/ex-vereadores e de servidores não entram. 7 viagens não têm valor publicado e contam como R$ 0."
+ },
+ "por_vereador": {
+  "46":    {"total": 0,        "viagens": 0},
+  "53":    {"total": 2653.63,  "viagens": 4},
+  "71":    {"total": 11067.54, "viagens": 5},
+  "73":    {"total": 17725.29, "viagens": 8},
+  "77":    {"total": 3393.32,  "viagens": 3},
+  "15231": {"total": 3723.78,  "viagens": 3},
+  "19428": {"total": 2364.11,  "viagens": 2},
+  "19430": {"total": 44819.73, "viagens": 13},
+  "23565": {"total": 0,        "viagens": 0},
+  "23566": {"total": 7126.69,  "viagens": 4},
+  "23568": {"total": 16333.95, "viagens": 8},
+  "23569": {"total": 4281.54,  "viagens": 2},
+  "23571": {"total": 923.27,   "viagens": 1},
+  "24556": {"total": 10924.64, "viagens": 3},
+  "27249": {"total": 8923.93,  "viagens": 8},
+  "27250": {"total": 9420.22,  "viagens": 5},
+  "27251": {"total": 0,        "viagens": 0},
+  "27252": {"total": 21317.23, "viagens": 7},
+  "27253": {"total": 22004.00, "viagens": 8},
+  "27255": {"total": 15952.94, "viagens": 8},
+  "27256": {"total": 0,        "viagens": 0},
+  "27257": {"total": 14572.10, "viagens": 4},
+  "27258": {"total": 2105.40,  "viagens": 1}
+ }
+}
