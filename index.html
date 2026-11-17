@@ -234,6 +234,14 @@ nav.secnav a{color:var(--navy)}
 .fonte,a{color:var(--navy)}
 .avatar{background:var(--navy)}
 .chip-part{background:#eaf0f4;color:var(--navy)}
+
+/* ===== contador de salário ===== */
+.salario-card{background:var(--navy);color:#fff;border-radius:16px;padding:18px 20px;margin:16px 0 4px}
+.sal-label{color:#f08a7e;font-size:.76rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin:0 0 6px}
+.sal-valor{font-family:'Archivo';font-weight:900;font-size:2rem;line-height:1;margin:0;color:#fff;font-variant-numeric:tabular-nums}
+.sal-sub{font-size:.78rem;margin:9px 0 0;color:#bcccd6}
+.sal-sub a{color:#9fc4e8}
+@media(min-width:640px){.sal-valor{font-size:2.7rem}}
 </style>
 </head>
 <body>
@@ -242,6 +250,7 @@ nav.secnav a{color:var(--navy)}
   <p class="brand"><span class="ao-vivo" aria-hidden="true"></span> Radar Político de Rio Preto</p>
   <h1>O que cada vereador de São José do Rio Preto faz</h1>
   <p class="lead">Presença, proposições e votos dos 23 vereadores, só com dados oficiais. Digite sua rua ou bairro e veja o que foi pedido para lá — e por quem. Cada número tem link para a fonte oficial.</p>
+  <div class="salario-card" data-mensal="379500"><p class="sal-label">Salário pago aos 23 vereadores desde a posse</p><p class="sal-valor" id="sal-valor">R$ —</p><p class="sal-sub">e subindo agora · estimativa de 23 subsídios de R$ 16.500/mês desde 1º de janeiro de 2025 · <a href="https://www.riopreto.sp.leg.br/Arquivos/ContasPublicas/1790793899365-991.pdf" target="_blank" rel="noopener">fonte oficial ↗</a></p></div>
   <div class="tiles"><div class="tile t-navy"><b>18.734</b><span>pedidos nos bairros (indicações)</span></div><div class="tile t-blue"><b>15.768</b><span>requerimentos</span></div><div class="tile t-red"><b>1.458</b><span>homenagens (moções)</span></div><div class="tile t-green"><b>489</b><span>projetos de lei</span></div></div>
   <p class="freshness">🟢 Conferido automaticamente na Câmara · atualizado em <strong>17 de novembro de 2026</strong>. O robô confere todo dia de madrugada.</p>
 </div></header>
@@ -1015,5 +1024,12 @@ function renderCmp(){const sel=cmpSels.map(s=>s.value).filter(Boolean),uniq=[];s
   linhas.forEach(l=>{h+='<tr><th scope="row">'+l[0]+'</th>';uniq.forEach(m=>{h+='<td>'+l[1](m)+'</td>';});h+='</tr>';});
   h+='</tbody></table></div>';cmpRes.innerHTML=h;}
 cmpSels.forEach(s=>s.addEventListener('change',renderCmp));
+// contador de salário (estimativa, sobe ao vivo)
+(function(){const el=document.getElementById('sal-valor');if(!el)return;
+  const card=document.querySelector('.salario-card');const mensal=+card.dataset.mensal||0;
+  const inicio=Date.UTC(2025,0,1);const msMes=1000*60*60*24*(365.25/12);
+  function tick(){const meses=(Date.now()-inicio)/msMes;const total=mensal*meses;
+    el.textContent=total.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
+  tick();setInterval(tick,1000);})();
 </script>
 </body></html>

@@ -214,3 +214,11 @@ nav.secnav a{color:var(--navy)}
 .fonte,a{color:var(--navy)}
 .avatar{background:var(--navy)}
 .chip-part{background:#eaf0f4;color:var(--navy)}
+
+/* ===== contador de salário ===== */
+.salario-card{background:var(--navy);color:#fff;border-radius:16px;padding:18px 20px;margin:16px 0 4px}
+.sal-label{color:#f08a7e;font-size:.76rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin:0 0 6px}
+.sal-valor{font-family:'Archivo';font-weight:900;font-size:2rem;line-height:1;margin:0;color:#fff;font-variant-numeric:tabular-nums}
+.sal-sub{font-size:.78rem;margin:9px 0 0;color:#bcccd6}
+.sal-sub a{color:#9fc4e8}
+@media(min-width:640px){.sal-valor{font-size:2.7rem}}

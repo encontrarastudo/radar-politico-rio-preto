@@ -260,6 +260,14 @@ tiles_html=(f'<div class="tiles">'
  f'<div class="tile t-red"><b>{fmt(T_MOC)}</b><span>homenagens (moções)</span></div>'
  f'<div class="tile t-green"><b>{fmt(T_LEIS)}</b><span>projetos de lei</span></div></div>')
 
+# contador de salário (estimativa; subsídio confirmado na fonte oficial da Câmara)
+SAL_VALOR=16500.0; SAL_N=23; SAL_FONTE="https://www.riopreto.sp.leg.br/Arquivos/ContasPublicas/1790793899365-991.pdf"
+salario_html=(f'<div class="salario-card" data-mensal="{int(SAL_N*SAL_VALOR)}">'
+ f'<p class="sal-label">Salário pago aos {SAL_N} vereadores desde a posse</p>'
+ f'<p class="sal-valor" id="sal-valor">R$ —</p>'
+ f'<p class="sal-sub">e subindo agora · estimativa de {SAL_N} subsídios de R$ 16.500/mês desde 1º de janeiro de 2025 · '
+ f'<a href="{SAL_FONTE}" target="_blank" rel="noopener">fonte oficial ↗</a></p></div>')
+
 # ===== dimensões comparáveis (índice) =====
 def participacao(vid):
     cast=aus=0
@@ -353,7 +361,8 @@ page = (TPL.replace("__TITLE__",esc(TITLE)).replace("__DESC__",esc(DESC)).replac
  .replace("__CARDS__",cards_html).replace("__GLOSS__",gloss_html).replace("__VERIF__",verif_html)
  .replace("__DETALHES__",detalhes_html).replace("__GLOSSJS__",gloss_js).replace("__BUSCADATA__",busca_data)
  .replace("__NAOCONF__",naoconf_html).replace("__TILES__",tiles_html)
- .replace("__RANKING__",ranking_html).replace("__COMPARAR__",comparar_html).replace("__VMJS__",VM_JS))
+ .replace("__RANKING__",ranking_html).replace("__COMPARAR__",comparar_html).replace("__VMJS__",VM_JS)
+ .replace("__SALARIO__",salario_html))
 open(os.path.join(OUT,"index.html"),"w",encoding="utf-8").write(page)
 
 # robots / sitemap / llms
