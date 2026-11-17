@@ -1,25 +1,117 @@
 {
- "46": {"pl": 6, "plc": 0, "aprovados": 6},
- "53": {"pl": 4, "plc": 0, "aprovados": 4},
- "71": {"pl": 3, "plc": 0, "aprovados": 3},
- "73": {"pl": 2, "plc": 0, "aprovados": 2},
- "77": {"pl": 13, "plc": 0, "aprovados": 13},
- "15231": {"pl": 3, "plc": 0, "aprovados": 3},
- "19428": {"pl": 2, "plc": 0, "aprovados": 2},
- "19430": {"pl": 10, "plc": 0, "aprovados": 10},
- "23565": {"pl": 3, "plc": 0, "aprovados": 3},
- "23566": {"pl": 8, "plc": 1, "aprovados": 9},
- "23568": {"pl": 1, "plc": 1, "aprovados": 2},
- "23569": {"pl": 6, "plc": 0, "aprovados": 6},
- "23571": {"pl": 1, "plc": 1, "aprovados": 2},
- "24556": {"pl": 20, "plc": 8, "aprovados": 28},
- "27249": {"pl": 11, "plc": 0, "aprovados": 11},
- "27250": {"pl": 10, "plc": 0, "aprovados": 10},
- "27251": {"pl": 6, "plc": 4, "aprovados": 10},
- "27252": {"pl": 9, "plc": 5, "aprovados": 14},
- "27253": {"pl": 8, "plc": 4, "aprovados": 12},
- "27255": {"pl": 7, "plc": 0, "aprovados": 7},
- "27256": {"pl": 5, "plc": 0, "aprovados": 5},
- "27257": {"pl": 11, "plc": 5, "aprovados": 16},
- "27258": {"pl": 10, "plc": 0, "aprovados": 10}
+ "27253": {
+  "pl": 8,
+  "plc": 4,
+  "aprovados": 12
+ },
+ "27258": {
+  "pl": 10,
+  "plc": 0,
+  "aprovados": 10
+ },
+ "27250": {
+  "pl": 10,
+  "plc": 0,
+  "aprovados": 10
+ },
+ "19428": {
+  "pl": 2,
+  "plc": 0,
+  "aprovados": 2
+ },
+ "23565": {
+  "pl": 3,
+  "plc": 0,
+  "aprovados": 3
+ },
+ "23566": {
+  "pl": 8,
+  "plc": 1,
+  "aprovados": 9
+ },
+ "71": {
+  "pl": 3,
+  "plc": 0,
+  "aprovados": 3
+ },
+ "27249": {
+  "pl": 11,
+  "plc": 0,
+  "aprovados": 11
+ },
+ "73": {
+  "pl": 2,
+  "plc": 0,
+  "aprovados": 2
+ },
+ "19430": {
+  "pl": 10,
+  "plc": 0,
+  "aprovados": 10
+ },
+ "46": {
+  "pl": 6,
+  "plc": 0,
+  "aprovados": 6
+ },
+ "27252": {
+  "pl": 9,
+  "plc": 5,
+  "aprovados": 14
+ },
+ "53": {
+  "pl": 4,
+  "plc": 0,
+  "aprovados": 4
+ },
+ "23568": {
+  "pl": 1,
+  "plc": 1,
+  "aprovados": 2
+ },
+ "27256": {
+  "pl": 5,
+  "plc": 0,
+  "aprovados": 5
+ },
+ "27257": {
+  "pl": 11,
+  "plc": 5,
+  "aprovados": 16
+ },
+ "27251": {
+  "pl": 6,
+  "plc": 4,
+  "aprovados": 10
+ },
+ "23569": {
+  "pl": 6,
+  "plc": 0,
+  "aprovados": 6
+ },
+ "24556": {
+  "pl": 20,
+  "plc": 8,
+  "aprovados": 28
+ },
+ "15231": {
+  "pl": 3,
+  "plc": 0,
+  "aprovados": 3
+ },
+ "77": {
+  "pl": 13,
+  "plc": 0,
+  "aprovados": 13
+ },
+ "23571": {
+  "pl": 1,
+  "plc": 1,
+  "aprovados": 2
+ },
+ "27255": {
+  "pl": 7,
+  "plc": 0,
+  "aprovados": 7
+ }
 }
