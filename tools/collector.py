@@ -91,8 +91,8 @@ def lista_sessoes():
 
 def parse_sessao(sid):
     t = texto(get(f"{SIS}/Sessoes/Sessao/{sid}"))
-    titm = re.search(r"Sessões\s*-\s*(.+?)\s*Data:", t)
-    titulo = titm.group(1).strip() if titm else f"Sessão {sid}"
+    titm = re.search(r"(\d+ª\s+Sessão\s+[A-Za-zÁ-úÀ-ÿ]+(?:\s+[A-Za-zÁ-úÀ-ÿ]+)?\s+de\s+\d{4})", t)
+    titulo = re.sub(r"\s+"," ", titm.group(1)).strip() if titm else f"Sessão {sid}"
     dm = re.search(r"Data:\s*(\d{2}/\d{2}/\d{4})", t)
     data = dm.group(1) if dm else ""
     if "Frequências" not in t and "frequencias" not in nrm(t): return titulo, data, None, []
