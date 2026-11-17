@@ -368,7 +368,8 @@ def mini_foto(m):
 rank_rows="".join(
   f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-aprov="{m["aprov"]}" data-econ="{m["econ"]}" data-nome="{esc(m["nome"])}">'
   f'<td class="r-pos">{i+1}</td><td class="r-nome"><a href="#v-{m["slug"]}">{mini_foto(m)}<span>{esc(m["nome"])}<small>{esc(m["partido"])}</small></span></a></td>'
-  f'<td class="r-strong">{m["aprov"]}</td><td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td><td class="r-indice">{m["indice"]}</td></tr>'
+  f'<td class="r-strong">{m["aprov"]}</td><td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td>'
+  f'<td class="r-gasto">R$ {("{:,.0f}".format(m["gasto"])).replace(",",".")}</td><td class="r-indice">{m["indice"]}</td></tr>'
   for i,m in enumerate(rank_ordenado))
 ranking_html=(f'<div class="rank-head"><label for="rank-sort">Ordenar por</label>'
  f'<select id="rank-sort"><option value="indice">Índice geral</option><option value="aprov">Projetos aprovados</option>'
@@ -378,7 +379,9 @@ ranking_html=(f'<div class="rank-head"><label for="rank-sort">Ordenar por</label
  f'<option value="nome">Nome (A–Z)</option></select></div>'
  f'<div class="tab-wrap"><table class="rank-tab"><thead><tr><th>#</th><th>Vereador</th>'
  f'<th>Projetos aprovados <button class="ajuda" data-termo="aprovados" aria-label="O que é projeto aprovado?">?</button></th>'
- f'<th>Presença</th><th>Participação</th><th>Projetos de lei</th><th>Índice</th></tr></thead>'
+ f'<th>Presença</th><th>Participação</th><th>Projetos de lei</th>'
+ f'<th>Gastos c/ viagens <button class="ajuda" data-termo="viagens" aria-label="O que é isso?">?</button></th>'
+ f'<th>Índice</th></tr></thead>'
  f'<tbody id="rank-body">{rank_rows}</tbody></table></div>')
 cmp_opts="".join(f'<option value="{v["id"]}">{esc(v["nome"])} ({esc(v["partido"])})</option>' for v in VERS)
 comparar_html=(f'<div class="cmp-pick">'

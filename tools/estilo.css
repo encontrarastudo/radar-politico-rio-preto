@@ -178,6 +178,7 @@ h2{font-weight:800}
 .rank-tab .r-nome span{display:flex;flex-direction:column;line-height:1.15}
 .rank-tab .r-nome small{color:var(--muted);font-size:.74rem}
 .rank-tab td.r-indice{font-weight:800;font-family:'Archivo';color:var(--accent-ink)}
+.rank-tab td.r-gasto{font-variant-numeric:tabular-nums;color:#5a6673;font-size:.86rem}
 .foto-sm{width:34px;height:34px;border-width:2px;flex:none}
 .cmp-pick{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px}
 .cmp-pick select{font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff}
