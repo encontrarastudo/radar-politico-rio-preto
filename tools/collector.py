@@ -12,7 +12,7 @@ DATA = os.path.join(ROOT, "data")
 SIS  = "https://riopreto.siscam.com.br"
 UA   = {"User-Agent": "RadarPoliticoRioPreto/1.0 (+projeto cidadao de transparencia; contato via GitHub encontrarastudo)"}
 TIMEOUT = 30
-PAUSA = 0.4   # cortesia entre requisições
+PAUSA = 0.25  # cortesia entre requisições
 
 S = requests.Session(); S.headers.update(UA)
 
@@ -149,20 +149,17 @@ def lista_sessoes_ano(ano):
 def mandato_anos():
     return [str(y) for y in range(2025, datetime.date.today().year + 1)]
 
-def coletar_sessoes(limite=None):
-    # enumera TODAS as sessões do mandato (2025+) pela busca oficial
+def coletar_sessoes(limite=70):
+    # Presença vem dos relatórios mensais (coletar_frequencia). Aqui só pegamos as
+    # sessões recentes, que são as únicas com votação nominal e chamada preenchidas.
     ids=[]
-    for ano in mandato_anos():
-        try: ids += lista_sessoes_ano(ano)
-        except Exception as ex: print(f"  sessões {ano}: erro ({ex})")
-    if not ids:  # fallback: lista recente + caminhada por ids
-        base = lista_sessoes(); ids=[x[0] for x in base]
-        if ids:
-            mx=max(ids)
-            for sid in range(mx, mx-60, -1):
-                if sid not in ids: ids.append(sid)
-    ids = sorted(set(ids), reverse=True)
-    print(f"  sessões do mandato encontradas: {len(ids)}")
+    try: ids += lista_sessoes_ano(datetime.date.today().year)
+    except Exception as ex: print(f"  sessões: busca falhou ({ex})")
+    try:
+        base = lista_sessoes(); ids += [x[0] for x in base]
+    except Exception: pass
+    ids = sorted(set(ids), reverse=True)[:limite]
+    print(f"  sessões recentes a analisar: {len(ids)}")
     presenca=[]; votacoes=[]
     for sid in ids:
         try:
@@ -196,14 +193,14 @@ def parse_records(html, label):
         out.append([m.group(1).strip(), m.group(2), m.group(3), m.group(4).strip()[:80], re.sub(r"\s+"," ",m.group(5)).strip()[:320]])
     return out
 
-def coletar_propostas(dias=180):
+def coletar_propostas(dias=150):
     hoje = datetime.date.today()
     ini = (hoje - datetime.timedelta(days=dias)).strftime("%d/%m/%Y")
     fim = hoje.strftime("%d/%m/%Y")
     recs=[]; seen=set()
     for k,code in TIPOS.items():
         pagina=1
-        while pagina<=150:
+        while pagina<=90:
             url=(f"{SIS}/Documentos/Pesquisa?Pesquisa=Avancada&id=78&pagina={pagina}&Modulo=8&Documento={code}"
                  f"&Numeracao=Documento&DataInicial={ini}&DataFinal={fim}&Situacao=0&Classificacao=0"
                  f"&TipoAutor=Todos&AutoriaId=0&Iniciativa=Nenhum&NoTexto=false")
