@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="__BASE__/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Radar Político de Rio Preto">
+<meta property="og:title" content="__TITLE__"><meta property="og:description" content="__DESC__">
+<meta property="og:url" content="__BASE__/"><meta property="og:image" content="__BASE__/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="__TITLE__"><meta name="twitter:description" content="__DESC__">
+__JSONLD__
+<style>__CSS__</style>
+</head>
+<body>
+<a href="#conteudo" class="skip">Pular para o conteúdo</a>
+<header class="top"><div class="wrap">
+  <p class="brand">Radar Político de Rio Preto</p>
+  <h1>O que cada vereador de São José do Rio Preto faz</h1>
+  <p class="lead">Presença, proposições e votos dos 23 vereadores, só com dados oficiais. Digite sua rua ou bairro e veja o que foi pedido para lá — e por quem. Cada número tem link para a fonte oficial.</p>
+  <div class="meta-top"><span>📅 Atualizado em <strong>__ATUALIZADO__</strong></span><span>👥 23 vereadores</span><span>🔎 Fontes oficiais linkadas</span></div>
+</div></header>
+
+<main id="conteudo" class="wrap">
+<div id="lista-view">
+  <nav class="secnav" aria-label="Seções">
+    <a href="#busca">Busca por rua</a><a href="#problema">Problema que não some</a>
+    <a href="#trabalho">Trabalho da Câmara</a><a href="#vereadores">Vereadores</a>
+    <a href="#numeros">De onde vêm os números</a><a href="#erro">Achou um erro?</a>
+  </nav>
+
+  <section class="sec2" id="busca">
+    <h2>Busque sua rua ou bairro</h2>
+    <p class="sub">Digite o nome de uma rua ou bairro e veja os pedidos feitos para lá na amostra mais recente de proposituras, com o nome de quem pediu.</p>
+    <div class="buscaRua">
+      <input id="rua-input" type="search" placeholder="Ex.: Vila Toninho, Rua Dr. Justino Carvalho..." autocomplete="off" aria-controls="rua-result">
+    </div>
+    <p id="rua-info"></p>
+    <ul class="lista-itens" id="rua-result"></ul>
+  </section>
+
+  <section class="sec2" id="problema">
+    <h2>O problema que não some</h2>
+    <p class="sub">Lugares onde o mesmo tipo de pedido aparece mais de uma vez na amostra. Pode indicar um problema que ainda não foi resolvido.</p>
+    <div class="alerta">⚠️ Pedido repetido <strong>não prova</strong> que a Prefeitura ignorou. Pode ser outro trecho da mesma rua, um novo morador pedindo, ou o serviço já em andamento. Abra cada caso e leia os pedidos.</div>
+    __REP__
+  </section>
+
+  <section class="sec2" id="trabalho">
+    <h2>O trabalho da Câmara</h2>
+    <p class="sub">As proposituras da amostra, agrupadas por tipo em linguagem simples. Abra cada grupo e leia uma por uma. <a href="#numeros">Veja a regra de agrupamento</a>.</p>
+    __GRUPOS__
+  </section>
+
+  <section class="sec2" id="vereadores">
+    <h2>Os 23 vereadores</h2>
+    <p class="sub">Toque num vereador para ver presença, proposições (contagem do mandato) e votos, com a fonte de cada número.</p>
+    <div class="controls">
+      <div class="c-busca"><label for="busca-v">Buscar pelo nome</label>
+        <input id="busca-v" type="search" placeholder="Digite um nome..." autocomplete="off"></div>
+      <div class="c-part"><label for="filtro-part">Filtrar por partido</label>
+        <select id="filtro-part"><option value="">Todos os partidos</option>__OPTIONS__</select></div>
+    </div>
+    <p class="count-info" id="count-info" aria-live="polite"></p>
+    <div class="grid" id="grid">__CARDS__</div>
+  </section>
+
+  <section class="sec2" id="glossario">
+    <h2>O que significa cada coisa?</h2>
+    __GLOSS__
+  </section>
+
+  <section class="sec2" id="numeros">
+    <h2>De onde vêm os números</h2>
+    <p class="sub">Tudo é público e vem das fontes oficiais da Câmara. Veja como medimos — e onde conferimos.</p>
+    __VERIF__
+    <h3 style="margin-top:18px">O que ainda é amostra ou não foi confirmado</h3>
+    __NAOCONF__
+    <p class="muted" style="margin-top:12px">Fontes: <a href="https://riopreto.siscam.com.br/sessoes" target="_blank" rel="noopener">sessões (SISCAM)</a> · <a href="https://riopreto.siscam.com.br/index/78/8" target="_blank" rel="noopener">proposituras (SISCAM)</a> · <a href="https://www.riopreto.sp.leg.br/ContaPublica/Listar/1267" target="_blank" rel="noopener">relatório mensal de presença (Câmara)</a> · <a href="https://www.riopreto.sp.leg.br/Vereador" target="_blank" rel="noopener">vereadores e Mesa (Câmara)</a>.</p>
+  </section>
+
+  <section class="sec2" id="erro">
+    <h2>Achou um erro?</h2>
+    <div class="aviso">
+      <p style="margin:0 0 8px">Todo número aqui tem link para a fonte oficial — clique e confira. Se um dado estiver diferente da Câmara, a fonte oficial é que vale, e o site é corrigido.</p>
+      <p style="margin:0">Fale com a Câmara: camara@riopreto.sp.leg.br · (17) 3214-7777. Este é um projeto cidadão independente, sem vínculo com a Câmara, a Prefeitura ou qualquer partido.</p>
+    </div>
+  </section>
+</div>
+
+<div id="detalhe-view">__DETALHES__</div>
+</main>
+
+<footer><div class="wrap">
+  <div><strong>Radar Político de Rio Preto</strong> — informação pública sobre a Câmara Municipal de São José do Rio Preto (SP).</div>
+  <div>Contato da Câmara: camara@riopreto.sp.leg.br · (17) 3214-7777 · <a href="https://www.riopreto.sp.leg.br/" target="_blank" rel="noopener">riopreto.sp.leg.br</a></div>
+  <div class="muted" style="color:#8a98a8">Atualizado em __ATUALIZADO__. Projeto cidadão independente. Cada número traz link para a fonte oficial, que pode estar mais atualizada.</div>
+</div></footer>
+
+<div id="backdrop"></div>
+<aside id="pop" role="dialog" aria-modal="true" aria-labelledby="pop-t">
+  <button class="fechar" id="pop-close" aria-label="Fechar explicação">Fechar ✕</button>
+  <h4 id="pop-t"></h4><p id="pop-b"></p>
+</aside>
+
+<script>
+const GLOSS=__GLOSSJS__;
+const BUSCA=__BUSCADATA__;
+const lista=document.getElementById('lista-view'),det=document.getElementById('detalhe-view');
+const detalhes=Array.from(det.querySelectorAll('.detalhe'));
+function router(){const h=location.hash||'';const m=h.match(/^#v-(.+)$/);let shown=false;
+  detalhes.forEach(d=>{const on=!!m&&d.id==='v-'+m[1];d.style.display=on?'block':'none';if(on)shown=true;});
+  if(m&&shown){lista.style.display='none';det.style.display='block';window.scrollTo(0,0);}else{lista.style.display='block';det.style.display='none';}}
+window.addEventListener('hashchange',router);router();
+function norm(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
+// vereadores filtro
+const bv=document.getElementById('busca-v'),fp=document.getElementById('filtro-part'),ci=document.getElementById('count-info');
+const cards=Array.from(document.querySelectorAll('#grid .card'));
+function fcards(){const q=norm(bv.value),p=fp.value;let n=0;cards.forEach(c=>{const nome=norm(c.querySelector('.card-nome').textContent+' '+c.querySelector('.card-sub').textContent);const part=c.querySelector('.chip-part').textContent;const ok=(!q||nome.includes(q))&&(!p||part===p);c.style.display=ok?'':'none';if(ok)n++;});ci.textContent=n+(n===1?' vereador':' vereadores');}
+bv.addEventListener('input',fcards);fp.addEventListener('change',fcards);fcards();
+// busca rua
+const ri=document.getElementById('rua-input'),rr=document.getElementById('rua-result'),rinfo=document.getElementById('rua-info');
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function renderItens(arr){return arr.map(r=>{const loc=[r.rua,r.bairro].filter(Boolean).join(' · ');return '<li class="it"><div class="it-top"><span class="it-tipo">'+esc(r.t)+' '+esc(r.n)+'</span><span class="it-data">'+esc(r.d)+'</span></div><div class="it-ass">'+esc(r.s)+'</div>'+(loc?'<div class="it-local">📍 '+esc(loc)+'</div>':'')+'<div class="it-aut">por <strong>'+esc(r.a)+'</strong> · '+esc(r.g)+'</div></li>';}).join('');}
+function buscarRua(){const q=norm(ri.value).trim();if(!q){rr.innerHTML='';rinfo.textContent='Digite uma rua ou bairro para começar.';return;}
+  const res=BUSCA.filter(r=>r.q.includes(q));
+  rinfo.textContent=res.length+(res.length===1?' pedido encontrado':' pedidos encontrados')+' para “'+ri.value.trim()+'” na amostra';
+  rr.innerHTML=res.length?renderItens(res):'<li class="it">Nada encontrado nesta amostra. O acervo completo da Câmara pode ter mais — veja a busca oficial de proposituras.</li>';}
+ri.addEventListener('input',buscarRua);
+const pr=new URLSearchParams(location.search).get('rua');if(pr){ri.value=pr;}buscarRua();
+// ajuda popover
+const pop=document.getElementById('pop'),pt=document.getElementById('pop-t'),pb=document.getElementById('pop-b'),bd=document.getElementById('backdrop');
+function abrir(k){const g=GLOSS[k];if(!g)return;pt.textContent=g.q;pb.textContent=g.a;pop.classList.add('open');bd.classList.add('open');document.getElementById('pop-close').focus();}
+function fechar(){pop.classList.remove('open');bd.classList.remove('open');}
+document.addEventListener('click',e=>{const b=e.target.closest('.ajuda');if(b){e.preventDefault();abrir(b.dataset.termo);}});
+document.getElementById('pop-close').addEventListener('click',fechar);bd.addEventListener('click',fechar);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar();});
+</script>
+</body></html>

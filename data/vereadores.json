@@ -1,0 +1,186 @@
+[
+ {
+  "id": 27253,
+  "slug": "abner-tofanelli",
+  "nome": "Abner Tofanelli",
+  "nome_completo": "Abner Joas Tofanelli",
+  "partido": "PSB",
+  "mesa": ""
+ },
+ {
+  "id": 27258,
+  "slug": "alex-de-carvalho",
+  "nome": "Alex de Carvalho",
+  "nome_completo": "Alex Sandro de Carvalho",
+  "partido": "PSB",
+  "mesa": ""
+ },
+ {
+  "id": 27250,
+  "slug": "alexandre-montenegro",
+  "nome": "Alexandre Montenegro",
+  "nome_completo": "Alexandre Montenegro",
+  "partido": "PL",
+  "mesa": ""
+ },
+ {
+  "id": 19428,
+  "slug": "anderson-branco",
+  "nome": "Anderson Branco",
+  "nome_completo": "Anderson Branco da Silva",
+  "partido": "Progressistas",
+  "mesa": ""
+ },
+ {
+  "id": 23565,
+  "slug": "bruno-marinho",
+  "nome": "Bruno Marinho",
+  "nome_completo": "Bruno Marinho",
+  "partido": "PSB",
+  "mesa": ""
+ },
+ {
+  "id": 23566,
+  "slug": "bruno-moura",
+  "nome": "Bruno Moura",
+  "nome_completo": "Bruno Moura",
+  "partido": "PL",
+  "mesa": ""
+ },
+ {
+  "id": 71,
+  "slug": "celso-peixao",
+  "nome": "Celso Peixão",
+  "nome_completo": "Celso Luiz de Oliveira",
+  "partido": "MDB",
+  "mesa": ""
+ },
+ {
+  "id": 27249,
+  "slug": "felipe-alcala",
+  "nome": "Felipe Alcalá",
+  "nome_completo": "Felipe Alcalá de Assis",
+  "partido": "PL",
+  "mesa": ""
+ },
+ {
+  "id": 73,
+  "slug": "francisco-junior",
+  "nome": "Francisco Junior",
+  "nome_completo": "Francisco Sávio Ruel Junior",
+  "partido": "União Brasil",
+  "mesa": ""
+ },
+ {
+  "id": 19430,
+  "slug": "jean-dornelas",
+  "nome": "Jean Dornelas",
+  "nome_completo": "Jean Dornelas",
+  "partido": "MDB",
+  "mesa": ""
+ },
+ {
+  "id": 46,
+  "slug": "joao-paulo-rillo",
+  "nome": "João Paulo Rillo",
+  "nome_completo": "João Paulo Rillo",
+  "partido": "PT",
+  "mesa": ""
+ },
+ {
+  "id": 27252,
+  "slug": "jonathan-santos",
+  "nome": "Jonathan Santos",
+  "nome_completo": "Jonathan Santos",
+  "partido": "Republicanos",
+  "mesa": "2º Secretário"
+ },
+ {
+  "id": 53,
+  "slug": "jorge-menezes",
+  "nome": "Jorge Menezes",
+  "nome_completo": "Jorge Menezes Silva",
+  "partido": "PSD",
+  "mesa": ""
+ },
+ {
+  "id": 23568,
+  "slug": "julio-donizete",
+  "nome": "Júlio Donizete",
+  "nome_completo": "Júlio Donizete",
+  "partido": "PSD",
+  "mesa": ""
+ },
+ {
+  "id": 27256,
+  "slug": "klebinho-kizumba",
+  "nome": "Klebinho Kizumba",
+  "nome_completo": "Klebinho Kizumba",
+  "partido": "PL",
+  "mesa": ""
+ },
+ {
+  "id": 27257,
+  "slug": "luciano-juliao",
+  "nome": "Luciano Julião",
+  "nome_completo": "Luciano de Oliveira Julião",
+  "partido": "PL",
+  "mesa": "Presidente"
+ },
+ {
+  "id": 27251,
+  "slug": "marcia-caldas",
+  "nome": "Márcia Caldas",
+  "nome_completo": "Márcia Caldas",
+  "partido": "PL",
+  "mesa": "3º Secretário"
+ },
+ {
+  "id": 23569,
+  "slug": "odelio-chaves",
+  "nome": "Odélio Chaves",
+  "nome_completo": "Odélio Chaves",
+  "partido": "Podemos",
+  "mesa": ""
+ },
+ {
+  "id": 24556,
+  "slug": "paulo-paulera",
+  "nome": "Paulo Pauléra",
+  "nome_completo": "Paulo Roberto Ambrósio",
+  "partido": "Progressistas",
+  "mesa": "Vice-Presidente"
+ },
+ {
+  "id": 15231,
+  "slug": "pedro-roberto",
+  "nome": "Pedro Roberto",
+  "nome_completo": "Pedro Roberto Gomes",
+  "partido": "Republicanos",
+  "mesa": ""
+ },
+ {
+  "id": 77,
+  "slug": "renato-pupo",
+  "nome": "Renato Pupo",
+  "nome_completo": "Renato Pupo de Paula",
+  "partido": "Avante",
+  "mesa": ""
+ },
+ {
+  "id": 23571,
+  "slug": "rossini-diniz",
+  "nome": "Rossini Diniz",
+  "nome_completo": "Rossini Diniz",
+  "partido": "MDB",
+  "mesa": ""
+ },
+ {
+  "id": 27255,
+  "slug": "tadeu-de-lima",
+  "nome": "Tadeu de Lima",
+  "nome_completo": "Professor Tadeu",
+  "partido": "União Brasil",
+  "mesa": ""
+ }
+]
