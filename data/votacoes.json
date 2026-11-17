@@ -1,10 +1,82 @@
 [
  {
+  "sid": 4101,
+  "sessao": "38ª Sessão Ordinária de 2026",
+  "data": "10/11/2026",
+  "materia": "Projeto de Lei Complementar nº 15/2025",
+  "assunto": "Insere o art. 101-A na Lei Complementar nº 5/1990 (Estatuto dos Servidores Públicos Municipais de São José do Rio Preto), instituindo o Adicional de Qualificação Profissional aos ocupantes de cargo de Nível Médio.",
+  "votos": {
+   "A favor": [
+    46,
+    71,
+    73,
+    77,
+    15231,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27250,
+    27252,
+    27253,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    53,
+    27251
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4101,
+  "sessao": "38ª Sessão Ordinária de 2026",
+  "data": "10/11/2026",
+  "materia": "Projeto de Lei nº 179/2026",
+  "assunto": "Inclui no Calendário Oficial do Município de São José do Rio Preto o evento “Corrida da Polícia Federal”, e dá outras providências.",
+  "votos": {
+   "Ausente": [
+    46,
+    53,
+    71,
+    73,
+    77,
+    15231,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27250,
+    27251,
+    27252,
+    27253,
+    27255,
+    27256,
+    27257,
+    27258
+   ]
+  }
+ },
+ {
   "sid": 4100,
-  "sessao": "37ª Sessão Ordinária",
+  "sessao": "37ª Sessão Ordinária de 2026",
   "data": "03/11/2026",
   "materia": "Projeto de Lei Complementar nº 5/2026",
-  "assunto": "Altera regra de cobrança do IPTU.",
+  "assunto": "Altera o inciso I do art. 13 da Lei Complementar nº 798, de 25 de setembro de 2025, que dispõe sobre a cobrança do IPTU – Imposto sobre a Propriedade Predial e Territorial Urbana no Município de São José do Rio Preto, e ",
   "votos": {
    "A favor": [
     46,
@@ -29,58 +101,20 @@
     27256,
     27258
    ],
-   "Não vota": [
-    27257
-   ],
    "Ausente": [
     19430
+   ],
+   "Não vota": [
+    27257
    ]
   }
  },
  {
   "sid": 4100,
-  "sessao": "37ª Sessão Ordinária",
-  "data": "03/11/2026",
-  "materia": "Emenda nº 1 ao PLC nº 36/2026",
-  "assunto": "Altera artigo do PLC 36/2026 (desconto de IPTU).",
-  "votos": {
-   "A favor": [
-    46,
-    53,
-    71,
-    73,
-    77,
-    15231,
-    19428,
-    23565,
-    23566,
-    23568,
-    23569,
-    23571,
-    24556,
-    27249,
-    27250,
-    27251,
-    27252,
-    27253,
-    27255,
-    27256,
-    27258
-   ],
-   "Não vota": [
-    27257
-   ],
-   "Ausente": [
-    19430
-   ]
-  }
- },
- {
-  "sid": 4100,
-  "sessao": "37ª Sessão Ordinária",
+  "sessao": "37ª Sessão Ordinária de 2026",
   "data": "03/11/2026",
   "materia": "Projeto de Lei Complementar nº 36/2026",
-  "assunto": "Desconto de IPTU para imóveis em vias sem pavimentação definitiva.",
+  "assunto": "Altera artigo 1° do Projeto de Lei Complementar n° 36/2026, que altera a Lei Complementar nº 798 de 2025, de instituição de desconto no Imposto Predial e Territorial Urbano - IPTU incidente sobre imóveis residenciais sit",
   "votos": {
    "A favor": [
     46,
@@ -105,20 +139,20 @@
     27256,
     27258
    ],
-   "Não vota": [
-    27257
-   ],
    "Ausente": [
     19430
+   ],
+   "Não vota": [
+    27257
    ]
   }
  },
  {
   "sid": 4100,
-  "sessao": "37ª Sessão Ordinária",
+  "sessao": "37ª Sessão Ordinária de 2026",
   "data": "03/11/2026",
   "materia": "Requerimento nº 2480/2026",
-  "assunto": "Congratulação pela reeleição do Presidente da República.",
+  "assunto": "De Congratulação ao Presidente Luiz Inácio Lula da Silva pela reeleição à Presidência da República do Brasil.",
   "votos": {
    "A favor": [
     46,
@@ -137,9 +171,6 @@
     27249,
     27256
    ],
-   "Não vota": [
-    27257
-   ],
    "Ausente": [
     53,
     71,
@@ -150,18 +181,1034 @@
     23571,
     27252,
     27255
+   ],
+   "Não vota": [
+    27257
    ]
   }
  },
  {
-  "sid": 4101,
-  "sessao": "38ª Sessão Ordinária",
-  "data": "10/11/2026",
-  "materia": "Projeto de Lei Complementar nº 15/2025",
-  "assunto": "Adicional de Qualificação Profissional a servidores de nível médio.",
+  "sid": 4097,
+  "sessao": "36ª Sessão Ordinária de 2026",
+  "data": "27/10/2026",
+  "materia": "Projeto de Lei Complementar nº 9/2025",
+  "assunto": "Dispõe sobre a Alteração da Lei Complementar nº 331/2010 e demais leis municipais que versem sobre a nomenclatura da Guarda Civil Municipal para Polícia Metropolitana, adequando a terminologia e as disposições legais per",
   "votos": {
    "A favor": [
     46,
+    53,
+    73,
+    77,
+    15231,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27250,
+    27251,
+    27252,
+    27253,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    71
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4097,
+  "sessao": "36ª Sessão Ordinária de 2026",
+  "data": "27/10/2026",
+  "materia": "Projeto de Lei nº 185/2026",
+  "assunto": "Abre ao Orçamento Fiscal do Município um Crédito Adicional Especial no valor de R$ 180.410,00 (cento e oitenta mil, quatrocentos e dez reais), para atender às necessidades orçamentárias da Secretaria Municipal da Cultura",
+  "votos": {
+   "A favor": [
+    46,
+    53,
+    73,
+    77,
+    15231,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27250,
+    27251,
+    27252,
+    27253,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    71
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4095,
+  "sessao": "7ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ceder, a título oneroso, os direitos creditórios originários d",
+  "votos": {
+   "A favor": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Contra": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta parágrafo ao art. 11 do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e ",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta parágrafo ao art. 11 do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e ",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta parágrafo ao art. 11 do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e ",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    24556,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    71,
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Altera o art. 10 do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ceder, a títu",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    53,
+    27249,
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Suprime alíneas do inciso II do art. 7º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FEC",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Altera o inciso IV do art. 2º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    53,
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Altera o §3º do art. 2º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ceder,",
+  "votos": {
+   "A favor": [
+    46,
+    53,
+    77,
+    15231,
+    23569,
+    24556,
+    27250,
+    27252,
+    27253
+   ],
+   "Contra": [
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Altera o inciso VI do art. 2º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta parágrafo ao art. 1º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e ",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Abstenção": [
+    24556
+   ],
+   "Ausente": [
+    53
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta parágrafo ao art. 1º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e ",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta o §3º no art. 8º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ce",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta o §3º no art. 8º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ce",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    19430,
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta parágrafo ao art. 6º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e ",
+  "votos": {
+   "A favor": [
+    46,
+    53,
+    77,
+    15231,
+    19430,
+    23569,
+    24556,
+    27249,
+    27250,
+    27252,
+    27253,
+    27257
+   ],
+   "Contra": [
+    71,
+    73,
+    19428,
+    23565,
+    23566,
+    23568,
+    23571,
+    27251,
+    27255,
+    27256,
+    27258
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta inciso ao §1º do art. 1º do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    23565,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    19430,
+    23566
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescente-se, onde couber, parágrafo ao art. 1º. do Projeto de Lei 289/2025, que passa a vigorar com a seguinte redação:",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Altera o art. 12 do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ceder, a títu",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256
+   ],
+   "Ausente": [
+    19428,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Altera o caput do art. 11 do Projeto de Lei 289/2025, que autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a cede",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta a alínea “e” ao inciso II do art. 7º do Projeto de Lei nº 289/2025, para reservar parcela residual de investimentos à Segurança Pública municipal.",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta a alínea “f” ao inciso II do art. 7º do Projeto de Lei nº 289/2025, para reservar parcela residual de investimentos a políticas municipais de proteção, defesa e Bem-Estar Animal.",
+  "votos": {
+   "A favor": [
+    46,
+    53,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    71,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    73,
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta a alínea “g” ao inciso II do art. 7º do Projeto de Lei nº 289/2025, para reservar parcela residual de investimentos a políticas municipais de proteção da infância e prevenção do abuso e da violência sexual con",
+  "votos": {
+   "A favor": [
+    46,
+    53,
+    77,
+    15231,
+    23569,
+    27249,
+    27250,
+    27252,
+    27253
+   ],
+   "Contra": [
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Acrescenta dispositivo de proteção às verbas trabalhistas de empregados de empresas contratadas pelo Município, mediante mecanismos contratuais de garantia, conta vinculada e pagamento direto previstos na Lei Federal nº ",
+  "votos": {
+   "A favor": [
+    46,
+    77,
+    15231,
+    27250,
+    27253
+   ],
+   "Contra": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Altera o § 5º do artigo 11 do Projeto de Lei nº 289/2025, que “Autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT e a ",
+  "votos": {
+   "A favor": [
+    46,
+    53,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Contra": [
+    71,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27255,
+    27256,
+    27258
+   ],
+   "Ausente": [
+    73,
+    19428,
+    27252
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4094,
+  "sessao": "6ª Sessão Extraordinária de 2026",
+  "data": "22/10/2026",
+  "materia": "Projeto de Lei nº 289/2025",
+  "assunto": "Autoriza o Poder Executivo a criar o Fundo Orçamentário, Contábil e Financeiro Especial de Créditos Inadimplidos Tributários e Não Tributários - FECIDAT, e a ceder, a título oneroso, os direitos creditórios originários d",
+  "votos": {
+   "A favor": [
+    53,
+    71,
+    73,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23571,
+    24556,
+    27249,
+    27251,
+    27252,
+    27255,
+    27256,
+    27258
+   ],
+   "Contra": [
+    46,
+    77,
+    15231,
+    23569,
+    27250,
+    27253
+   ],
+   "Não vota": [
+    27257
+   ]
+  }
+ },
+ {
+  "sid": 4092,
+  "sessao": "35ª Sessão Ordinária de 2026",
+  "data": "20/10/2026",
+  "materia": "Projeto de Lei Complementar nº 30/2026",
+  "assunto": "Altera a Lei Complementar nº 792, de 5 de setembro de 2025, para disciplinar o pagamento dos auxílios de natureza mensal e vedar sua acumulação na mesma competência.",
+  "votos": {
+   "A favor": [
+    46,
+    53,
     71,
     73,
     77,
@@ -176,18 +1223,53 @@
     24556,
     27249,
     27250,
-    27252,
+    27251,
+    27253,
+    27255,
+    27256,
+    27257,
+    27258
+   ],
+   "Ausente": [
+    27252
+   ]
+  }
+ },
+ {
+  "sid": 4092,
+  "sessao": "35ª Sessão Ordinária de 2026",
+  "data": "20/10/2026",
+  "materia": "Projeto de Lei nº 185/2026",
+  "assunto": "Abre ao Orçamento Fiscal do Município um Crédito Adicional Especial no valor de R$ 180.410,00 (cento e oitenta mil, quatrocentos e dez reais), para atender às necessidades orçamentárias da Secretaria Municipal da Cultura",
+  "votos": {
+   "A favor": [
+    46,
+    53,
+    71,
+    73,
+    77,
+    15231,
+    19428,
+    19430,
+    23565,
+    23566,
+    23568,
+    23569,
+    23571,
+    24556,
+    27249,
+    27250,
+    27251,
     27253,
     27255,
     27256,
     27258
    ],
+   "Ausente": [
+    27252
+   ],
    "Não vota": [
     27257
-   ],
-   "Ausente": [
-    53,
-    27251
    ]
   }
  }
