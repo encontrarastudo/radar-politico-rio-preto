@@ -189,3 +189,29 @@ h2{font-weight:800}
 .cmp-tab tbody td{font-weight:700;font-variant-numeric:tabular-nums}
 .cmp-tab small{font-weight:500;color:var(--muted);font-size:.74rem}
 .cmp-result{margin-top:4px}
+
+/* ===== v4: paleta e topo claro (Yully Lacerda) ===== */
+:root{--navy:#0C324A;--red:#C11720;--blue:#679CBC;--cream:#FEF1D5;
+  --accent:#0C324A;--accent-ink:#0C324A;--ink:#152430}
+/* topo claro, alto contraste */
+header.top{background:var(--cream);color:var(--navy);border-bottom:4px solid var(--navy)}
+header.top .brand{color:var(--red);opacity:1;font-weight:800}
+header.top h1{color:var(--navy)}
+header.top .lead{color:#2d3f4a;opacity:1}
+header.top .meta-top,header.top .freshness{color:#45525b;opacity:1}
+header.top .meta-top strong,header.top .freshness strong{color:var(--navy)}
+.ao-vivo{background:var(--red)}
+.freshness::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#1a7a44;margin-right:6px;vertical-align:baseline}
+/* tiles: cartão branco, número escuro e legível, faixa colorida no topo */
+.tiles .tile{background:#fff;border:1px solid #ece3cb;border-top:4px solid var(--navy);border-radius:12px;padding:12px 14px}
+.tile b{font-size:1.5rem;font-weight:900;line-height:1}
+.tile span{color:#5a6673;opacity:1}
+.tile.t-navy{border-top-color:var(--navy)} .tile.t-navy b{color:var(--navy)}
+.tile.t-blue{border-top-color:var(--blue)} .tile.t-blue b{color:#2d6384}
+.tile.t-red{border-top-color:var(--red)}  .tile.t-red b{color:var(--red)}
+.tile.t-green{border-top-color:#1a7a44}    .tile.t-green b{color:#1a7a44}
+/* nav e links na cor da marca */
+nav.secnav a{color:var(--navy)}
+.fonte,a{color:var(--navy)}
+.avatar{background:var(--navy)}
+.chip-part{background:#eaf0f4;color:var(--navy)}

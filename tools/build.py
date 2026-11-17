@@ -255,10 +255,10 @@ T_LEIS=sum(ci(C["pl"],v["id"])+ci(C["plc"],v["id"]) for v in VERS)
 T_PROPS=T_IND+T_REQ+T_MOC+T_LEIS
 def fmt(n): return f"{n:,}".replace(",",".")
 tiles_html=(f'<div class="tiles">'
- f'<div class="tile"><b style="color:#2f6fd0">{fmt(T_IND)}</b><span>pedidos nos bairros (indicações)</span></div>'
- f'<div class="tile"><b style="color:#e07b2a">{fmt(T_REQ)}</b><span>requerimentos</span></div>'
- f'<div class="tile"><b style="color:#c9398f">{fmt(T_MOC)}</b><span>homenagens (moções)</span></div>'
- f'<div class="tile"><b style="color:#1a7a44">{fmt(T_LEIS)}</b><span>projetos de lei</span></div></div>')
+ f'<div class="tile t-navy"><b>{fmt(T_IND)}</b><span>pedidos nos bairros (indicações)</span></div>'
+ f'<div class="tile t-blue"><b>{fmt(T_REQ)}</b><span>requerimentos</span></div>'
+ f'<div class="tile t-red"><b>{fmt(T_MOC)}</b><span>homenagens (moções)</span></div>'
+ f'<div class="tile t-green"><b>{fmt(T_LEIS)}</b><span>projetos de lei</span></div></div>')
 
 # ===== dimensões comparáveis (índice) =====
 def participacao(vid):
