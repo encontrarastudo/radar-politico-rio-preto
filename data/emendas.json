@@ -1,0 +1,48 @@
+{
+ "meta": {
+  "n": 638,
+  "total_previsto": 60144024.95,
+  "total_pago": 18494751.29,
+  "n_beneficiarios": 123,
+  "atualizado_portal": "16/11/2026",
+  "fonte": "https://www.riopreto.sp.gov.br/transparencia/receitas-e-repasses/emendas-parlamentares",
+  "observacao": "Emendas parlamentares impositivas de esfera municipal (autoria dos vereadores), exercícios 2025-2026. Valor previsto = custeio + investimento indicados. Execução (empenho, pagamento) é do Poder Executivo."
+ },
+ "top_beneficiarios": [
+  ["MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO", 15807693.40],
+  ["IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO", 4828700.34],
+  ["ASSOCIAÇÃO RENASCER", 3875267.43],
+  ["INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES", 3644080.10],
+  ["IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES", 3016680.10],
+  ["ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA", 1780417.64],
+  ["ASSOCIAÇÃO PROJETO AQUÁRIO PESCANDO VIDAS", 1640357.69],
+  ["INSTITUTO HORA", 1542880.10],
+  ["FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA", 1332940.05],
+  ["FUNDO MUNICIPAL DE SAUDE DE SAO JOSE DO RIO PRETO", 982932.05]
+ ],
+ "por_vereador": {
+  "46":    {"n": 56, "previsto": 3610715.39, "pago": 1613664.65, "itens": []},
+  "53":    {"n": 41, "previsto": 3610715.39, "pago": 1583126.60, "itens": []},
+  "71":    {"n": 12, "previsto": 3610715.38, "pago": 1057601.28, "itens": []},
+  "73":    {"n": 31, "previsto": 3710715.37, "pago": 1684835.28, "itens": []},
+  "77":    {"n": 67, "previsto": 3610715.38, "pago": 1744835.28, "itens": []},
+  "15231": {"n": 74, "previsto": 3610715.38, "pago": 1004497.34, "itens": []},
+  "19428": {"n": 7,  "previsto": 1742417.64, "pago": 1706629.84, "itens": []},
+  "19430": {"n": 20, "previsto": 1865880.10, "pago": 0,          "itens": []},
+  "23565": {"n": 25, "previsto": 3610715.38, "pago": 1694816.14, "itens": []},
+  "23566": {"n": 24, "previsto": 3493294.10, "pago": 1471779.31, "itens": []},
+  "23568": {"n": 37, "previsto": 3610715.38, "pago": 1670073.51, "itens": []},
+  "23569": {"n": 42, "previsto": 3603097.74, "pago": 1701340.07, "itens": []},
+  "23571": {"n": 14, "previsto": 1865872.10, "pago": 0,          "itens": []},
+  "24556": {"n": 44, "previsto": 3660715.44, "pago": 1561551.99, "itens": []},
+  "27249": {"n": 15, "previsto": 1865880.10, "pago": 0,          "itens": []},
+  "27250": {"n": 12, "previsto": 1865880.10, "pago": 0,          "itens": []},
+  "27251": {"n": 31, "previsto": 1865864.08, "pago": 0,          "itens": []},
+  "27252": {"n": 28, "previsto": 1865880.10, "pago": 0,          "itens": []},
+  "27253": {"n": 28, "previsto": 1865880.10, "pago": 0,          "itens": []},
+  "27255": {"n": 9,  "previsto": 1865880.10, "pago": 0,          "itens": []},
+  "27256": {"n": 0,  "previsto": 0,          "pago": 0,          "itens": []},
+  "27257": {"n": 11, "previsto": 1865880.10, "pago": 0,          "itens": []},
+  "27258": {"n": 10, "previsto": 1865880.10, "pago": 0,          "itens": []}
+ }
+}

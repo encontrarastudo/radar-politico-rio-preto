@@ -26,6 +26,12 @@ except Exception: GV = {"meta":{},"por_vereador":{}}
 GVP = GV.get("por_vereador", {})
 def gv_total(vid): return (GVP.get(str(vid)) or {}).get("total", 0) or 0
 def gv_viagens(vid): return (GVP.get(str(vid)) or {}).get("viagens", 0) or 0
+try: EM = load("emendas.json")
+except Exception: EM = {"meta":{},"top_beneficiarios":[],"por_vereador":{}}
+EMP = EM.get("por_vereador", {})
+def em_v(vid): return EMP.get(str(vid)) or {"n":0,"previsto":0,"pago":0,"itens":[]}
+def brl(v): return "R$ " + ("{:,.2f}".format(v or 0)).replace(",","X").replace(".",",").replace("X",".")
+def brl0(v): return "R$ " + ("{:,.0f}".format(v or 0)).replace(",",".")
 
 def esc(s): return html.escape(str(s), quote=True)
 def nrm(s):
@@ -171,6 +177,24 @@ def contato_html(vid):
     if not linhas: return '<p class="muted">Contato individual não disponível nesta versão — veja no perfil oficial.</p>'
     return '<p class="contato-vereador">'+' · '.join(linhas)+'</p>'
 
+def em_box(vid):
+    e=em_v(vid); fonte_url=EM.get("meta",{}).get("fonte","https://www.riopreto.sp.gov.br/transparencia/receitas-e-repasses/emendas-parlamentares")
+    if not e.get("n"):
+        return (f'<p class="muted">Nenhuma emenda impositiva municipal registrada no período. {fonte("ver no Portal da Transparência",fonte_url)}</p>')
+    itens=e.get("itens") or []
+    lista=""
+    for it in itens:
+        sit=f'<span class="em-sit">{esc(it.get("sit",""))}</span>' if it.get("sit") else ""
+        lista+=(f'<li class="it"><div class="it-top"><span class="it-tipo">{esc(it.get("ben","—"))}</span><span class="it-data">{esc(it.get("ano",""))}</span></div>'
+                f'<div class="it-ass">{esc(it.get("fin",""))}</div>'
+                f'<div class="it-aut"><strong>{brl(it.get("val",0))}</strong> {sit}</div></li>')
+    detalhe_lista=(f'<details class="grupo-card" style="margin-top:10px"><summary><span class="gc-main"><span class="gc-nome" style="font-size:.98rem">Ver as {e["n"]} emendas (instituição, finalidade e valor)</span></span><span class="gc-cta">abrir ▾</span></summary><ul class="lista-itens" style="padding:12px 15px">{lista}</ul></details>') if lista else \
+                  (f'<p class="muted" style="margin-top:8px">Detalhamento por emenda em atualização pelo robô. {fonte("ver no Portal da Transparência",fonte_url)}</p>')
+    pago_line=(f' · <strong>{brl(e["pago"])}</strong> já pagos pela Prefeitura' if e.get("pago") else ' · ainda não pagas')
+    return (f'<div class="efet-box"><div class="efet-num" style="color:#2d6384;font-size:1.4rem;min-width:auto">{brl0(e["previsto"])}</div>'
+            f'<div class="efet-txt"><strong>destinados em {e["n"]} emenda(s) impositiva(s)</strong> <button class="ajuda" data-termo="emendas" aria-label="O que é isso?">?</button>'
+            f'<span class="muted">valor indicado ao orçamento{pago_line} · {fonte("fonte: Portal da Transparência",fonte_url)}</span></div></div>{detalhe_lista}')
+
 def detalhe(v):
     vid,slug,nome,part,mesa = v["id"],v["slug"],v["nome"],v["partido"],v["mesa"]
     prof=PROF.format(id=vid); ini="".join([p[0] for p in nome.split()[:2]]).upper()
@@ -221,6 +245,9 @@ def detalhe(v):
   <div class="efet-txt"><strong>em {gv_viagens(vid)} viagem(ns)</strong> custeada(s) com dinheiro público <button class="ajuda" data-termo="viagens" aria-label="O que é isso?">?</button>
   <span class="muted">diárias e despesas de deslocamento · {fonte("ver as viagens na fonte",'https://www.riopreto.sp.leg.br/paginas/despesas-de-viagens')}</span></div></div>
   <p class="muted">Verba de gabinete e remuneração de assessores não são publicadas separadamente por vereador; quando a Câmara divulgar, entram aqui.</p></section>
+  <section class="bloco"><h3>Emendas impositivas (recursos destinados)</h3>
+  <p class="muted">Valor obrigatório do orçamento que o vereador destina a instituições e serviços. A execução (empenho e pagamento) é da Prefeitura.</p>
+  {em_box(vid)}</section>
 </article>'''
 
 cards_html="\n".join(card(v,i) for i,v in enumerate(VERS))
@@ -236,6 +263,7 @@ GLOSS=[
  ("sessao","O que é uma Sessão?","A reunião em que os vereadores debatem e votam. As ordinárias costumam ser semanais. Cada uma tem duas listas de presença: a Chamada Regimental (na abertura) e a Chamada da Ordem do Dia (na hora de votar)."),
  ("nominal","O que é votação nominal?","Quando fica registrado o voto de cada vereador, um por um. Na votação simbólica a Câmara registra só o resultado geral, sem o nome de cada um — nesses casos não dá para saber como cada um votou."),
  ("aprovados","O que é um projeto aprovado?","É um Projeto de Lei (ou Projeto de Lei Complementar) de autoria do vereador que já foi aprovado pela Câmara — ou seja, saiu do papel e virou (ou está prestes a virar) lei. Diferente da quantidade de projetos apresentados, aqui conta o que de fato foi adiante. Contamos só os projetos com situação “APROVADO” no sistema da Câmara, no mandato atual."),
+ ("emendas","O que é uma emenda impositiva?","É uma fatia do orçamento que cada vereador tem direito de destinar, de forma obrigatória, a instituições (hospitais, entidades sociais, associações) ou a serviços públicos. O vereador indica o valor e o destino; a Prefeitura é obrigada a executar. Aqui mostramos o valor indicado (previsto), a quem foi destinado, para qual finalidade e quanto já foi pago. É uma das formas mais concretas de ver para onde cada vereador direciona dinheiro público."),
  ("viagens","O que são os gastos com viagens?","É quanto de dinheiro público a Câmara pagou em diárias e despesas de deslocamento (transporte, hospedagem) de cada vereador em viagens oficiais — reuniões em São Paulo, Brasília, etc. Somamos o “Total da despesa” de cada viagem publicada no Portal da Transparência da Câmara. Em viagens de grupo, o custo é dividido igualmente entre os participantes. No ranking, gastar menos pontua mais (critério de economia)."),
  ("quantos","Quantos vereadores tem São José do Rio Preto?","A Câmara Municipal de São José do Rio Preto tem 23 vereadores no mandato de 2025 a 2028."),
 ]
@@ -429,6 +457,26 @@ panorama_html=(f'<div class="pan-total"><b>{fmt(T_PROPS)}</b><span>proposituras 
  f'<div class="pan-rec"><h3>Propostas mais recentes</h3><ul class="pan-reclist">{rec_html}</ul>'
  f'<a class="pan-vermais" href="#trabalho">Ver todas as propostas por tema →</a></div>')
 
+# ===== Emendas (seção) =====
+emeta=EM.get("meta",{}); etop=EM.get("top_beneficiarios",[])
+emax=(etop[0][1] if etop else 1) or 1
+ebars="".join(f'<li><span class="pb-loc">{esc(nome)}</span><span class="pp-barwrap"><span class="pb-bar" style="width:{round(100*val/emax)}%"></span></span><b>{brl0(val)}</b></li>' for nome,val in etop[:8])
+em_rank=sorted(VERS, key=lambda v:-(em_v(v["id"]).get("previsto",0)))[:6]
+emvmax=(em_v(em_rank[0]["id"]).get("previsto",0) if em_rank else 1) or 1
+equem="".join(
+  f'<li><a href="#v-{v["slug"]}">{foto_html(v["id"],v["nome"]) if False else mini_foto({"foto":FOTO.format(id=v["id"]),"ini":iniciais(v["nome"])})}'
+  f'<span class="pq-id"><span class="pq-nome">{esc(v["nome"])}</span><small>{esc(v["partido"])}</small></span>'
+  f'<span class="pq-barwrap"><span class="pq-bar" style="width:{round(100*em_v(v["id"]).get("previsto",0)/emvmax)}%"></span></span>'
+  f'<b class="pq-num">{brl0(em_v(v["id"]).get("previsto",0))}</b></a></li>'
+  for v in em_rank)
+emendas_html=(f'<div class="pan-total"><b>{brl0(emeta.get("total_previsto",0))}</b>'
+ f'<span>destinados pelos vereadores em {emeta.get("n","—")} emendas impositivas municipais ({PERIODO_DADOS})'
+ f' · {brl0(emeta.get("total_pago",0))} já pagos pela Prefeitura</span></div>'
+ f'<div class="pan-cols" style="grid-template-columns:1fr">'
+ f'<div class="pan-col"><h3>Quem mais destinou</h3><p class="pan-base">valor previsto no mandato</p><ol class="pan-quem">{equem}</ol></div>'
+ f'<div class="pan-col"><h3>Instituições mais beneficiadas</h3><p class="pan-base">por valor destinado</p><ul class="pan-bairro">{ebars}</ul></div>'
+ f'</div><p class="muted" style="margin-top:10px">Abra a ficha de cada vereador para ver todas as emendas — instituição, finalidade e valor. {fonte("Fonte: Portal da Transparência da Prefeitura",emeta.get("fonte","#"))}</p>')
+
 # contagens para verificação
 tot_props = sum(ci(C[t],v["id"]) for t in C for v in VERS)
 verif_html=f'''<div class="met">
@@ -478,7 +526,7 @@ page = (TPL.replace("__TITLE__",esc(TITLE)).replace("__DESC__",esc(DESC)).replac
  .replace("__DETALHES__",detalhes_html).replace("__GLOSSJS__",gloss_js).replace("__BUSCADATA__",busca_data)
  .replace("__NAOCONF__",naoconf_html).replace("__TILES__",tiles_html)
  .replace("__RANKING__",ranking_html).replace("__COMPARAR__",comparar_html).replace("__VMJS__",VM_JS)
- .replace("__PANORAMA__",panorama_html).replace("__SALARIO__",salario_html))
+ .replace("__PANORAMA__",panorama_html).replace("__EMENDAS__",emendas_html).replace("__SALARIO__",salario_html))
 open(os.path.join(OUT,"index.html"),"w",encoding="utf-8").write(page)
 
 # robots / sitemap / llms

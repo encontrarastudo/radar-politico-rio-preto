@@ -280,6 +280,72 @@ def coletar_gastos_viagens(anos=("2025","2026")):
     print(f"  gastos com viagens: {total_viag} viagens, {len([1 for v in out['por_vereador'].values() if v['total']>0])} vereadores com gasto")
     return out
 
+# ============ 7) EMENDAS PARLAMENTARES IMPOSITIVAS (municipais, por vereador) ============
+NOVOPAINEL = "https://novopainel.riopreto.sp.gov.br"
+EMENDAS_API = NOVOPAINEL + "/api/slugify/slugs/page/emendas-impositivas?publicationState=preview&populate=tabs.fileItem.files"
+EMENDAS_PORTAL = "https://www.riopreto.sp.gov.br/transparencia/receitas-e-repasses/emendas-parlamentares"
+def brl(s):
+    s = (s or "").strip().replace("R$","").replace(".","").replace(" ","").replace(",",".")
+    s = re.sub(r"[^\d.\-]", "", s)
+    try: return float(s)
+    except Exception: return 0.0
+
+def coletar_emendas():
+    """Emendas impositivas municipais (autoria dos vereadores) do Portal da Transparência
+    da Prefeitura, via CSV oficial. Por vereador: nº, previsto, pago e itens (beneficiário,
+    finalidade, valor, situação, ano). Complementar (não bloqueia o gate)."""
+    import csv, io
+    # 1) descobre o CSV atual
+    csv_url = f"{NOVOPAINEL}/uploads/EMENDAS_PARLAMENTARES_ATUALIZADO_PORTAL_Todas_Emendas_6_50feede8ee.csv"
+    try:
+        api = get(EMENDAS_API)
+        m = re.search(r"/uploads/[^\"'\\]+\.csv", api)
+        if m: csv_url = NOVOPAINEL + m.group(0)
+    except Exception as ex:
+        print(f"  emendas: API falhou, usando CSV conhecido ({ex})")
+    raw = get(csv_url)
+    rows = list(csv.reader(io.StringIO(raw)))
+    if not rows: return {}
+    H = rows[0]
+    def col(name):
+        for i,h in enumerate(H):
+            if nrm(h)==nrm(name): return i
+        return -1
+    oi=col("Origem"); ai=col("Autoria"); ci=col("Valor Custeio (Previsto)"); ii=col("Valor Investimento (Previsto)")
+    pi=col("Valor Pago"); bi=col("Beneficiário"); fi=col("OBJETIVO/FINALIDADE"); obj=col("OBJETO")
+    si=col("Situação"); yi=col("Ano da indicação")
+    def mid(autoria):
+        key=nrm(autoria)
+        for nn,i in NORM2ID.items():
+            if nn in key or key in nn: return i
+        return None
+    por={}; ben_tot={}; n_tot=0; prev_tot=0.0; pago_tot=0.0
+    for r in rows[1:]:
+        if len(r)<=max(oi,ai,ci,ii): continue
+        if nrm(r[oi])!="municipal": continue
+        i = mid(r[ai])
+        if i is None: continue
+        val = brl(r[ci])+brl(r[ii]); pago = brl(r[pi]) if pi>=0 else 0.0
+        ben = (r[bi].strip() if bi>=0 else "")
+        fin = (r[fi].strip() if fi>=0 else "") or (r[obj].strip() if obj>=0 else "")
+        sit = (r[si].strip() if si>=0 else "")
+        ano = (r[yi].strip() if yi>=0 else "")
+        d=por.setdefault(i,{"n":0,"previsto":0.0,"pago":0.0,"itens":[]})
+        d["n"]+=1; d["previsto"]=round(d["previsto"]+val,2); d["pago"]=round(d["pago"]+pago,2)
+        d["itens"].append({"ano":ano,"ben":ben[:90],"fin":fin[:170],"val":round(val,2),"sit":sit[:70]})
+        n_tot+=1; prev_tot+=val; pago_tot+=pago
+        if ben and ben!="-": ben_tot[ben]=round(ben_tot.get(ben,0.0)+val,2)
+    if not por: return {}
+    for d in por.values():
+        d["itens"].sort(key=lambda x:-x["val"])
+    top=sorted(ben_tot.items(), key=lambda kv:-kv[1])[:10]
+    out={"meta":{"n":n_tot,"total_previsto":round(prev_tot,2),"total_pago":round(pago_tot,2),
+                 "n_beneficiarios":len(ben_tot),"fonte":EMENDAS_PORTAL},
+         "top_beneficiarios":[[k,v] for k,v in top],
+         "por_vereador":{str(aid):por.get(aid,{"n":0,"previsto":0.0,"pago":0.0,"itens":[]}) for aid in IDS}}
+    print(f"  emendas municipais: {n_tot} de {len([1 for v in por.values() if v['n']>0])} vereadores, R$ {prev_tot:,.0f} previstos")
+    return out
+
 # ============ VALIDAÇÃO (o gate) ============
 def carrega_anterior(nome):
     try: return json.load(open(os.path.join(DATA,nome),encoding="utf-8"))
@@ -334,7 +400,15 @@ def main():
     if (not gastos or len(gastos.get("por_vereador",{}))<23) and ant_gv:
         print("  gastos com viagens incompletos — mantendo versão anterior")
         gastos = ant_gv
-    print("7/7 validando...")
+    print("7/8 emendas...")
+    try: emendas = coletar_emendas()
+    except Exception as ex:
+        print("  coleta de emendas falhou inteira:", ex); emendas = {}
+    ant_em = carrega_anterior("emendas.json") or {}
+    if (not emendas or len(emendas.get("por_vereador",{}))<23) and ant_em:
+        print("  emendas incompletas — mantendo versão anterior")
+        emendas = ant_em
+    print("8/8 validando...")
     erros = valida(contagens, presenca, votacoes, propostas, vereadores)
     if erros:
         print("\n❌ VALIDAÇÃO FALHOU — NADA será publicado. Motivos:")
@@ -350,6 +424,7 @@ def main():
     if contatos: dump("contatos.json", contatos)
     if efetividade: dump("efetividade.json", efetividade)
     if gastos: dump("gastos_viagens.json", gastos)
+    if emendas: dump("emendas.json", emendas)
     dump("meta.json", {"atualizado":datetime.date.today().isoformat(),"periodo_dados":"2025-2026",
                        "fonte":"SISCAM / Câmara Municipal de São José do Rio Preto","origem":"coleta automática diária"})
     print("\n✅ Coleta válida e gravada. Pronto para reconstruir o site.")

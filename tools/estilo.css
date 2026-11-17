@@ -190,6 +190,7 @@ h2{font-weight:800}
 .it-aut strong{color:var(--navy)}
 #t-bairros .lista-itens,#t-recentes .lista-itens{gap:12px}
 .rep[open] .lista-itens{padding-top:4px}
+.em-sit{display:inline-block;background:#eef2f7;color:#5a6673;border-radius:999px;padding:2px 9px;font-size:.72rem;font-weight:700;margin-left:4px}
 .foto-sm{width:34px;height:34px;border-width:2px;flex:none}
 .cmp-pick{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px}
 .cmp-pick select{font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff}
