@@ -33,6 +33,7 @@ __JSONLD__
   <nav class="secnav" aria-label="Seções">
     <a href="#busca">Busca por rua</a><a href="#problema">Problema que não some</a>
     <a href="#trabalho">Trabalho da Câmara</a><a href="#vereadores">Vereadores</a>
+    <a href="#ranking">Ranking</a><a href="#comparar">Comparar</a>
     <a href="#numeros">De onde vêm os números</a><a href="#erro">Achou um erro?</a>
   </nav>
 
@@ -67,9 +68,24 @@ __JSONLD__
         <input id="busca-v" type="search" placeholder="Digite um nome..." autocomplete="off"></div>
       <div class="c-part"><label for="filtro-part">Filtrar por partido</label>
         <select id="filtro-part"><option value="">Todos os partidos</option>__OPTIONS__</select></div>
+      <div class="c-part"><label for="ordena-v">Ordenar</label>
+        <select id="ordena-v"><option value="nome">Nome (A–Z)</option><option value="presenca">Maior presença</option><option value="pl">Mais projetos de lei</option><option value="indice">Índice geral</option></select></div>
     </div>
     <p class="count-info" id="count-info" aria-live="polite"></p>
     <div class="grid" id="grid">__CARDS__</div>
+  </section>
+
+  <section class="sec2" id="ranking">
+    <h2>Ranking por dimensões</h2>
+    <p class="sub">Não é nota de “bom” ou “ruim”: são dimensões comparáveis, lado a lado, calculadas só com dado oficial. <a href="#numeros">Veja como o índice é calculado</a> e suas limitações.</p>
+    <div class="alerta">⚠️ O índice é uma leitura <strong>parcial</strong>: a presença ainda cobre poucas sessões e a “efetividade” (projetos que viraram lei) ainda não entra. Use como ponto de partida, não como veredito.</div>
+    __RANKING__
+  </section>
+
+  <section class="sec2" id="comparar">
+    <h2>Comparar vereadores</h2>
+    <p class="sub">Escolha dois ou três vereadores e veja presença, participação em votações e proposições lado a lado.</p>
+    __COMPARAR__
   </section>
 
   <section class="sec2" id="glossario">
@@ -142,5 +158,29 @@ function fechar(){pop.classList.remove('open');bd.classList.remove('open');}
 document.addEventListener('click',e=>{const b=e.target.closest('.ajuda');if(b){e.preventDefault();abrir(b.dataset.termo);}});
 document.getElementById('pop-close').addEventListener('click',fechar);bd.addEventListener('click',fechar);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')fechar();});
+
+// ===== dados das dimensões =====
+const VM=__VMJS__; const VMbySlug={},VMbyId={}; VM.forEach(m=>{VMbySlug[m.slug]=m;VMbyId[String(m.id)]=m;});
+// ordenação do diretório
+const ordV=document.getElementById('ordena-v'),grid=document.getElementById('grid');
+function ordenarDir(){const k=ordV.value;cards.slice().sort((a,b)=>{const ma=VMbySlug[a.id.replace('card-','')],mb=VMbySlug[b.id.replace('card-','')];if(!ma||!mb)return 0;if(k==='nome')return ma.nome.localeCompare(mb.nome,'pt');return (mb[k]||0)-(ma[k]||0);}).forEach(c=>grid.appendChild(c));}
+ordV.addEventListener('change',ordenarDir);
+// ordenação do ranking
+const rankBody=document.getElementById('rank-body'),rankSort=document.getElementById('rank-sort');
+if(rankBody){const rrows=Array.from(rankBody.querySelectorAll('tr'));
+  function ordenarRank(){const k=rankSort.value;rrows.slice().sort((a,b)=>{if(k==='nome')return a.dataset.nome.localeCompare(b.dataset.nome,'pt');return (+b.dataset[k]||0)-(+a.dataset[k]||0);}).forEach((r,i)=>{r.querySelector('.r-pos').textContent=i+1;rankBody.appendChild(r);});}
+  rankSort.addEventListener('change',ordenarRank);}
+// comparação
+const cmpSels=Array.from(document.querySelectorAll('.cmp-sel')),cmpRes=document.getElementById('cmp-result');
+function fotoCmp(m){return '<span class="foto"><img loading="lazy" src="'+m.foto+'" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span class="foto-ini" style="display:none">'+esc(m.ini)+'</span></span>';}
+function renderCmp(){const sel=cmpSels.map(s=>s.value).filter(Boolean),uniq=[];sel.forEach(id=>{const m=VMbyId[id];if(m&&!uniq.find(x=>x.id===m.id))uniq.push(m);});
+  if(uniq.length<2){cmpRes.innerHTML='<p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p>';return;}
+  const linhas=[['Partido',m=>esc(m.partido)+(m.mesa?' · '+esc(m.mesa):'')],['Presença',m=>m.presenca+'% <small>('+m.presx+' de '+m.prest+' sessões)</small>'],['Participação em votações',m=>m.partic+'% <small>('+m.cast+' de '+m.votost+')</small>'],['Projetos de lei',m=>m.pl],['Indicações',m=>m.ind],['Requerimentos',m=>m.req],['Moções',m=>m.moc],['Índice geral',m=>'<b>'+m.indice+'</b>']];
+  let h='<div class="tab-wrap"><table class="cmp-tab"><thead><tr><th></th>';
+  uniq.forEach(m=>{h+='<th><a href="#v-'+m.slug+'">'+fotoCmp(m)+'<span>'+esc(m.nome)+'</span></a></th>';});
+  h+='</tr></thead><tbody>';
+  linhas.forEach(l=>{h+='<tr><th scope="row">'+l[0]+'</th>';uniq.forEach(m=>{h+='<td>'+l[1](m)+'</td>';});h+='</tr>';});
+  h+='</tbody></table></div>';cmpRes.innerHTML=h;}
+cmpSels.forEach(s=>s.addEventListener('change',renderCmp));
 </script>
 </body></html>

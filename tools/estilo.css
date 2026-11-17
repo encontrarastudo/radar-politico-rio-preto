@@ -163,3 +163,29 @@ h2{font-weight:800}
 .rep-cta{color:#e8422e;font-weight:700;font-size:.82rem;white-space:nowrap}
 .contato-vereador{font-size:.95rem;margin:0 0 6px}
 .contato-vereador a{font-weight:600;text-decoration:none}
+
+/* ===== ranking + comparação ===== */
+.tab-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rank-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:.88rem}
+.rank-head select,#ordena-v{font-size:15px;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+.c-part{flex:0 1 180px}
+.rank-tab,.cmp-tab{width:100%;border-collapse:collapse;font-size:.92rem;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.rank-tab th,.rank-tab td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+.rank-tab thead th{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:#f6f8fb}
+.rank-tab td.r-pos{font-weight:800;color:var(--muted);width:34px}
+.rank-tab td.r-nome{text-align:left}
+.rank-tab .r-nome a{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
+.rank-tab .r-nome span{display:flex;flex-direction:column;line-height:1.15}
+.rank-tab .r-nome small{color:var(--muted);font-size:.74rem}
+.rank-tab td.r-indice{font-weight:800;font-family:'Archivo';color:var(--accent-ink)}
+.foto-sm{width:34px;height:34px;border-width:2px;flex:none}
+.cmp-pick{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px}
+.cmp-pick select{font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff}
+@media(min-width:640px){.cmp-pick{grid-template-columns:repeat(3,1fr)}}
+.cmp-tab th,.cmp-tab td{padding:12px 12px;border-bottom:1px solid var(--line);text-align:center}
+.cmp-tab thead th{background:#f6f8fb;min-width:120px}
+.cmp-tab thead th a{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:inherit;font-size:.82rem;font-weight:700}
+.cmp-tab tbody th{text-align:left;font-size:.82rem;color:var(--muted);font-weight:600;white-space:nowrap}
+.cmp-tab tbody td{font-weight:700;font-variant-numeric:tabular-nums}
+.cmp-tab small{font-weight:500;color:var(--muted);font-size:.74rem}
+.cmp-result{margin-top:4px}

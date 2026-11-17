@@ -259,6 +259,53 @@ tiles_html=(f'<div class="tiles">'
  f'<div class="tile"><b style="color:#e07b2a">{fmt(T_REQ)}</b><span>requerimentos</span></div>'
  f'<div class="tile"><b style="color:#c9398f">{fmt(T_MOC)}</b><span>homenagens (moções)</span></div>'
  f'<div class="tile"><b style="color:#1a7a44">{fmt(T_LEIS)}</b><span>projetos de lei</span></div></div>')
+
+# ===== dimensões comparáveis (índice) =====
+def participacao(vid):
+    cast=aus=0
+    for m in VOT:
+        for voto,ids in m["votos"].items():
+            if vid in ids:
+                if voto in ("A favor","Contra","Abstenção"): cast+=1
+                elif voto=="Ausente": aus+=1
+                break
+    tot=cast+aus
+    return (round(100*cast/tot) if tot else 0, cast, tot)
+maxpl = max((ci(C["pl"],v["id"])+ci(C["plc"],v["id"]) for v in VERS), default=1) or 1
+VM=[]
+for v in VERS:
+    vid=v["id"]; f=freq(vid); pl=ci(C["pl"],vid)+ci(C["plc"],vid)
+    partic,cast,totv = participacao(vid)
+    presenca = f["pct"] if f else 0
+    inic = round(100*pl/maxpl)
+    indice = round(0.4*presenca + 0.3*partic + 0.3*inic)
+    VM.append({"id":vid,"slug":v["slug"],"nome":v["nome"],"partido":v["partido"],"mesa":v["mesa"],
+               "foto":FOTO.format(id=vid),"ini":iniciais(v["nome"]),
+               "presenca":presenca,"presx":f["pres"] if f else 0,"prest":f["tot"] if f else 0,
+               "partic":partic,"cast":cast,"votost":totv,
+               "pl":pl,"ind":ci(C["ind"],vid),"req":ci(C["req"],vid),"moc":ci(C["moc"],vid),
+               "inic":inic,"indice":indice})
+VM_JS=json.dumps(VM, ensure_ascii=False)
+rank_ordenado=sorted(VM, key=lambda x:-x["indice"])
+def mini_foto(m):
+    return (f'<span class="foto foto-sm"><img loading="lazy" src="{m["foto"]}" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span class="foto-ini" style="display:none">{esc(m["ini"])}</span></span>')
+rank_rows="".join(
+  f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-nome="{esc(m["nome"])}">'
+  f'<td class="r-pos">{i+1}</td><td class="r-nome"><a href="#v-{m["slug"]}">{mini_foto(m)}<span>{esc(m["nome"])}<small>{esc(m["partido"])}</small></span></a></td>'
+  f'<td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td><td class="r-indice">{m["indice"]}</td></tr>'
+  for i,m in enumerate(rank_ordenado))
+ranking_html=(f'<div class="rank-head"><label for="rank-sort">Ordenar por</label>'
+ f'<select id="rank-sort"><option value="indice">Índice geral</option><option value="presenca">Presença</option>'
+ f'<option value="partic">Participação em votações</option><option value="pl">Projetos de lei</option>'
+ f'<option value="nome">Nome (A–Z)</option></select></div>'
+ f'<div class="tab-wrap"><table class="rank-tab"><thead><tr><th>#</th><th>Vereador</th><th>Presença</th>'
+ f'<th>Participação</th><th>Projetos de lei</th><th>Índice</th></tr></thead><tbody id="rank-body">{rank_rows}</tbody></table></div>')
+cmp_opts="".join(f'<option value="{v["id"]}">{esc(v["nome"])} ({esc(v["partido"])})</option>' for v in VERS)
+comparar_html=(f'<div class="cmp-pick">'
+ f'<select class="cmp-sel" data-i="0" aria-label="Primeiro vereador"><option value="">Escolha um vereador…</option>{cmp_opts}</select>'
+ f'<select class="cmp-sel" data-i="1" aria-label="Segundo vereador"><option value="">Escolha para comparar…</option>{cmp_opts}</select>'
+ f'<select class="cmp-sel" data-i="2" aria-label="Terceiro vereador (opcional)"><option value="">(opcional) um terceiro…</option>{cmp_opts}</select>'
+ f'</div><div id="cmp-result" class="cmp-result"><p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p></div>')
 busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"])} for r in REGS], ensure_ascii=False)
 
 # contagens para verificação
@@ -270,6 +317,12 @@ verif_html=f'''<div class="met">
 <p>As contagens por vereador vêm da busca oficial de proposituras (mandato {PERIODO_DADOS}). Os textos nos grupos e na busca por rua são a amostra mais recente coletada.</p>
 <h3>Como agrupamos</h3>
 <p>A mesma regra vale para todos: Moção → Homenagem; Projeto de Lei → Proposta de lei; Indicação/Requerimento são lidos pelo assunto (congratulação/pesar → Homenagens; pedido de informação → Perguntas e cobranças; serviço no bairro → Pedidos de melhoria; o resto → Outros).</p>
+<h3>Como calculamos o índice (ranking)</h3>
+<p>Seguindo a ideia de “dimensões comparáveis, não nota de bom ou ruim”, o índice junta três coisas que dá para medir com dado oficial, cada uma de 0 a 100:</p>
+<p>• <strong>Presença</strong> (peso 40%): % de comparecimento nas sessões com chamada registrada.<br>
+• <strong>Participação em votações</strong> (peso 30%): das votações nominais, em quantas o vereador registrou voto (a favor, contra ou abstenção) — ausências contam contra; quando o presidente não vota por função, isso não entra na conta.<br>
+• <strong>Iniciativa</strong> (peso 30%): quantidade de projetos de lei (os de conteúdo substantivo), comparada ao vereador que mais apresentou (esse vira 100).</p>
+<p class="muted">De propósito, o índice <strong>não usa o volume de indicações e requerimentos</strong> — eles são apresentados em massa e inchariam a conta sem medir qualidade. O índice é uma leitura parcial: a presença ainda cobre poucas sessões e a “efetividade” (quantos projetos viraram lei) ainda não entra. Use como ponto de partida, não como veredito — e confira sempre a ficha de cada um.</p>
 <p class="muted">Origem desta carga de dados: {esc(META.get("origem","—"))}. Total de proposituras contabilizadas (mandato): {tot_props:,}.</p></div>'''.replace(",", ".")
 
 naoconf_html='''<ul class="aviso-lista">
@@ -299,7 +352,8 @@ page = (TPL.replace("__TITLE__",esc(TITLE)).replace("__DESC__",esc(DESC)).replac
  .replace("__REP__",rep_html).replace("__GRUPOS__",grupos_html).replace("__OPTIONS__",options)
  .replace("__CARDS__",cards_html).replace("__GLOSS__",gloss_html).replace("__VERIF__",verif_html)
  .replace("__DETALHES__",detalhes_html).replace("__GLOSSJS__",gloss_js).replace("__BUSCADATA__",busca_data)
- .replace("__NAOCONF__",naoconf_html).replace("__TILES__",tiles_html))
+ .replace("__NAOCONF__",naoconf_html).replace("__TILES__",tiles_html)
+ .replace("__RANKING__",ranking_html).replace("__COMPARAR__",comparar_html).replace("__VMJS__",VM_JS))
 open(os.path.join(OUT,"index.html"),"w",encoding="utf-8").write(page)
 
 # robots / sitemap / llms
