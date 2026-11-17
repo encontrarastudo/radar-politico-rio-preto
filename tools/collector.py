@@ -203,6 +203,26 @@ def coletar_contatos():
     print(f"  contatos com e-mail/telefone: {tem}/23")
     return out
 
+# ============ 5) EFETIVIDADE (projetos aprovados: PL+PLC com Situação 515) ============
+def url_aprovados(code, aid):
+    return (f"{SIS}/Documentos/Pesquisa?Pesquisa=Avancada&id=78&pagina=1&Modulo=8&Documento={code}"
+            f"&Numeracao=Documento&AnoInicial=2025&AnoFinal=2026&Situacao=515&Classificacao=0"
+            f"&TipoAutor=Todos&AutoriaId={aid}&Iniciativa=Nenhum&NoTexto=false")
+
+def coletar_efetividade():
+    """Projetos de Lei (129) e PL Complementar (130) APROVADOS (Situação 515),
+    por vereador, mandato 2025-2026. Complementar ao índice (não bloqueia o gate)."""
+    out={}
+    for aid in IDS:
+        try:
+            pl  = parse_count(get(url_aprovados("129", aid))); time.sleep(PAUSA)
+            plc = parse_count(get(url_aprovados("130", aid))); time.sleep(PAUSA)
+            out[str(aid)] = {"pl":pl, "plc":plc, "aprovados":pl+plc}
+        except Exception as ex:
+            print(f"  efetividade {aid}: erro ({ex})")
+    print(f"  efetividade (vereadores com dado): {len(out)}/23")
+    return out
+
 # ============ VALIDAÇÃO (o gate) ============
 def carrega_anterior(nome):
     try: return json.load(open(os.path.join(DATA,nome),encoding="utf-8"))
@@ -236,11 +256,20 @@ def main():
     print("1/4 contagens..."); contagens = coletar_contagens()
     print("2/4 sessões...");   presenca, votacoes = coletar_sessoes()
     print("3/5 proposituras..."); propostas = coletar_propostas()
-    print("4/5 contatos...")
+    print("4/6 contatos...")
     try: contatos = coletar_contatos()
     except Exception as ex:
         print("  coleta de contatos falhou inteira:", ex); contatos = carrega_anterior("contatos.json") or {}
-    print("5/5 validando...")
+    print("5/6 efetividade...")
+    try: efetividade = coletar_efetividade()
+    except Exception as ex:
+        print("  coleta de efetividade falhou inteira:", ex); efetividade = {}
+    # efetividade é complementar: se vier incompleta, mantém a última versão boa
+    ant_ef = carrega_anterior("efetividade.json") or {}
+    if len(efetividade) < 23 and len(ant_ef) >= len(efetividade):
+        print(f"  efetividade incompleta ({len(efetividade)}/23) — mantendo versão anterior ({len(ant_ef)})")
+        efetividade = ant_ef
+    print("6/6 validando...")
     erros = valida(contagens, presenca, votacoes, propostas, vereadores)
     if erros:
         print("\n❌ VALIDAÇÃO FALHOU — NADA será publicado. Motivos:")
@@ -254,6 +283,7 @@ def main():
     dump("votacoes.json", votacoes)
     dump("propostas.json", propostas)
     if contatos: dump("contatos.json", contatos)
+    if efetividade: dump("efetividade.json", efetividade)
     dump("meta.json", {"atualizado":datetime.date.today().isoformat(),"periodo_dados":"2025-2026",
                        "fonte":"SISCAM / Câmara Municipal de São José do Rio Preto","origem":"coleta automática diária"})
     print("\n✅ Coleta válida e gravada. Pronto para reconstruir o site.")

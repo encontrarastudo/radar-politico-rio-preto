@@ -222,3 +222,70 @@ nav.secnav a{color:var(--navy)}
 .sal-sub{font-size:.78rem;margin:9px 0 0;color:#bcccd6}
 .sal-sub a{color:#9fc4e8}
 @media(min-width:640px){.sal-valor{font-size:2.7rem}}
+
+/* ===== v5: painel "A cidade em números" ===== */
+.pan-total{background:var(--navy);color:#fff;border-radius:16px;padding:16px 20px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.pan-total b{font-family:'Archivo';font-weight:900;font-size:2.3rem;line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.pan-total span{font-size:.92rem;color:#cdddE8;max-width:34ch}
+.pan-cols{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:760px){.pan-cols{grid-template-columns:repeat(3,1fr)}}
+.pan-col{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+.pan-col h3{margin:0;font-size:1.05rem;font-family:'Archivo';font-weight:800;color:var(--navy)}
+.pan-base{margin:1px 0 10px;font-size:.73rem;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.pan-quem{list-style:none;margin:0;padding:0;counter-reset:q}
+.pan-quem li a{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;padding:7px 0;text-decoration:none;color:inherit;border-top:1px solid var(--line)}
+.pan-quem li:first-child a{border-top:none}
+.pan-quem .foto-sm{width:30px;height:30px}
+.pan-quem .pq-id{display:flex;flex-direction:column;line-height:1.1;min-width:0}
+.pan-quem .pq-nome{font-weight:700;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pan-quem .pq-id small{color:var(--muted);font-size:.72rem}
+.pan-quem .pq-barwrap{grid-column:2/3;grid-row:2;height:5px;background:#eef1f4;border-radius:3px;margin-top:-3px;overflow:hidden}
+.pan-quem .pq-bar{display:block;height:100%;background:var(--blue);border-radius:3px}
+.pan-quem .pq-num{font-family:'Archivo';font-weight:900;font-size:1.05rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.pan-pede,.pan-bairro{list-style:none;margin:0;padding:0}
+.pan-pede li,.pan-bairro li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 10px;padding:7px 0;border-top:1px solid var(--line)}
+.pan-pede li:first-child,.pan-bairro li:first-child{border-top:none}
+.pan-pede b,.pan-bairro b{font-family:'Archivo';font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
+.pp-cat,.pb-loc{font-size:.9rem;font-weight:600}
+.pp-barwrap{grid-column:1/-1;grid-row:2;height:5px;background:#eef1f4;border-radius:3px;overflow:hidden}
+.pp-bar{display:block;height:100%;background:var(--red);border-radius:3px}
+.pb-bar{display:block;height:100%;background:var(--blue);border-radius:3px}
+.pan-rec{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+.pan-rec h3{margin:0 0 10px;font-size:1.05rem;font-family:'Archivo';font-weight:800;color:var(--navy)}
+.pan-reclist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:760px){.pan-reclist{grid-template-columns:1fr 1fr}}
+.pr-item{border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.pr-top{display:flex;justify-content:space-between;gap:8px;font-size:.76rem;color:var(--muted);margin-bottom:4px}
+.pr-tipo{font-weight:700;color:var(--navy)}
+.pr-ass{font-size:.9rem;line-height:1.4}
+.pr-aut{font-size:.8rem;color:var(--muted);margin-top:5px}
+.pan-vermais{display:inline-block;margin-top:12px;font-weight:700;font-size:.88rem;text-decoration:none;color:var(--red)}
+
+/* ===== v5: grupos e repetições em cards (grid) ===== */
+.grupos-grid,.rep-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:620px){.grupos-grid,.rep-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.grupos-grid,.rep-grid{grid-template-columns:repeat(3,1fr)}}
+.grupo-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0;align-self:start}
+.grupo-card[open]{grid-column:1/-1;box-shadow:0 8px 24px rgba(16,40,70,.1)}
+.grupo-card>summary{list-style:none;cursor:pointer;padding:15px;display:flex;align-items:flex-start;gap:11px}
+.grupo-card>summary::-webkit-details-marker{display:none}
+.gc-icon{font-size:1.4rem;line-height:1;flex:none}
+.gc-main{flex:1;min-width:0}
+.gc-nome{display:block;font-family:'Archivo';font-weight:800;font-size:1.05rem;color:var(--navy);line-height:1.15}
+.gc-cont{display:inline-block;background:var(--chip);border-radius:999px;padding:2px 10px;font-size:.74rem;color:#334;font-weight:700;margin-top:6px}
+.gc-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.gc-chip{background:#eaf1fb;color:#2d6384;border-radius:999px;padding:2px 9px;font-size:.72rem;font-weight:600}
+.gc-chip b{color:var(--navy)}
+.gc-cta{color:var(--red);font-weight:700;font-size:.8rem;white-space:nowrap;flex:none}
+.grupo-card[open] .gc-cta{opacity:.5}
+.grupo-card .lista-itens{padding:0 15px 15px}
+.rep{align-self:start}
+.rep[open]{grid-column:1/-1;box-shadow:0 8px 24px rgba(16,40,70,.1)}
+.rep>summary{align-items:flex-start;flex-wrap:wrap}
+
+/* ===== v5: efetividade no perfil + coluna no ranking ===== */
+.efet-box{display:flex;align-items:center;gap:14px;background:#f4f8f5;border:1px solid #d9ebe0;border-radius:14px;padding:14px 16px;margin-top:12px}
+.efet-num{font-family:'Archivo';font-weight:900;font-size:2.2rem;color:#1a7a44;line-height:1;flex:none;min-width:40px;text-align:center}
+.efet-txt{font-size:.92rem}
+.efet-txt .muted{display:block;margin-top:3px}
+.rank-tab td.r-strong{font-weight:800;font-family:'Archivo';color:#1a7a44;font-variant-numeric:tabular-nums}

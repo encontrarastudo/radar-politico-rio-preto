@@ -2,6 +2,7 @@
 """Radar Político de Rio Preto — gera o site (index.html + SEO) a partir de data/*.json.
 Uso: python tools/build.py  (roda a partir da raiz do repositório)."""
 import os, re, json, html, unicodedata
+from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -17,6 +18,9 @@ PROPOSTAS = load("propostas.json")
 META = load("meta.json")
 try: CONTATOS = load("contatos.json")
 except Exception: CONTATOS = {}
+try: EF = load("efetividade.json")
+except Exception: EF = {}
+def ef_aprov(vid): return (EF.get(str(vid)) or {}).get("aprovados", 0)
 
 def esc(s): return html.escape(str(s), quote=True)
 def nrm(s):
@@ -41,6 +45,10 @@ TIPO_ID = {"pl":"129","plc":"130","req":"134","ind":"135","moc":"136"}
 def busca(tipo, aid):
     return ("https://riopreto.siscam.com.br/Documentos/Pesquisa?Pesquisa=Avancada&id=78&pagina=1&Modulo=8"
             f"&Documento={tipo}&Numeracao=Documento&AnoInicial=2025&AnoFinal=2026&Situacao=0&Classificacao=0"
+            f"&TipoAutor=Todos&AutoriaId={aid}&Iniciativa=Nenhum&NoTexto=false")
+def busca_aprov(tipo, aid):
+    return ("https://riopreto.siscam.com.br/Documentos/Pesquisa?Pesquisa=Avancada&id=78&pagina=1&Modulo=8"
+            f"&Documento={tipo}&Numeracao=Documento&AnoInicial=2025&AnoFinal=2026&Situacao=515&Classificacao=0"
             f"&TipoAutor=Todos&AutoriaId={aid}&Iniciativa=Nenhum&NoTexto=false")
 SESSAO = "https://riopreto.siscam.com.br/Sessoes/Sessao/{id}"
 def ci(d,i): return d.get(str(i),0) or 0
@@ -193,7 +201,10 @@ def detalhe(v):
   <p class="muted">Contato geral da Câmara: camara@riopreto.sp.leg.br · (17) 3214-7777.</p></section>
   <section class="bloco"><h3>Proposições no mandato ({PERIODO_DADOS})</h3>
   <p class="muted">Números de autoria/coautoria no sistema legislativo (SISCAM). Clique na fonte para conferir a lista completa.</p>
-  <table class="tab"><thead><tr><th>Tipo</th><th>Quantidade</th><th>Fonte oficial</th></tr></thead><tbody>{prows}</tbody></table></section>
+  <table class="tab"><thead><tr><th>Tipo</th><th>Quantidade</th><th>Fonte oficial</th></tr></thead><tbody>{prows}</tbody></table>
+  <div class="efet-box"><div class="efet-num">{ef_aprov(vid)}</div>
+  <div class="efet-txt"><strong>projetos de lei já aprovados</strong> pela Câmara (viraram ou estão prestes a virar lei) <button class="ajuda" data-termo="aprovados" aria-label="O que é projeto aprovado?">?</button>
+  <span class="muted">de {ci(C["pl"],vid)+ci(C["plc"],vid)} projetos apresentados · {fonte("ver os aprovados na fonte",busca_aprov(TIPO_ID["pl"],vid))}</span></div></div></section>
   <section class="bloco"><h3>Presença nas sessões <button class="ajuda" data-termo="sessao" aria-label="O que é sessão?">?</button></h3>
   <p class="muted">Sessões com chamada registrada no SISCAM nesta versão.</p>
   <table class="tab"><thead><tr><th>Sessão / chamada</th><th>Situação</th><th>Fonte</th></tr></thead><tbody>{prows2}</tbody></table></section>
@@ -215,6 +226,7 @@ GLOSS=[
  ("moc","O que é uma Moção?","Uma manifestação oficial da Câmara: de apoio, de pesar, de repúdio ou de congratulação a uma pessoa, grupo ou causa."),
  ("sessao","O que é uma Sessão?","A reunião em que os vereadores debatem e votam. As ordinárias costumam ser semanais. Cada uma tem duas listas de presença: a Chamada Regimental (na abertura) e a Chamada da Ordem do Dia (na hora de votar)."),
  ("nominal","O que é votação nominal?","Quando fica registrado o voto de cada vereador, um por um. Na votação simbólica a Câmara registra só o resultado geral, sem o nome de cada um — nesses casos não dá para saber como cada um votou."),
+ ("aprovados","O que é um projeto aprovado?","É um Projeto de Lei (ou Projeto de Lei Complementar) de autoria do vereador que já foi aprovado pela Câmara — ou seja, saiu do papel e virou (ou está prestes a virar) lei. Diferente da quantidade de projetos apresentados, aqui conta o que de fato foi adiante. Contamos só os projetos com situação “APROVADO” no sistema da Câmara, no mandato atual."),
  ("quantos","Quantos vereadores tem São José do Rio Preto?","A Câmara Municipal de São José do Rio Preto tem 23 vereadores no mandato de 2025 a 2028."),
 ]
 gloss_html="".join(f'<div class="gloss-item"><h3>{esc(q)}</h3><p>{esc(a)}</p></div>' for k,q,a in GLOSS)
@@ -226,18 +238,28 @@ def item_html(r):
     return (f'<li class="it"><div class="it-top"><span class="it-tipo">{esc(r["tipo"])} {esc(r["n"])}</span><span class="it-data">{esc(r["data"])}</span></div>'
             f'<div class="it-ass">{esc(r["assunto"])}</div>{local}<div class="it-aut">por <strong>{esc(r["autor"])}</strong> {sub}</div></li>')
 CAP=60
-grupos_html=""
+GRUPO_ICON={"melhorias":"🛠️","cobrancas":"❓","homenagens":"🎖️","leis":"📜","outros":"•••"}
+grupos_html='<div class="grupos-grid">'
 for k in ["melhorias","cobrancas","homenagens","leis","outros"]:
     regs=POR_GRUPO[k]
     if not regs and k=="outros": continue
     mostra=regs[:CAP]
     itens="".join(item_html(r) for r in mostra) or "<li class='it'>Sem itens nesta amostra.</li>"
     extra=f'<li class="it muted">+ {len(regs)-CAP} outros na amostra — use a busca por rua/bairro acima.</li>' if len(regs)>CAP else ""
-    grupos_html+=f'<details class="grupo"><summary><span class="g-nome">{esc(GRUPOS[k])}</span><span class="g-cont">{len(regs)} na amostra</span></summary><ul class="lista-itens">{itens}{extra}</ul></details>'
+    chips=""
+    if k=="melhorias":
+        ct=Counter(r["sub"] for r in regs if r["sub"] and r["sub"]!="Outros serviços")
+        chips="".join(f'<span class="gc-chip">{esc(s)} <b>{n}</b></span>' for s,n in ct.most_common(3))
+    chips_html=f'<span class="gc-chips">{chips}</span>' if chips else ""
+    grupos_html+=(f'<details class="grupo-card"><summary><span class="gc-icon" aria-hidden="true">{GRUPO_ICON[k]}</span>'
+      f'<span class="gc-main"><span class="gc-nome">{esc(GRUPOS[k])}</span>'
+      f'<span class="gc-cont">{len(regs)} na amostra</span>{chips_html}</span>'
+      f'<span class="gc-cta">abrir ▾</span></summary><ul class="lista-itens">{itens}{extra}</ul></details>')
+grupos_html+='</div>'
 def periodo(items):
     ds=sorted(set(i["data"] for i in items), key=lambda x:(x[6:],x[3:5],x[0:2]))
     return ds[0] if len(ds)==1 else f"{ds[0]} a {ds[-1]}"
-rep_html=""
+rep_html='<div class="rep-grid">'
 for loc,sub,items in REP_BAIRRO[:12]:
     nver=len(set(i["autor"] for i in items))
     rep_html+=(f'<details class="rep"><summary><span class="rep-n">{len(items)}<small>×</small></span>'
@@ -245,7 +267,8 @@ for loc,sub,items in REP_BAIRRO[:12]:
                f'<div class="rep-meta2"><span class="rep-tag">{esc(sub)}</span> · {nver} vereador(es) pediram · {esc(periodo(items))}</div></div>'
                f'<span class="rep-cta">ver e cobrar →</span></summary>'
                f'<ul class="lista-itens">{"".join(item_html(i) for i in items)}</ul></details>')
-if not rep_html: rep_html='<p class="muted">Nenhuma repetição na amostra atual.</p>'
+rep_html+='</div>'
+if not REP_BAIRRO: rep_html='<p class="muted">Nenhuma repetição na amostra atual.</p>'
 
 # totais para os tiles do topo
 T_IND=sum(ci(C["ind"],v["id"]) for v in VERS)
@@ -280,34 +303,49 @@ def participacao(vid):
     tot=cast+aus
     return (round(100*cast/tot) if tot else 0, cast, tot)
 maxpl = max((ci(C["pl"],v["id"])+ci(C["plc"],v["id"]) for v in VERS), default=1) or 1
+maxef = max((ef_aprov(v["id"]) for v in VERS), default=1) or 1
+# Articulação institucional: ocupar cargo na Mesa Diretora (peso pequeno)
+ARTIC_PTS={"presidente":100,"vice-presidente":70,"1º secretário":55,"1 secretario":55,
+           "2º secretário":50,"3º secretário":45}
+def artic_pts(mesa): return ARTIC_PTS.get(nrm(mesa),0) if mesa else 0
+# Pesos aprovados: Efetividade 25 · Presença 20 · Participação 20 · Produção 20 · Articulação 5
+# (Economia/gastos 10% fica para a 2ª rodada — depende dos PDFs mensais de despesa.)
+PESO_SOMA=0.25+0.20+0.20+0.20+0.05  # = 0.90, renormaliza p/ 0–100
 VM=[]
 for v in VERS:
     vid=v["id"]; f=freq(vid); pl=ci(C["pl"],vid)+ci(C["plc"],vid)
     partic,cast,totv = participacao(vid)
     presenca = f["pct"] if f else 0
-    inic = round(100*pl/maxpl)
-    indice = round(0.4*presenca + 0.3*partic + 0.3*inic)
+    aprov = ef_aprov(vid)
+    efet = round(100*aprov/maxef)          # efetividade: projetos aprovados / maior
+    producao = round(100*pl/maxpl)         # produção: projetos de lei / maior
+    artic = artic_pts(v["mesa"])           # articulação institucional (Mesa)
+    indice = round((0.25*efet + 0.20*presenca + 0.20*partic + 0.20*producao + 0.05*artic)/PESO_SOMA)
     VM.append({"id":vid,"slug":v["slug"],"nome":v["nome"],"partido":v["partido"],"mesa":v["mesa"],
                "foto":FOTO.format(id=vid),"ini":iniciais(v["nome"]),
                "presenca":presenca,"presx":f["pres"] if f else 0,"prest":f["tot"] if f else 0,
                "partic":partic,"cast":cast,"votost":totv,
                "pl":pl,"ind":ci(C["ind"],vid),"req":ci(C["req"],vid),"moc":ci(C["moc"],vid),
-               "inic":inic,"indice":indice})
+               "aprov":aprov,"efet":efet,"producao":producao,"artic":artic,
+               "inic":producao,"indice":indice})
 VM_JS=json.dumps(VM, ensure_ascii=False)
 rank_ordenado=sorted(VM, key=lambda x:-x["indice"])
 def mini_foto(m):
     return (f'<span class="foto foto-sm"><img loading="lazy" src="{m["foto"]}" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span class="foto-ini" style="display:none">{esc(m["ini"])}</span></span>')
 rank_rows="".join(
-  f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-nome="{esc(m["nome"])}">'
+  f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-aprov="{m["aprov"]}" data-nome="{esc(m["nome"])}">'
   f'<td class="r-pos">{i+1}</td><td class="r-nome"><a href="#v-{m["slug"]}">{mini_foto(m)}<span>{esc(m["nome"])}<small>{esc(m["partido"])}</small></span></a></td>'
-  f'<td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td><td class="r-indice">{m["indice"]}</td></tr>'
+  f'<td class="r-strong">{m["aprov"]}</td><td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td><td class="r-indice">{m["indice"]}</td></tr>'
   for i,m in enumerate(rank_ordenado))
 ranking_html=(f'<div class="rank-head"><label for="rank-sort">Ordenar por</label>'
- f'<select id="rank-sort"><option value="indice">Índice geral</option><option value="presenca">Presença</option>'
+ f'<select id="rank-sort"><option value="indice">Índice geral</option><option value="aprov">Projetos aprovados</option>'
+ f'<option value="presenca">Presença</option>'
  f'<option value="partic">Participação em votações</option><option value="pl">Projetos de lei</option>'
  f'<option value="nome">Nome (A–Z)</option></select></div>'
- f'<div class="tab-wrap"><table class="rank-tab"><thead><tr><th>#</th><th>Vereador</th><th>Presença</th>'
- f'<th>Participação</th><th>Projetos de lei</th><th>Índice</th></tr></thead><tbody id="rank-body">{rank_rows}</tbody></table></div>')
+ f'<div class="tab-wrap"><table class="rank-tab"><thead><tr><th>#</th><th>Vereador</th>'
+ f'<th>Projetos aprovados <button class="ajuda" data-termo="aprovados" aria-label="O que é projeto aprovado?">?</button></th>'
+ f'<th>Presença</th><th>Participação</th><th>Projetos de lei</th><th>Índice</th></tr></thead>'
+ f'<tbody id="rank-body">{rank_rows}</tbody></table></div>')
 cmp_opts="".join(f'<option value="{v["id"]}">{esc(v["nome"])} ({esc(v["partido"])})</option>' for v in VERS)
 comparar_html=(f'<div class="cmp-pick">'
  f'<select class="cmp-sel" data-i="0" aria-label="Primeiro vereador"><option value="">Escolha um vereador…</option>{cmp_opts}</select>'
@@ -315,6 +353,44 @@ comparar_html=(f'<div class="cmp-pick">'
  f'<select class="cmp-sel" data-i="2" aria-label="Terceiro vereador (opcional)"><option value="">(opcional) um terceiro…</option>{cmp_opts}</select>'
  f'</div><div id="cmp-result" class="cmp-result"><p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p></div>')
 busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"])} for r in REGS], ensure_ascii=False)
+
+# ===== Painel "A cidade em números" =====
+from collections import Counter
+def pan_tot(m): return m["pl"]+m["ind"]+m["req"]+m["moc"]
+pan_rank=sorted(VM, key=lambda m:-pan_tot(m))
+pan_max=pan_tot(pan_rank[0]) if pan_rank else 1
+quem_html=""
+for m in pan_rank[:6]:
+    tt=pan_tot(m); w=round(100*tt/(pan_max or 1))
+    quem_html+=(f'<li><a href="#v-{m["slug"]}">{mini_foto(m)}'
+      f'<span class="pq-id"><span class="pq-nome">{esc(m["nome"])}</span><small>{esc(m["partido"])}</small></span>'
+      f'<span class="pq-barwrap"><span class="pq-bar" style="width:{w}%"></span></span>'
+      f'<b class="pq-num">{fmt(tt)}</b></a></li>')
+sub_ct=Counter(r["sub"] for r in REGS if r["grupo"]=="melhorias" and r["sub"] and r["sub"]!="Outros serviços")
+pede_max=sub_ct.most_common(1)[0][1] if sub_ct else 1
+pede_html="".join(f'<li><span class="pp-cat">{esc(k)}</span><span class="pp-barwrap"><span class="pp-bar" style="width:{round(100*n/pede_max)}%"></span></span><b>{fmt(n)}</b></li>' for k,n in sub_ct.most_common(6))
+bai_ct=Counter(r["bairro"] for r in REGS if r["bairro"])
+bai_max=bai_ct.most_common(1)[0][1] if bai_ct else 1
+bairro_html="".join(f'<li><span class="pb-loc">{esc(k)}</span><span class="pp-barwrap"><span class="pb-bar" style="width:{round(100*n/bai_max)}%"></span></span><b>{fmt(n)}</b></li>' for k,n in bai_ct.most_common(6))
+def dkey(d):
+    try: p=d.split("/"); return (p[2],p[1],p[0])
+    except: return ("0","0","0")
+recentes=sorted(REGS, key=lambda r:dkey(r["data"]), reverse=True)[:4]
+rec_html=""
+for r in recentes:
+    local=" · ".join([x for x in [r["rua"],r["bairro"]] if x])
+    rec_html+=(f'<li class="pr-item"><div class="pr-top"><span class="pr-tipo">{esc(r["tipo"])} {esc(r["n"])}</span>'
+      f'<span class="pr-data">{esc(r["data"])}</span></div>'
+      f'<div class="pr-ass">{esc(r["assunto"][:150])}</div>'
+      f'<div class="pr-aut">por <strong>{esc(r["autor"])}</strong>{(" · 📍 "+esc(local)) if local else ""}</div></li>')
+panorama_html=(f'<div class="pan-total"><b>{fmt(T_PROPS)}</b><span>proposituras dos 23 vereadores no mandato ({PERIODO_DADOS})</span></div>'
+ f'<div class="pan-cols">'
+ f'<div class="pan-col"><h3>Quem mais propôs</h3><p class="pan-base">no mandato inteiro</p><ol class="pan-quem">{quem_html}</ol></div>'
+ f'<div class="pan-col"><h3>O que mais pedem</h3><p class="pan-base">na amostra recente de pedidos</p><ul class="pan-pede">{pede_html or "<li class=muted>—</li>"}</ul></div>'
+ f'<div class="pan-col"><h3>Bairros mais citados</h3><p class="pan-base">na amostra recente de pedidos</p><ul class="pan-bairro">{bairro_html or "<li class=muted>—</li>"}</ul></div>'
+ f'</div>'
+ f'<div class="pan-rec"><h3>Propostas mais recentes</h3><ul class="pan-reclist">{rec_html}</ul>'
+ f'<a class="pan-vermais" href="#trabalho">Ver todas as propostas por tema →</a></div>')
 
 # contagens para verificação
 tot_props = sum(ci(C[t],v["id"]) for t in C for v in VERS)
@@ -326,11 +402,13 @@ verif_html=f'''<div class="met">
 <h3>Como agrupamos</h3>
 <p>A mesma regra vale para todos: Moção → Homenagem; Projeto de Lei → Proposta de lei; Indicação/Requerimento são lidos pelo assunto (congratulação/pesar → Homenagens; pedido de informação → Perguntas e cobranças; serviço no bairro → Pedidos de melhoria; o resto → Outros).</p>
 <h3>Como calculamos o índice (ranking)</h3>
-<p>Seguindo a ideia de “dimensões comparáveis, não nota de bom ou ruim”, o índice junta três coisas que dá para medir com dado oficial, cada uma de 0 a 100:</p>
-<p>• <strong>Presença</strong> (peso 40%): % de comparecimento nas sessões com chamada registrada.<br>
-• <strong>Participação em votações</strong> (peso 30%): das votações nominais, em quantas o vereador registrou voto (a favor, contra ou abstenção) — ausências contam contra; quando o presidente não vota por função, isso não entra na conta.<br>
-• <strong>Iniciativa</strong> (peso 30%): quantidade de projetos de lei (os de conteúdo substantivo), comparada ao vereador que mais apresentou (esse vira 100).</p>
-<p class="muted">De propósito, o índice <strong>não usa o volume de indicações e requerimentos</strong> — eles são apresentados em massa e inchariam a conta sem medir qualidade. O índice é uma leitura parcial: a presença ainda cobre poucas sessões e a “efetividade” (quantos projetos viraram lei) ainda não entra. Use como ponto de partida, não como veredito — e confira sempre a ficha de cada um.</p>
+<p>A ideia é medir várias dimensões comparáveis, não dar uma nota de “bom” ou “ruim”. Cada dimensão vai de 0 a 100 e é calculada só com dado oficial. O índice final é a média ponderada delas:</p>
+<p>• <strong>Efetividade</strong> (peso 25%): quantos projetos de lei do vereador foram <em>aprovados</em> pela Câmara, comparado a quem mais aprovou (esse vira 100). É o que de fato virou lei, não só o que foi apresentado.<br>
+• <strong>Presença</strong> (peso 20%): % de comparecimento nas sessões com chamada registrada.<br>
+• <strong>Participação em votações</strong> (peso 20%): das votações nominais, em quantas o vereador registrou voto (a favor, contra ou abstenção) — ausências contam contra; quando o presidente não vota por função, isso não entra na conta.<br>
+• <strong>Produção legislativa</strong> (peso 20%): quantidade de projetos de lei apresentados (os de conteúdo substantivo), comparada a quem mais apresentou.<br>
+• <strong>Articulação institucional</strong> (peso 5%): ocupar um cargo na Mesa Diretora (Presidência, Vice, Secretarias), responsabilidade de condução dos trabalhos. Quem não está na Mesa pontua 0 aqui — é o fator de menor peso, de propósito.</p>
+<p class="muted">De propósito, o índice <strong>não usa o volume de indicações e requerimentos</strong> — eles são apresentados em massa e inchariam a conta sem medir qualidade. Uma dimensão prevista, <strong>Economia/gastos de gabinete</strong> (peso 10%), ainda <strong>não entra</strong>: depende dos PDFs mensais de despesa, que serão incorporados numa próxima rodada; enquanto isso, os outros cinco fatores são renormalizados para somar 100%. O índice é uma leitura parcial — a presença ainda cobre poucas sessões. Use como ponto de partida, não como veredito, e confira sempre a ficha de cada um.</p>
 <p class="muted">Origem desta carga de dados: {esc(META.get("origem","—"))}. Total de proposituras contabilizadas (mandato): {tot_props:,}.</p></div>'''.replace(",", ".")
 
 naoconf_html='''<ul class="aviso-lista">
@@ -362,7 +440,7 @@ page = (TPL.replace("__TITLE__",esc(TITLE)).replace("__DESC__",esc(DESC)).replac
  .replace("__DETALHES__",detalhes_html).replace("__GLOSSJS__",gloss_js).replace("__BUSCADATA__",busca_data)
  .replace("__NAOCONF__",naoconf_html).replace("__TILES__",tiles_html)
  .replace("__RANKING__",ranking_html).replace("__COMPARAR__",comparar_html).replace("__VMJS__",VM_JS)
- .replace("__SALARIO__",salario_html))
+ .replace("__PANORAMA__",panorama_html).replace("__SALARIO__",salario_html))
 open(os.path.join(OUT,"index.html"),"w",encoding="utf-8").write(page)
 
 # robots / sitemap / llms

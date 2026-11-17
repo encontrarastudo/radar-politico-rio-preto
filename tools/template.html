@@ -32,11 +32,17 @@ __JSONLD__
 <main id="conteudo" class="wrap">
 <div id="lista-view">
   <nav class="secnav" aria-label="Seções">
-    <a href="#busca">Busca por rua</a><a href="#problema">Problema que não some</a>
+    <a href="#panorama">A cidade em números</a><a href="#busca">Busca por rua</a><a href="#problema">Problema que não some</a>
     <a href="#trabalho">Trabalho da Câmara</a><a href="#vereadores">Vereadores</a>
     <a href="#ranking">Ranking</a><a href="#comparar">Comparar</a>
     <a href="#numeros">De onde vêm os números</a><a href="#erro">Achou um erro?</a>
   </nav>
+
+  <section class="sec2" id="panorama">
+    <h2>A cidade em números</h2>
+    <p class="sub">Um retrato rápido do que a Câmara produziu: quem mais propôs, o que a população mais pede e os bairros que mais aparecem. Os pedidos por tema e bairro vêm da amostra recente de proposituras.</p>
+    __PANORAMA__
+  </section>
 
   <section class="sec2" id="busca">
     <h2>Busque sua rua ou bairro</h2>
@@ -78,14 +84,14 @@ __JSONLD__
 
   <section class="sec2" id="ranking">
     <h2>Ranking por dimensões</h2>
-    <p class="sub">Não é nota de “bom” ou “ruim”: são dimensões comparáveis, lado a lado, calculadas só com dado oficial. <a href="#numeros">Veja como o índice é calculado</a> e suas limitações.</p>
-    <div class="alerta">⚠️ O índice é uma leitura <strong>parcial</strong>: a presença ainda cobre poucas sessões e a “efetividade” (projetos que viraram lei) ainda não entra. Use como ponto de partida, não como veredito.</div>
+    <p class="sub">Não é nota de “bom” ou “ruim”: é uma nota que combina vários fatores comparáveis — efetividade (projetos aprovados), presença, participação em votações, produção e articulação —, calculados só com dado oficial. <a href="#numeros">Veja como o índice é calculado</a> e suas limitações.</p>
+    <div class="alerta">⚠️ O índice é uma leitura <strong>parcial</strong>: a presença ainda cobre poucas sessões e a dimensão de economia/gastos de gabinete ainda entrará numa próxima rodada. Use como ponto de partida, não como veredito.</div>
     __RANKING__
   </section>
 
   <section class="sec2" id="comparar">
     <h2>Comparar vereadores</h2>
-    <p class="sub">Escolha dois ou três vereadores e veja presença, participação em votações e proposições lado a lado.</p>
+    <p class="sub">Escolha dois ou três vereadores e veja projetos aprovados, presença, participação em votações e proposições lado a lado.</p>
     __COMPARAR__
   </section>
 
@@ -176,7 +182,7 @@ const cmpSels=Array.from(document.querySelectorAll('.cmp-sel')),cmpRes=document.
 function fotoCmp(m){return '<span class="foto"><img loading="lazy" src="'+m.foto+'" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span class="foto-ini" style="display:none">'+esc(m.ini)+'</span></span>';}
 function renderCmp(){const sel=cmpSels.map(s=>s.value).filter(Boolean),uniq=[];sel.forEach(id=>{const m=VMbyId[id];if(m&&!uniq.find(x=>x.id===m.id))uniq.push(m);});
   if(uniq.length<2){cmpRes.innerHTML='<p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p>';return;}
-  const linhas=[['Partido',m=>esc(m.partido)+(m.mesa?' · '+esc(m.mesa):'')],['Presença',m=>m.presenca+'% <small>('+m.presx+' de '+m.prest+' sessões)</small>'],['Participação em votações',m=>m.partic+'% <small>('+m.cast+' de '+m.votost+')</small>'],['Projetos de lei',m=>m.pl],['Indicações',m=>m.ind],['Requerimentos',m=>m.req],['Moções',m=>m.moc],['Índice geral',m=>'<b>'+m.indice+'</b>']];
+  const linhas=[['Partido',m=>esc(m.partido)+(m.mesa?' · '+esc(m.mesa):'')],['Projetos de lei aprovados',m=>'<b>'+m.aprov+'</b> <small>de '+m.pl+' apresentados</small>'],['Presença',m=>m.presenca+'% <small>('+m.presx+' de '+m.prest+' sessões)</small>'],['Participação em votações',m=>m.partic+'% <small>('+m.cast+' de '+m.votost+')</small>'],['Projetos de lei apresentados',m=>m.pl],['Indicações',m=>m.ind],['Requerimentos',m=>m.req],['Moções',m=>m.moc],['Índice geral',m=>'<b>'+m.indice+'</b>']];
   let h='<div class="tab-wrap"><table class="cmp-tab"><thead><tr><th></th>';
   uniq.forEach(m=>{h+='<th><a href="#v-'+m.slug+'">'+fotoCmp(m)+'<span>'+esc(m.nome)+'</span></a></th>';});
   h+='</tr></thead><tbody>';
