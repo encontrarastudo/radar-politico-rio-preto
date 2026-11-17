@@ -28,6 +28,18 @@ def get(url, tries=3):
         time.sleep(1.2)
     raise RuntimeError(f"Falha ao buscar {url}: {last}")
 
+def get_bytes(url, tries=3):
+    last=None
+    for _ in range(tries):
+        try:
+            r = S.get(url, timeout=TIMEOUT)
+            if r.status_code == 200: return r.content
+            last = f"HTTP {r.status_code}"
+        except Exception as e:
+            last = str(e)
+        time.sleep(1.2)
+    raise RuntimeError(f"Falha ao buscar {url}: {last}")
+
 def texto(html):
     return re.sub(r"\s+", " ", BeautifulSoup(html, "html.parser").get_text(" "))
 
@@ -119,14 +131,38 @@ def parse_sessao(sid):
                           "assunto":assunto.strip()[:220],"autoria":autoria.strip(),"votos":vd})
     return titulo, data, chamadas, votos
 
-def coletar_sessoes(limite=55):
-    # começa pela lista recente e caminha para trás pelos ids, cobrindo o ano
-    base = lista_sessoes(); ids=[x[0] for x in base]
-    if ids:
-        mx=max(ids)
-        for sid in range(mx, mx-limite, -1):
-            if sid not in ids: ids.append(sid)
-    ids = sorted(set(ids), reverse=True)[:limite]
+def lista_sessoes_ano(ano):
+    """Todos os ids de sessão de um ano, via a busca oficial de sessões (todas as páginas)."""
+    sids=[]
+    for pg in range(1, 30):
+        try:
+            html = get(f"{SIS}/Sessoes/Pesquisa?Classe=Sessao&tipo=0&ano={ano}&pagina={pg}")
+        except Exception:
+            break
+        novos = [int(x) for x in re.findall(r"/Sessoes/Sessao/(\d+)", html)]
+        novos = [s for s in novos if s not in sids]
+        if not novos: break
+        sids += novos
+        time.sleep(PAUSA)
+    return sids
+
+def mandato_anos():
+    return [str(y) for y in range(2025, datetime.date.today().year + 1)]
+
+def coletar_sessoes(limite=None):
+    # enumera TODAS as sessões do mandato (2025+) pela busca oficial
+    ids=[]
+    for ano in mandato_anos():
+        try: ids += lista_sessoes_ano(ano)
+        except Exception as ex: print(f"  sessões {ano}: erro ({ex})")
+    if not ids:  # fallback: lista recente + caminhada por ids
+        base = lista_sessoes(); ids=[x[0] for x in base]
+        if ids:
+            mx=max(ids)
+            for sid in range(mx, mx-60, -1):
+                if sid not in ids: ids.append(sid)
+    ids = sorted(set(ids), reverse=True)
+    print(f"  sessões do mandato encontradas: {len(ids)}")
     presenca=[]; votacoes=[]
     for sid in ids:
         try:
@@ -160,14 +196,14 @@ def parse_records(html, label):
         out.append([m.group(1).strip(), m.group(2), m.group(3), m.group(4).strip()[:80], re.sub(r"\s+"," ",m.group(5)).strip()[:320]])
     return out
 
-def coletar_propostas(dias=45):
+def coletar_propostas(dias=180):
     hoje = datetime.date.today()
     ini = (hoje - datetime.timedelta(days=dias)).strftime("%d/%m/%Y")
     fim = hoje.strftime("%d/%m/%Y")
     recs=[]; seen=set()
     for k,code in TIPOS.items():
         pagina=1
-        while pagina<=40:
+        while pagina<=150:
             url=(f"{SIS}/Documentos/Pesquisa?Pesquisa=Avancada&id=78&pagina={pagina}&Modulo=8&Documento={code}"
                  f"&Numeracao=Documento&DataInicial={ini}&DataFinal={fim}&Situacao=0&Classificacao=0"
                  f"&TipoAutor=Todos&AutoriaId=0&Iniciativa=Nenhum&NoTexto=false")
@@ -346,6 +382,88 @@ def coletar_emendas():
     print(f"  emendas municipais: {n_tot} de {len([1 for v in por.values() if v['n']>0])} vereadores, R$ {prev_tot:,.0f} previstos")
     return out
 
+# ============ 8) FREQUÊNCIA DO MANDATO (relatórios mensais de presença, PDF) ============
+SELEG = "https://www.riopreto.sp.leg.br"
+# token distintivo -> id (nomes como aparecem nos relatórios de presença)
+FREQ_KEYS=[("abner",27253),("alex sandro",27258),("montenegro",27250),("anderson branco",19428),
+ ("marinho",23565),("moura",23566),("celso luiz",71),("felipe alcala",27249),("francisco savio",73),
+ ("dornelas",19430),("rillo",46),("jonathan",27252),("jorge menezes",53),("julio donizete",23568),
+ ("kleber",27256),("klebinho",27256),("juliao",27257),("marcia",27251),("odelio",23569),
+ ("paulo roberto ambrosio",24556),("paulera",24556),("pedro roberto",15231),("renato pupo",77),
+ ("rossini",23571),("tadeu",27255)]
+def freq_mid(nome):
+    n=nrm(nome)
+    for tok,i in FREQ_KEYS:
+        if tok in n: return i
+    return None
+
+def listar_pdfs_presenca(ano):
+    html = get(f"{SELEG}/ContaPublica/Visualizar?idtipo=1267&ano={ano}")
+    soup = BeautifulSoup(html, "html.parser")
+    out=[]; seen=set()
+    for a in soup.find_all("a", href=re.compile(r"\.pdf", re.I)):
+        txt=a.get_text(" ").strip()
+        if not re.search(r"presen", txt, re.I): continue
+        mm=(re.search(r"(\d{2})-(\d{2})", txt) or [None]); mkey=mm.group(0) if hasattr(mm,"group") else txt
+        if mkey in seen: continue
+        seen.add(mkey)
+        href=a.get("href","").split("?")[0]
+        if href.startswith("/"): href=SELEG+href
+        out.append((txt, href))
+    return out
+
+def coletar_frequencia():
+    """Presença do mandato inteiro, a partir dos relatórios mensais oficiais
+    (PDF 'Comparecimento dos Vereadores às Sessões'). Por vereador: presenças, faltas,
+    total e detalhe por sessão. Complementar (não bloqueia o gate)."""
+    import pdfplumber, io
+    freq={}; meses=set()
+    for ano in mandato_anos():
+        try: pdfs=listar_pdfs_presenca(ano)
+        except Exception as ex:
+            print(f"  presença {ano}: lista falhou ({ex})"); continue
+        for (txt,url) in pdfs:
+            try: raw=get_bytes(url); time.sleep(PAUSA)
+            except Exception: continue
+            try:
+                with pdfplumber.open(io.BytesIO(raw)) as pdf:
+                    tbls=[p.extract_table() for p in pdf.pages]
+            except Exception as ex:
+                print(f"  presença '{txt}': PDF falhou ({ex})"); continue
+            meses.add(txt)
+            for tbl in tbls:
+                if not tbl: continue
+                datas=None
+                for hr in tbl[:3]:
+                    if hr and sum(1 for c in hr if c and re.search(r"\d{2}/\d{2}/\d{4}", c))>=2:
+                        datas=[(re.search(r"\d{2}/\d{2}/\d{4}", c or "") or [None,""])[0] if (re.search(r"\d{2}/\d{2}/\d{4}", c or "")) else "" for c in hr]
+                        break
+                for row in tbl:
+                    if not row or not row[0]: continue
+                    i=freq_mid(row[0])
+                    if i is None: continue
+                    d=freq.setdefault(i,{"p":0,"f":0,"sessoes":[]})
+                    for ci,cell in enumerate(row):
+                        u=nrm(cell or "")
+                        if u=="presente": st="P"; d["p"]+=1
+                        elif "ausente" in u or u=="falta" or "faltou" in u: st="F"; d["f"]+=1
+                        elif "justif" in u: st="J"; d["f"]+=1
+                        else: continue
+                        data=(datas[ci] if datas and ci<len(datas) else "")
+                        d["sessoes"].append({"data":data,"status":st})
+    if not freq: return {}
+    por={}
+    for aid in IDS:
+        d=freq.get(aid,{"p":0,"f":0,"sessoes":[]})
+        def chave(s):
+            x=s.get("data","") or ""
+            return (x[6:10],x[3:5],x[0:2])
+        d["sessoes"].sort(key=chave, reverse=True)
+        por[str(aid)]={"presencas":d["p"],"faltas":d["f"],"total":d["p"]+d["f"],"sessoes":d["sessoes"]}
+    out={"meta":{"fonte":f"{SELEG}/ContaPublica/Listar/1267","n_meses":len(meses)},"por_vereador":por}
+    print(f"  frequência do mandato: {sum(v['total'] for v in por.values())} registros em {len(meses)} meses")
+    return out
+
 # ============ VALIDAÇÃO (o gate) ============
 def carrega_anterior(nome):
     try: return json.load(open(os.path.join(DATA,nome),encoding="utf-8"))
@@ -408,7 +526,16 @@ def main():
     if (not emendas or len(emendas.get("por_vereador",{}))<23) and ant_em:
         print("  emendas incompletas — mantendo versão anterior")
         emendas = ant_em
-    print("8/8 validando...")
+    print("8/9 frequência do mandato...")
+    try: frequencia = coletar_frequencia()
+    except Exception as ex:
+        print("  coleta de frequência falhou inteira:", ex); frequencia = {}
+    ant_fr = carrega_anterior("frequencia.json") or {}
+    tot_fr = sum(v.get("total",0) for v in frequencia.get("por_vereador",{}).values())
+    if tot_fr < 100 and ant_fr:
+        print(f"  frequência incompleta ({tot_fr} registros) — mantendo versão anterior")
+        frequencia = ant_fr
+    print("9/9 validando...")
     erros = valida(contagens, presenca, votacoes, propostas, vereadores)
     if erros:
         print("\n❌ VALIDAÇÃO FALHOU — NADA será publicado. Motivos:")
@@ -425,6 +552,7 @@ def main():
     if efetividade: dump("efetividade.json", efetividade)
     if gastos: dump("gastos_viagens.json", gastos)
     if emendas: dump("emendas.json", emendas)
+    if frequencia: dump("frequencia.json", frequencia)
     dump("meta.json", {"atualizado":datetime.date.today().isoformat(),"periodo_dados":"2025-2026",
                        "fonte":"SISCAM / Câmara Municipal de São José do Rio Preto","origem":"coleta automática diária"})
     print("\n✅ Coleta válida e gravada. Pronto para reconstruir o site.")

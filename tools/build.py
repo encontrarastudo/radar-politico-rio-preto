@@ -18,6 +18,12 @@ PROPOSTAS = load("propostas.json")
 META = load("meta.json")
 try: CONTATOS = load("contatos.json")
 except Exception: CONTATOS = {}
+try: FREQM = load("frequencia.json")
+except Exception: FREQM = {"meta":{},"por_vereador":{}}
+FREQMP = FREQM.get("por_vereador", {})
+PRES_FULL = any((v or {}).get("total") for v in FREQMP.values())
+PRES_NOTA = ("Presença em todas as sessões do mandato, pelos relatórios mensais oficiais de comparecimento da Câmara."
+             if PRES_FULL else "Sessões com chamada registrada no SISCAM nesta versão.")
 try: EF = load("efetividade.json")
 except Exception: EF = {}
 def ef_aprov(vid): return (EF.get(str(vid)) or {}).get("aprovados", 0)
@@ -121,10 +127,14 @@ TLAB = {"pl":"Projetos de lei","ind":"Indicações","req":"Requerimentos","moc":
 def iniciais(nome): return "".join([p[0] for p in nome.split()[:2]]).upper()
 
 def freq(vid):
+    fm = FREQMP.get(str(vid))
+    if fm and fm.get("total"):
+        tot=fm["total"]; pres=fm.get("presencas",0)
+        return {"pct": round(100*pres/tot) if tot else 0, "pres":pres, "tot":tot, "aus":fm.get("faltas",0), "fonte":"mensal"}
     if not PRES: return None
     pres = sum(1 for s in PRES if any(vid in ch["presentes"] for ch in s["chamadas"]))
     tot = len(PRES)
-    return {"pct": round(100*pres/tot) if tot else 0, "pres":pres, "tot":tot, "aus":tot-pres}
+    return {"pct": round(100*pres/tot) if tot else 0, "pres":pres, "tot":tot, "aus":tot-pres, "fonte":"siscam"}
 
 def donut(pct):
     import math
@@ -144,9 +154,10 @@ def freq_block(vid, grande=False):
     f = freq(vid)
     if not f: return ""
     aus = f"{f['aus']} ausência" + ("s" if f["aus"]!=1 else "")
+    base = "no mandato (relatórios mensais oficiais)" if f.get("fonte")=="mensal" else "nas sessões com chamada registrada"
     return (f'<div class="freq{" freq-lg" if grande else ""}">{donut(f["pct"])}'
             f'<div class="freq-txt"><strong>{f["pres"]} de {f["tot"]} sessões</strong>'
-            f'<span class="muted">{aus} · nas sessões com chamada registrada</span></div></div>')
+            f'<span class="muted">{aus} · {base}</span></div></div>')
 
 def barra_tipos(vid):
     vals = {"pl":ci(C["pl"],vid)+ci(C["plc"],vid),"ind":ci(C["ind"],vid),"req":ci(C["req"],vid),"moc":ci(C["moc"],vid)}
@@ -205,11 +216,20 @@ def detalhe(v):
            ("Moções",ci(C["moc"],vid),busca(TIPO_ID["moc"],vid),"moc")]
     prows="".join(f'<tr><th scope="row">{esc(l)} <button class="ajuda" data-termo="{t}" aria-label="O que é {esc(l)}?">?</button></th><td class="num">{n}</td><td>{fonte("ver a lista oficial",u)}</td></tr>' for (l,n,u,t) in props)
     # presença
-    prows2=""
-    for s in PRES:
-        for ch in s["chamadas"]:
-            pres = vid in ch["presentes"]; st="Presente" if pres else "Ausente"; cls="sim" if pres else "nao"
-            prows2+=f'<tr><th scope="row">{esc(s["titulo"])} — {esc(s["data"])}<br><span class="muted">{esc(ch["nome"])}</span></th><td><span class="status {cls}">{st}</span></td><td>{fonte("ver a sessão",SESSAO.format(id=s["sid"]))}</td></tr>'
+    prows2=""; pres_fonte=FREQM.get("meta",{}).get("fonte","https://www.riopreto.sp.leg.br/ContaPublica/Listar/1267")
+    fm=FREQMP.get(str(vid))
+    if fm and fm.get("sessoes"):
+        PRES_CAP=50
+        for s in fm["sessoes"][:PRES_CAP]:
+            P={"P":("Presente","sim"),"F":("Ausente","nao"),"J":("Falta justificada","neutro")}.get(s.get("status","F"),("Ausente","nao"))
+            prows2+=f'<tr><th scope="row">Sessão de {esc(s.get("data","") or "data não informada")}</th><td><span class="status {P[1]}">{P[0]}</span></td><td></td></tr>'
+        if len(fm["sessoes"])>PRES_CAP:
+            prows2+=f'<tr><td colspan="3" class="muted">+ {len(fm["sessoes"])-PRES_CAP} sessões anteriores no mandato. {fonte("relatórios mensais oficiais",pres_fonte)}</td></tr>'
+    else:
+        for s in PRES:
+            for ch in s["chamadas"]:
+                pres = vid in ch["presentes"]; st="Presente" if pres else "Ausente"; cls="sim" if pres else "nao"
+                prows2+=f'<tr><th scope="row">{esc(s["titulo"])} — {esc(s["data"])}<br><span class="muted">{esc(ch["nome"])}</span></th><td><span class="status {cls}">{st}</span></td><td>{fonte("ver a sessão",SESSAO.format(id=s["sid"]))}</td></tr>'
     # votos
     vrows=""
     for m in VOT:
@@ -235,7 +255,7 @@ def detalhe(v):
   <div class="efet-txt"><strong>projetos de lei já aprovados</strong> pela Câmara (viraram ou estão prestes a virar lei) <button class="ajuda" data-termo="aprovados" aria-label="O que é projeto aprovado?">?</button>
   <span class="muted">de {ci(C["pl"],vid)+ci(C["plc"],vid)} projetos apresentados · {fonte("ver os aprovados na fonte",busca_aprov(TIPO_ID["pl"],vid))}</span></div></div></section>
   <section class="bloco"><h3>Presença nas sessões <button class="ajuda" data-termo="sessao" aria-label="O que é sessão?">?</button></h3>
-  <p class="muted">Sessões com chamada registrada no SISCAM nesta versão.</p>
+  <p class="muted">{PRES_NOTA}</p>
   <table class="tab"><thead><tr><th>Sessão / chamada</th><th>Situação</th><th>Fonte</th></tr></thead><tbody>{prows2}</tbody></table></section>
   <section class="bloco"><h3>Como votou (votações nominais) <button class="ajuda" data-termo="nominal" aria-label="O que é votação nominal?">?</button></h3>
   <p class="muted">Apenas o registro do voto. Em votações simbólicas o voto individual não é registrado.</p>
@@ -417,7 +437,9 @@ comparar_html=(f'<div class="cmp-pick">'
  f'<select class="cmp-sel" data-i="1" aria-label="Segundo vereador"><option value="">Escolha para comparar…</option>{cmp_opts}</select>'
  f'<select class="cmp-sel" data-i="2" aria-label="Terceiro vereador (opcional)"><option value="">(opcional) um terceiro…</option>{cmp_opts}</select>'
  f'</div><div id="cmp-result" class="cmp-result"><p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p></div>')
-busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"])} for r in REGS], ensure_ascii=False)
+BUSCA_CAP=6000
+REGS_BUSCA=sorted(REGS, key=lambda r:dkey_d(r["data"]), reverse=True)[:BUSCA_CAP]
+busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"])} for r in REGS_BUSCA], ensure_ascii=False)
 
 # ===== Painel "A cidade em números" =====
 from collections import Counter
@@ -481,7 +503,7 @@ emendas_html=(f'<div class="pan-total"><b>{brl0(emeta.get("total_previsto",0))}<
 tot_props = sum(ci(C[t],v["id"]) for t in C for v in VERS)
 verif_html=f'''<div class="met">
 <h3>Presença nas sessões</h3>
-<p>A presença vem da chamada registrada em cada sessão no sistema do Legislativo (SISCAM). Há ainda a fonte oficial independente — o relatório mensal <em>“Comparecimento dos Vereadores às Sessões”</em> (PDF da Câmara). Onde as duas existem, os nomes coincidem na maioria dos casos; divergências pontuais ocorrem porque o relatório mensal pode contar falta justificada como presença, e nem toda sessão tem a chamada estruturada preenchida no SISCAM.</p>
+{("<p>A presença cobre <strong>todas as sessões do mandato</strong> e vem dos relatórios mensais oficiais da Câmara — <em>“Comparecimento dos Vereadores às Sessões”</em> (um PDF por mês). Cada relatório lista, sessão a sessão, se cada vereador esteve Presente ou Ausente; nós somamos tudo. Falta justificada, quando aparece, é contada como ausência.</p>" if PRES_FULL else "<p>A presença vem da chamada registrada em cada sessão no sistema do Legislativo (SISCAM). Há ainda a fonte oficial independente — o relatório mensal <em>“Comparecimento dos Vereadores às Sessões”</em> (PDF da Câmara).</p>")}
 <h3>Proposições</h3>
 <p>As contagens por vereador vêm da busca oficial de proposituras (mandato {PERIODO_DADOS}). Os textos nos grupos e na busca por rua são a amostra mais recente coletada.</p>
 <h3>Como agrupamos</h3>
@@ -494,7 +516,7 @@ verif_html=f'''<div class="met">
 • <strong>Produção legislativa</strong> (peso 20%): quantidade de projetos de lei apresentados (os de conteúdo substantivo), comparada a quem mais apresentou.<br>
 • <strong>Economia</strong> (peso 10%): gasto com viagens oficiais custeadas com dinheiro público (diárias e deslocamento) no mandato. Aqui a lógica se inverte — <strong>gastar menos pontua mais</strong>. Quem mais gastou pontua 0; quem não teve gasto de viagem pontua 100.<br>
 • <strong>Articulação institucional</strong> (peso 5%): ocupar um cargo na Mesa Diretora (Presidência, Vice, Secretarias), responsabilidade de condução dos trabalhos. Quem não está na Mesa pontua 0 aqui — é o fator de menor peso, de propósito.</p>
-<p class="muted">De propósito, o índice <strong>não usa o volume de indicações e requerimentos</strong> — eles são apresentados em massa e inchariam a conta sem medir qualidade. A dimensão de economia mede só as viagens, porque é o único gasto publicado por vereador: verba de gabinete e salários de assessores não saem separados por vereador na Câmara. O índice é uma leitura parcial — a presença ainda cobre poucas sessões. Use como ponto de partida, não como veredito, e confira sempre a ficha de cada um.</p>
+<p class="muted">De propósito, o índice <strong>não usa o volume de indicações e requerimentos</strong> — eles são apresentados em massa e inchariam a conta sem medir qualidade. A dimensão de economia mede só as viagens, porque é o único gasto publicado por vereador: verba de gabinete e salários de assessores não saem separados por vereador na Câmara. {("A presença agora cobre o mandato inteiro." if PRES_FULL else "A presença ainda cobre poucas sessões.")} Use como ponto de partida, não como veredito, e confira sempre a ficha de cada um.</p>
 <p class="muted">Origem desta carga de dados: {esc(META.get("origem","—"))}. Total de proposituras contabilizadas (mandato): {tot_props:,}.</p></div>'''.replace(",", ".")
 
 naoconf_html='''<ul class="aviso-lista">
