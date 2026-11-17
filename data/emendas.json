@@ -4,45 +4,4676 @@
   "total_previsto": 60144024.95,
   "total_pago": 18494751.29,
   "n_beneficiarios": 123,
-  "atualizado_portal": "16/11/2026",
-  "fonte": "https://www.riopreto.sp.gov.br/transparencia/receitas-e-repasses/emendas-parlamentares",
-  "observacao": "Emendas parlamentares impositivas de esfera municipal (autoria dos vereadores), exercícios 2025-2026. Valor previsto = custeio + investimento indicados. Execução (empenho, pagamento) é do Poder Executivo."
+  "fonte": "https://www.riopreto.sp.gov.br/transparencia/receitas-e-repasses/emendas-parlamentares"
  },
  "top_beneficiarios": [
-  ["MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO", 15807693.40],
-  ["IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO", 4828700.34],
-  ["ASSOCIAÇÃO RENASCER", 3875267.43],
-  ["INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES", 3644080.10],
-  ["IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES", 3016680.10],
-  ["ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA", 1780417.64],
-  ["ASSOCIAÇÃO PROJETO AQUÁRIO PESCANDO VIDAS", 1640357.69],
-  ["INSTITUTO HORA", 1542880.10],
-  ["FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA", 1332940.05],
-  ["FUNDO MUNICIPAL DE SAUDE DE SAO JOSE DO RIO PRETO", 982932.05]
+  [
+   "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+   15807693.4
+  ],
+  [
+   "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+   4828700.34
+  ],
+  [
+   "ASSOCIAÇÃO RENASCER",
+   3875267.43
+  ],
+  [
+   "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+   3644080.1
+  ],
+  [
+   "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+   3016680.1
+  ],
+  [
+   "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+   1780417.64
+  ],
+  [
+   "ASSOCIAÇÃO PROJETO AQUÁRIO PESCANDO VIDAS",
+   1640357.69
+  ],
+  [
+   "INSTITUTO HORA",
+   1542880.1
+  ],
+  [
+   "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+   1332940.05
+  ],
+  [
+   "FUNDO MUNICIPAL DE SAUDE DE SAO JOSE DO RIO PRETO",
+   982932.05
+  ]
  ],
  "por_vereador": {
-  "46":    {"n": 56, "previsto": 3610715.39, "pago": 1613664.65, "itens": []},
-  "53":    {"n": 41, "previsto": 3610715.39, "pago": 1583126.60, "itens": []},
-  "71":    {"n": 12, "previsto": 3610715.38, "pago": 1057601.28, "itens": []},
-  "73":    {"n": 31, "previsto": 3710715.37, "pago": 1684835.28, "itens": []},
-  "77":    {"n": 67, "previsto": 3610715.38, "pago": 1744835.28, "itens": []},
-  "15231": {"n": 74, "previsto": 3610715.38, "pago": 1004497.34, "itens": []},
-  "19428": {"n": 7,  "previsto": 1742417.64, "pago": 1706629.84, "itens": []},
-  "19430": {"n": 20, "previsto": 1865880.10, "pago": 0,          "itens": []},
-  "23565": {"n": 25, "previsto": 3610715.38, "pago": 1694816.14, "itens": []},
-  "23566": {"n": 24, "previsto": 3493294.10, "pago": 1471779.31, "itens": []},
-  "23568": {"n": 37, "previsto": 3610715.38, "pago": 1670073.51, "itens": []},
-  "23569": {"n": 42, "previsto": 3603097.74, "pago": 1701340.07, "itens": []},
-  "23571": {"n": 14, "previsto": 1865872.10, "pago": 0,          "itens": []},
-  "24556": {"n": 44, "previsto": 3660715.44, "pago": 1561551.99, "itens": []},
-  "27249": {"n": 15, "previsto": 1865880.10, "pago": 0,          "itens": []},
-  "27250": {"n": 12, "previsto": 1865880.10, "pago": 0,          "itens": []},
-  "27251": {"n": 31, "previsto": 1865864.08, "pago": 0,          "itens": []},
-  "27252": {"n": 28, "previsto": 1865880.10, "pago": 0,          "itens": []},
-  "27253": {"n": 28, "previsto": 1865880.10, "pago": 0,          "itens": []},
-  "27255": {"n": 9,  "previsto": 1865880.10, "pago": 0,          "itens": []},
-  "27256": {"n": 0,  "previsto": 0,          "pago": 0,          "itens": []},
-  "27257": {"n": 11, "previsto": 1865880.10, "pago": 0,          "itens": []},
-  "27258": {"n": 10, "previsto": 1865880.10, "pago": 0,          "itens": []}
+  "27253": {
+   "n": 28,
+   "previsto": 1865880.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "ANBAR ENSINO TÉCNICO E SUPERIOR LTDA - FACERES",
+     "fin": "Reduzir filas de espera, acelerar diagnósticos e garantir maior agilidade nos encaminhamentos clínicos e terapêuticos.",
+     "val": 412940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 200000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer políticas públicas voltadas à promoção da igualdade de gênero, inclusão social e combate a todas as formas de discriminação",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecimento de políticas públicas afirmativas que garantam visibilidade, respeito e cidadania à\ncomunidade LGBTQIA+",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar arborização no município",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 100000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aumentar a participação de grupos de Rio Preto e/ou aumentar as apresentações nas periferias da cidade.",
+     "val": 60000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CÁRITAS DIOCESANA DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 52940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Apoiar a realização de atividades culturais, educativas e de conscientização voltadas ao respeito e à inclusão.",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar o acesso da população à música e às ações formativas oferecidas ao longo do ano.",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "LAR SÃO FRANCISCO NA PROVIDÊNCIA DE DEUS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecimento cultural e acessível de nosso município.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Preservar acervo e melhor atendimento ao público",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "COMUNIDADE FRATERNA CANTINHO DE DEUS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO COMBONIANO DE SÃO JUDAS TADEU",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "Instituto Roberto Luiz Kaiser - Roka",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DOS AMIGOS AUTISTAS (AMA)",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "COMUNIDADE SÓ POR HOJE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aprimoramento das condições de bem-estar animal e manutenção das áreas de visitação e educação ambiental",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "PROJETO SOCIAL JUDÔ PARA TODOS",
+     "fin": "Ampliação do acesso ao esporte, melhorar condições de ensino e manutenção do espaço utilizado para a prática do judô",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SÃO JOSÉ DO RIO PRETO VIVA O CENTRO",
+     "fin": "Manutenção das atividades administrativas e operacionais e suporte aos projetos sociais",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria do acolhimento e atendimento médico",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Continuidade da qualidade dos serviços prestados à população",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    }
+   ]
+  },
+  "27258": {
+   "n": 10,
+   "previsto": 1865880.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 300140.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO VITÓRIO LUCCHESI",
+     "fin": "Manutenção de serviços essenciais, o aprimoramento das atividades e a garantia de funcionamento pleno da instituição",
+     "val": 300000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 300000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO RIOPRETENSE DE PROMOCAO DO MENOR ARPROM",
+     "fin": "Execução de serviços de fomento ao emprego, geração de renda e qualificação profissional",
+     "val": 300000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 250000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DOS COMPOSITORES E CANTORES AMADORES (ACCA)",
+     "fin": "Garantir o funcionamento das atividades formativas, a valorização dos profissionais envolvidos e a ampliação\ndas oportunidades de acesso à cultura na comunidade.",
+     "val": 150000.0,
+     "sit": "Impedimento Técnico Insuperável"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO NAIR PEREIRA",
+     "fin": "Ampliar o acesso a serviços de proteção social e fomentar políticas públicas voltadas à inclusão e ao desenvolvimento humano.",
+     "val": 132940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Computadores e TV LED: modernização dos processos administrativos, atendimento e ações educativas e informativas junto à comunidade; \nTenda sanfonada: melhorar campanhas ",
+     "val": 61800.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DOS COMPOSITORES E CANTORES AMADORES (ACCA)",
+     "fin": "Aprimorar a estrutura física e pedagógica da instituição, proporcionando melhores condições\npara o desenvolvimento artístico dos participantes.",
+     "val": 50000.0,
+     "sit": "IMPEDIMENTO TÉCNICO INSUPERÁVEL"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir pleno funcionamento dos equipamentos e maior eficiência no registro e acompanhamento dos atendimentos.",
+     "val": 21000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    }
+   ]
+  },
+  "27250": {
+   "n": 12,
+   "previsto": 1865880.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 500000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO PROJETO RESGATE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 350000.0,
+     "sit": "Impedimento Técnico sanado, recurso disponibilizado"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 250000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Para uso da Guarda Civil Municipal",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO EDUCA ECO",
+     "fin": "Manutenção das ações e serviços do Instituto",
+     "val": 170000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO COMPLEMENTAR DE SERVIÇOS DE SAÚDE NO SUS DE S.J. DO RIO PRETO",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer a estrutura física e operacional, visando assegurar melhores condições de atendimento à população, bem como proporcionar ambiente adequado de trabalho às equip",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 32940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO SOAR",
+     "fin": "Promover a união de cristãos e incentivar doação de doação de alimentos para famílias carentes e ONGs.",
+     "val": 32940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Auxiliar no pagamento da folha dos 3º e 4º Conselho Tutelar",
+     "val": 30000.0,
+     "sit": "IMPEDIMENTO TÉCNICO"
+    }
+   ]
+  },
+  "19428": {
+   "n": 7,
+   "previsto": 1742417.64,
+   "pago": 1706629.84,
+   "itens": [
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 690000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 500000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 300000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 150000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO ESPÍRITA MEIMEI - DISCÍPULOS DO AMOR",
+     "fin": "Distribuição de alimentos",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 32417.64,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar a segurança no trânsito e capacidade de prevenção de acidentes",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    }
+   ]
+  },
+  "23565": {
+   "n": 25,
+   "previsto": 3610715.38,
+   "pago": 1694816.14,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 700000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 400000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 365017.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO VITÓRIO LUCCHESI",
+     "fin": "Ampliar ações de esporte e lazer no município",
+     "val": 360000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Incentivo à prática esportiva, arbitragens, uniformes, premiações, melhorias e campeonatos de futebol",
+     "val": 302417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO EDUCA ECO",
+     "fin": "Manutenção e ampliação das atividades desenvolvidas pelo\nInstituto",
+     "val": 150000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO SEM SEGREDO - ESPORTE, CULTURA, EDUCACAO E SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 150000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "PROJETO DO AMANHÃ",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 135880.1,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E DESENVOLVIMENTO DA ENTIDADE",
+     "val": 130000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO DE ASSISTÊNCIAS SÃO DEOCLECIANO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Incentivo à prática esportiva, arbitragens, uniformes, premiações, melhorias e campeonatos de futebol",
+     "val": 100000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fomentar a cultura em São José do Rio Preto.",
+     "val": 60000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "BISPADO DE RIO PRETO BASILICA MENOR NOSSA SENHORA DA CONCEICAO APARECIDA",
+     "fin": "Promover saúde, bem-estar, integração comunitária e, sobretudo, celebrar Nossa Senhora da Conceição Aparecida",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar a segurança no trânsito e capacidade de prevenção de acidentes",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Organizar o trânsito, melhorar a mobilidade urbana e otimizar o uso do espaço público",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 47400.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Equipamentos para a academia de treinamento da Guarda Civil Municipal",
+     "val": 40000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ARCD - ASSOCIAÇÃO DE REABILITAÇÃO DA CRIANÇA DEFICIENTE",
+     "fin": "MANUTENÇÃO E INCREMENTO DAS ATIVIDADES DA ENTIDADE, VISANDO GARANTIR OS ATENDIMENTOS AOS USUÁRIOS DO SUS",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIACAO RIOPRETENSE DE PROMOCAO DO MENOR ARPROM",
+     "fin": "Ampliação e modernização da infraestrutura tecnológica da instituição",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORIA NA PATRULHA ESCOLAR REALIZADA PELA GCM",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CENTRO INTEGRADO DE ENSINO SUPERIOR RIO PRETO - CIERP",
+     "fin": "Realizar gratuitamente atendimentos externos clínicos e cirurgias eletivas de baixa complexibilidade de cães e gatos",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO PROJETO DO AMANHÃ - SOLO SAGRADO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    }
+   ]
+  },
+  "23566": {
+   "n": 24,
+   "previsto": 3493294.1,
+   "pago": 1471779.31,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 932940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 400000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 305000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO REINTEGRAÇÃO ASSISTENCIAL (ARA)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "OSC - MAQUININHA DO FUTURO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 175000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "CLUBE DOS AMIGOS DOS DEFICIENTES (CAD)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 170000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 150000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIACAO LAR DE MENORES ALARME",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 150000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CENTRO SOCIAL PARQUE ESTORIL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 147100.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CAD - CLUBE DOS AMIGOS DOS DEFICIENTES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100314.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar a segurança no trânsito e capacidade de prevenção de acidentes",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 100000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Reforma da Base nova do Canil da Guarda Civil Municipal",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR ATENDIMENTO À POPULAÇÃO",
+     "val": 52940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria da infraestrutura física da escola para melhor atender alunos, professores e demais frequentadores",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fomentar a cultura em São José do Rio Preto.",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 50000.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2025",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Registro dos atendimentos realizados nas residências e melhorar trabalho interno da Unidade",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecimento de políticas públicas afirmativas que garantam visibilidade, respeito e cidadania à\ncomunidade LGBTQIA+",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 27000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 23000.0,
+     "sit": "Em Execução"
+    }
+   ]
+  },
+  "71": {
+   "n": 12,
+   "previsto": 3610715.38,
+   "pago": 1057601.28,
+   "itens": [
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir o melhor atendimento à população\ndo Bairro Vila Toninho e bairros adjacentes",
+     "val": 872417.64,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO PROJETO AQUÁRIO PESCANDO VIDAS",
+     "fin": "AMPLIAR ESPAÇO FÍSICO PARA ATENDIMENTO DA CRESCENTE DEMANDA DE CRIANÇAS EM FILA DE ESPERA",
+     "val": 672417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO PROJETO AQUÁRIO PESCANDO VIDAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 400000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO PROJETO AQUÁRIO PESCANDO VIDAS",
+     "fin": "Preservação do patrimônio e ampliação das condições de atendimento às famílias e indivíduos beneficiados pelos projetos da entidade,",
+     "val": 367940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria para os usuários",
+     "val": 309383.74,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria para os usuários da Unidade Básica de Saúde Vila\nToninho \"Dr. Gilberto Lopes da Silva\" (UBS Vila Toninho) e ao Pronto Socorro Vila Toninho (PS Vila Toninho)",
+     "val": 300000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria para os usuários",
+     "val": 295556.31,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO PROJETO AQUÁRIO PESCANDO VIDAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 200000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Proporcionar maior segurança a unidade escolar",
+     "val": 125000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria na infraestrutura da unidade escolar",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria para os usuários",
+     "val": 28000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Proporcionar proteção ao sol e as chuvas a todos que frequetam a unidade escolar",
+     "val": 10000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    }
+   ]
+  },
+  "27249": {
+   "n": 15,
+   "previsto": 1865880.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "FUNDO MUNICIPAL DE SAUDE DE SAO JOSE DO RIO PRETO",
+     "fin": "MANUTENÇÃO DAS AÇÕES E SERVIÇOS DO FUNDO",
+     "val": 500000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO REINTEGRAÇÃO ASSISTENCIAL (ARA)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 500000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 250000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 152940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE INTEGRAÇÃO E FORTALECIMENTO VÍNCULO SOCIAL ADONAI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 60000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO SOAR",
+     "fin": "Continuidade às ações desenvolvidas, além de ampliar o alcance do projeto com a abertura de novos horários e turmas, garantindo um atendimento mais inclusivo e especializ",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO EVANGÉLICA LAR DE BETÂNIA",
+     "fin": "Melhoria na infraestrutura da instituição, propiciando um espaço mais adequado e seguro, tanto para os colaboradores quanto aos idosos assistidos.",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ANJO DA GUARDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir melhores condições de trabalho aos agentes e maior eficiência na segurança pública do município.",
+     "val": 41940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "REDE DE APOIO E ASSISTÊNCIA SOCIAL FAMILIA DE DEUS",
+     "fin": "Custear despesas essenciais ao funcionamento do Serviço de Convivência e Fortalecimento de Vínculos - SCFV",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 31000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Continuidade das políticas públicas exercidas pela pasta",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Atender às necessidades de preservação da infraestrutura da corporação e bem-estar dos atiradores.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE INTEGRAÇÃO E FORTALECIMENTO VÍNCULO SOCIAL ADONAI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    }
+   ]
+  },
+  "73": {
+   "n": 31,
+   "previsto": 3710715.37,
+   "pago": 1684835.28,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "FUNDO MUNICIPAL DE SAUDE DE SAO JOSE DO RIO PRETO",
+     "fin": "MANUTENÇÃO DAS AÇÕES E SERVIÇOS DO FUNDO",
+     "val": 400000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 400000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇAO PROJETO DE INCENTIVO AO COOPERATIVISMO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 350000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 262417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "PROJETO DE INCENTIVO AO COOPERATIVISMO - PIC",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 250000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR ESTRUTURA DA SAÚDE PÚBLICA",
+     "val": 250000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "RIO PRETO ESPORTE CLUBE",
+     "fin": "Manutenção das atividades esportivas e sociais desenvolvidas pela entidade",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Ampliação dos serviços prestados e assegurando um ambiente mais seguro, acessível e acolhedor para pessoas com deficiência visual.",
+     "val": 200000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 200000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DA FRATERNIDADE",
+     "fin": "Proporcionar local mais seguro, acolhedor e funcional",
+     "val": 150000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 150000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "COMUNIDADE SÓ POR HOJE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 120000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 65880.09,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Apoiar e fortalecer as\natividades culturais desenvolvidas no município, em especial o custeio e manutenção da Orquestra de Rio\nPreto",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇAO PROJETO DE INCENTIVO AO COOPERATIVISMO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CASA DA FRATERNIDADE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CASA DA FRATERNIDADE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIACAO ARTISTICA E CULTURAL DO INTERIOR PAULISTA AACIP (CAMERATA JOVEM BEETHOVEN)",
+     "fin": "ESTRUTURAR E FORTALECER AS OFICINAS EDUCATIVAS COMPLEMENTARES VISANDO PROMOVER O ENSINO COLETIVO DE MÚSICA COMO PROPOSTA PEDAGÓGICA",
+     "val": 32000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "NAÇÃO VALQUÍRIAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CÁRITAS DIOCESANA DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "CRIAÇÃO E MANUTENÇÃO DE AULAS DE MÚSICA GRATUITAS",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE EURÍPEDES",
+     "fin": "Auxiliar em demandas complexas que extrapolam o atendimento regular oferecido",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "NAÇÃO VALQUÍRIAS",
+     "fin": "Manutenção das atividades da instituição",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO ARTISTICA E CULTURAL DO INTERIOR PAULISTA AACIP (CAMERATA JOVEM BEETHOVEN)",
+     "fin": "Adequar os espaços às normas de segurança e acessibilidade vigentes",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO ESPÍRITA A CAMINHO DA LUZ (AELUZ)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CASA DE EURÍPEDES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "COOPERLAGOS - COOPERATIVA DE COLETA SELETIVA, BENEFICIAMENTO E TRANSFORMAÇÃO DE MATERIAIS ",
+     "fin": "Apoio à Administração Pública Municipal com geração de emprego e renda através do cooperativismo",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASELB - ASSOCIAÇÃO EVANGÉLICA \"LAR DE BETÂNIA\"",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    }
+   ]
+  },
+  "19430": {
+   "n": 20,
+   "previsto": 1865880.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 300000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 250000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 239940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Atendimentos clínicos, diagnósticos, tratamentos e cuidados\nhigiênico-sanitários aos animais domésticos em situação de vulnerabilidade,",
+     "val": 175000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "Aprimorar o atendimento diagnóstico por imagem na referida unidade de saúde,",
+     "val": 143000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ESPÍRITA A CAMINHO DA LUZ (AELUZ)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 140000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BENEFICENTE SOLO SAGRADO (SOS)",
+     "fin": "Manutenção das atividades e melhor atender famílias em\nsituação de risco e vulnerabilidade social",
+     "val": 102940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "GRUPO DE ATENDIMENTO E PREVENÇÃO AO CANCER",
+     "fin": "Manutenção das atividades e melhor atender a população\nem situação de vulnerabilidade social que estão realizando tratamento oncológico",
+     "val": 100000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNDAÇÃO BENEDICTA TERRA PIMENTEL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO MDC",
+     "fin": "Manutenção das atividades e melhor atender famílias em\nsituação de vulnerabilidade social",
+     "val": 45000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO DE ASSISTENCIA A CRIANCA IRMA ESTELITA",
+     "fin": "Garantir um ambiente mais adequado, seguro e acolhedor às crianças atendidas.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhor ordenamento do trânsito, maior segurança aos\npedestres, contribuirá para a valorização do espaço público",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar o conhecimento técnico e o alinhamento às diretrizes nacionais e municipais sobre a temática, favorecendo a construção de uma rede de atenção qualificada e humani",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BEM COMUM",
+     "fin": "Manutenção das atividades e melhor atender famílias em\nsituação de vulnerabilidade social",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "Manutenção das atividades e melhor atender à população\nem tratamento de doenças graves.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE INTEGRAÇÃO E FORTALECIMENTO VÍNCULO SOCIAL ADONAI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ESCOLA VIVA BEATRIZ DA CONCEIÇÃO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "REDE DE APOIO E ASSISTÊNCIA SOCIAL FAMILIA DE DEUS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    }
+   ]
+  },
+  "46": {
+   "n": 56,
+   "previsto": 3610715.39,
+   "pago": 1613664.65,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar capacidade operacional da unidade",
+     "val": 300000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 250000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 250000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecimento de atividades culturais de rua",
+     "val": 142417.65,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aumentar a participação de grupos de Rio Preto e/ou aumentar as apresentações nas periferias da cidade.",
+     "val": 140000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "REFORÇAR E EXPANDIR A TRADIÇÃO DO CARNAVAL DE RUA EM SÃO JOSÉ DO RIO PRETO",
+     "val": 140000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 132417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Qualificar os serviços oferecidos e\nampliar a capacidade de atendimento",
+     "val": 106000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Maior agilidade e precisão nos atendimentos de urgência e emergência, ampliando a capacidade diagnóstica da unidade",
+     "val": 105000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aumentar a participação de grupos de Rio Preto e/ou aumentar as apresentações nas periferias da cidade.",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 90000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 80940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 80000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer a infraestrutura da unidade e ampliar sua capacidade de atendimento",
+     "val": 66000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO COMBONIANO DE SÃO JUDAS TADEU",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 60000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 60000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Proteção e aprimoramento das atividades desenvolvidas com os alunos.",
+     "val": 52000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO COMBONIANO DE SÃO JUDAS TADEU",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer e valorizar a cultura urbana como expressão artística e social das periferias",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Incentivar a produção musical brasileira",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer políticas públicas voltadas à garantia de direitos, à equidade de gênero e ao bem-estar das mulheres no município.",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Desenvolvimento de ações e atividades geridas pelo Conselho Municipal Afro",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CÁRITAS DIOCESANA DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIACAO RIOPRETENSE DE PROMOCAO DO MENOR ARPROM",
+     "fin": "Ampliação e modernização da infraestrutura tecnológica da instituição",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "COOPERLAGOS - COOPERATIVA DE COLETA SELETIVA, BENEFICIAMENTO E TRANSFORMAÇÃO DE MATERIAIS ",
+     "fin": "Apoio à Administração Pública Municipal com geração de emprego e renda através do cooperativismo",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "SERVIÇOS SOCIAL VITÓRIO LUCCHESI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Valorizar as tradições dos povos e comunidades de matrizes africanas",
+     "val": 40000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "Projeto Educacional Profissionalizante do Adolescente (Proepad)",
+     "fin": "OFERTAR À CRIANÇA E AO ADOLESCENTE ESPAÇO DE CONVÍVIO E DESENVOLVIMENTO DE HABILIDADES, DE ACORDO COM SEU CICLO DE VIDA, INCENTIVANDO A SOCIALIZAÇÃO E A CONVIVÊNCIA COMUN",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Qualificar o registro das atividades em campo, agilizar o\nmonitoramento das ações de vigilância e aprimorar o atendimento à população",
+     "val": 35000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 35000.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Manutenção dos serviços e para a continuidade das ações de reabilitação e promoção da autonomia das pessoas com deficiência visual.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecimento de políticas públicas afirmativas que garantam visibilidade, respeito e cidadania à\ncomunidade LGBTQIA+",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Valorizar, preservar e difundir a tradição cultural de Santos Reis",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "GRÊMIO RECREATIVO CULTURAL ESCOLA DE SAMBA IMPERATRIZ RIO-PRETENSE",
+     "fin": "Estímulo à tradição das escolas de samba.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO VITÓRIO LUCCHESI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SÃO JOSÉ DO RIO PRETO VIVA O CENTRO",
+     "fin": "Viabilizar a manutenção, revitalização e dinamização do Centro, tornando-o um espaço mais atrativo, sustentável e vivo para toda a população.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir um ambiente mais acolhedor, seguro e adequado para o desenvolvimento das atividades escolares",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas de conforto térmico para estudantes e profissionais da educação.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas de conforto térmico para estudantes e profissionais da educação.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "GLAUCIA REGINA RAMIRES - ME",
+     "fin": "Viabilizar ações que promovam os direitos e o bem-estar das mulheres em nosso município.",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "P. M. CARNEIRO - PADARIA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecimento de políticas públicas afirmativas que garantam visibilidade, respeito e cidadania à\ncomunidade LGBTQIA+",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Informar e quebrar estereótipos sobre a cultura dos povos e comunidades tradicionais de matrizes africanas.",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Valorizar e preservar a cultura de Santos\nReis",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO COMPLEMENTAR DE SERVIÇOS DE SAÚDE NO SUS DE S.J. DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASELB - ASSOCIAÇÃO EVANGÉLICA \"LAR DE BETÂNIA\"",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 15000.0,
+     "sit": "Finalizada"
+    }
+   ]
+  },
+  "27252": {
+   "n": 28,
+   "previsto": 1865880.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aumentar a oferta de exames, reduzir significativamente a fila de espera por ultrassonografia e agilizar o diagnóstico e o tratamento dos pacientes, garantindo maior efic",
+     "val": 250000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO, MANUTENÇÃO E FORTALECIMENTO DO SUAS",
+     "val": 110000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar a capacidade diagnóstica",
+     "val": 105000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 100000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Ampliação dos serviços prestados e assegurando um ambiente mais seguro, acessível e acolhedor para pessoas com deficiência visual.",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "Ampliar a capacidade de diagnóstico e tratamento, reduzir o tempo de espera para consultas e cirurgias, e melhorar a resolutividade e a humanização do atendimento prestad",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Patrulhamento da Guarda Civil Municipal",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Substituição de equipamentos obsoletos, melhoria da qualidade sonora, aumento da eficiência operacional e a ampliação da participação da Banda em eventos oficias e comuni",
+     "val": 70000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 60000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Modernização tecnológica da UBS Santo\nAntônio, visando equipar os agentes de saúde com ferramentas que otimizem suas atividades em campo.",
+     "val": 57600.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ANJO DA GUARDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 52940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50340.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Ampliar a capacidade de atendimento e reduzir a demanda reprimida por esses procedimentos na rede pública de saúde.",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir o custeio das ações necessárias à execução do Calendário Municipal de Campanhas em Saúde",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Otimizar a gestão e fortalecer a capacidade operacional da Secretaria",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ATHLETICO RIOPRETENSE",
+     "fin": "Manutenção das atividades da instituição",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE INTEGRAÇÃO E FORTALECIMENTO VÍNCULO SOCIAL ADONAI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ações de proteção, cuidado, atendimento e promoção da saúde animal no Município de São José do Rio Preto",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DOS AMIGOS AUTISTAS (AMA)",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Desenvolvimento das ações formativas e sociais realizadas pela instituição",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar a segurança no trânsito e capacidade de prevenção de acidentes",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO REINTEGRAÇÃO ASSISTENCIAL (ARA)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Manutenção das atividades administrativas, operacionais e culturais da Secretaria",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BENEFICENTE SOLO SAGRADO (SOS)",
+     "fin": "Ampliar o alcance de suas ações e aprimorar a qualidade dos atendimentos realizados",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    }
+   ]
+  },
+  "53": {
+   "n": 41,
+   "previsto": 3610715.39,
+   "pago": 1583126.6,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "PARA MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 700000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aqisição de mobiliário, equipamentos médico hospitalar e de informática, para melhor atender a população",
+     "val": 436400.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 242417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "PARA MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "PARA MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 180000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BENEFICENTE DOS VINTE E CINCO",
+     "fin": "STRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 160000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 158140.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "PARA MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 142940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 130000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO BENEFICENTE DOS VINTE E CINCO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 80000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CENTRO SOCIAL PARQUE ESTORIL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 80000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO EDUCACIONAL CASA DA CRIANÇA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 80000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "PARA MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 74800.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 73525.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO LAR DE MENORES ALARME",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 60000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "Associação dos Ostomizados da Região de Rio Preto - AORP",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO ESPÍRITA A CAMINHO DA LUZ (AELUZ)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 42417.65,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO ESPÍRITA MEIMEI - DISCÍPULOS DO AMOR",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 41475.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Proporcionar melhor conforto térmico aos alunos e professores",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Proporcionar melhor conforto térmico aos alunos e professores",
+     "val": 40000.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 35000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar acervo e apoiar o desenvolvimento educacional dos alunos.",
+     "val": 32200.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "Associação dos Ostomizados da Região de Rio Preto - AORP",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DOS AMIGOS AUTISTAS (AMA)",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "Associação dos Ostomizados da Região de Rio Preto - AORP",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CENTRO INTEGRADO DE ENSINO SUPERIOR RIO PRETO - CIERP",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Promover saúde, bem-estar, integração comunitária",
+     "val": 25000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "Sociedade Amigos do Bairro Parque Estoril",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 20748.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar acervo e apoiar o desenvolvimento educacional dos alunos.",
+     "val": 15000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aqisição de mobiliário, equipamentos médico hospitalar e de informática, para melhor atender a população",
+     "val": 13600.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2025",
+     "ben": "Sociedade Amigos do Bairro Parque Estoril",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 9252.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Proporcionar melhor conforto térmico aos alunos e professores",
+     "val": 7800.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Proporcionar melhor conforto térmico aos alunos e professores",
+     "val": 5600.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Proporcionar melhor conforto térmico aos alunos e professores",
+     "val": 4400.0,
+     "sit": "Finalizada"
+    }
+   ]
+  },
+  "23568": {
+   "n": 37,
+   "previsto": 3610715.38,
+   "pago": 1670073.51,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Ampliação dos serviços prestados e assegurando um ambiente mais seguro, acessível e acolhedor para pessoas com deficiência visual.",
+     "val": 800000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 732417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 280417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 170000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aprimorar o atendimento à saúde da população.",
+     "val": 140000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNDAÇÃO BENEDICTA TERRA PIMENTEL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Aprimorar a gestão das informações, otimizar o trabalho das equipes e garantir um atendimento mais eficiente",
+     "val": 67940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Maior agiiidade e eficiência nos registros e atendimento e mais conforto aos usuários e profissionais da saúde",
+     "val": 65000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 60000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CLÍNICA DE BEBÊS DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "FUNDAÇÃO BENEDICTA TERRA PIMENTEL",
+     "fin": "PARA AMPLIAÇÃO DO TRABALHO REALIZADO PELA INSTITUIÇÃO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO SOCIAL, CULTURAL, EDUCACIONAL, E BENEFICENTE VIDA NOVA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "A OSC não apresentou documentação"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 40000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir segurança do ambiente escolar e maior tranquilidade aos pais",
+     "val": 37600.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ALCANCE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 35000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO DE ASSISTENCIA A CRIANCA IRMA ESTELITA",
+     "fin": "PRESERVAÇÃO DO PRÉDIO E MELHORA NA QUALIDADE DOS SERVIÇOS PRESTADOS",
+     "val": 35000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO DE PAIS E MESTRES DA ESCOLA MUNICIPAL DR. CENOBELINO DE BARROS SERRA",
+     "fin": "PRESERVAR ESTRUTURA FÍSICA PARA ASSEGURAR AMBIENTE ADEQUADO AOS ALUNOS",
+     "val": 32940.05,
+     "sit": "Secretaria gestora solicitou alteração do objeto"
+    },
+    {
+     "ano": "2026",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ALCANCE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SÃO JOSÉ DO RIO PRETO VIVA O CENTRO",
+     "fin": "Viabilizar a manutenção, revitalização e dinamização do Centro, tornando-o um espaço mais atrativo, sustentável e vivo para toda a população.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "FORTALECER AS ATIVIDADES DESENVOLVIDAS PELA BANDA DA POLÍCIA MILITAR",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ATHLETICO RIOPRETENSE",
+     "fin": "Manutenção das atividades desenvolvidas",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Manutenção da unidade com atendimento eficiente aos atiradores",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "CÁRITAS DIOCESANA DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar conforto dos estudantes e professores, para melhor aproveitamento das aulas",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Previnir invasões e acidentes, oferecer espaço mais seguro para as atividades recreativas ao ar livre",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA PARA MELHOR ATENDER OS ALUNOS E PROFISSIONAIS DA ESCOLA",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar as condições do local",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir segurança do ambiente escolar e maior tranquilidade aos pais",
+     "val": 7400.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar conforto dos estudantes e professores, para melhor aproveitamento das aulas",
+     "val": 7000.0,
+     "sit": "Finalizada"
+    }
+   ]
+  },
+  "27256": {
+   "n": 0,
+   "previsto": 0.0,
+   "pago": 0.0,
+   "itens": []
+  },
+  "27257": {
+   "n": 11,
+   "previsto": 1865880.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DE ASSISTÊNCIAS SÃO DEOCLECIANO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 570000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 400000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria no atendimento à população",
+     "val": 163000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria no atendimento à população",
+     "val": 150940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 150000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliação das atividades de Marketing",
+     "val": 127940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 100000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITA-LAR NOSSA SENHORA DAS GRACAS NA PROV. DE DEUS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 69000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO LAR DE MENORES ALARME",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Desenvolvimento de ações de combate a incêndios, resgate e salvamento na cidade de São José do Rio Preto.",
+     "val": 35000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    }
+   ]
+  },
+  "27251": {
+   "n": 31,
+   "previsto": 1865864.08,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 302932.04,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir o armazenamento seguro e adequado das vacinas",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 180000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "RIO PRETO WEILERS",
+     "fin": "MANUTENÇÃO DO PROJETO",
+     "val": 150000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Garantir o atendimento gratuito a pessoas com deficiência visual, desde crianças até idosos, oferecendo serviços médicos, reabilitação e próteses oculares, além de atendi",
+     "val": 140000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 92932.04,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "Pagamento dos profissionais de Recursos\nHumanos, responsáveis pela gestão e capacitação da equipe e pela manutenção de um ambiente de trabalho eficiente e acolhedor, gara",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "Climatização do refeitório, permitindo condições adequadas de temperatura durante as refeições e demais atividades realizadas no local",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO DAS DAMAS DE CARIDADE - LAR DE FATIMA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "Fortalecer a infraestrutura da instituição, assegurando melhor qualidade os serviços prestados, eficiência operacional e conforto aos idosos acolhidos",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ESPÍRITA MEIMEI - DISCÍPULOS DO AMOR",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE EURÍPEDES",
+     "fin": "Modernizar e equipar adequadamente as instalações da instituição",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "CENTRO SOCIAL PARQUE ESTORIL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "COMUNIDADE SÓ POR HOJE",
+     "fin": "Assegurar a continuidade e a\nestabilidade das atividades da entidade, permitindo a manutenção de um local adequado, acessível e seguro para a realização dos atendimentos.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "FRATERNA ASSOCIAÇÃO EDUCACIONAL DO ESPIRÍTO PELA LIBERDADE, IGUALDADE E FRATERNIDADE",
+     "fin": "Continuidade e a qualidade das ações educacionais e\nsocioassistenciais desenvolvidas pela instituição,",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "Preservar a estrutura da\ninstituição, prevenir deteriorações e assegurar condições dignas de convivência,",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO SOAR",
+     "fin": "Continuidade das ações socioeducativas, bem como o pleno funcionamento das oficinas e dos atendimentos oferecidos à\ncomunidade",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO EVANGÉLICA LAR DE BETÂNIA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "Modernizar e adequar as condições de hospedagem",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "SERVIÇO SOCIAL MARIA PEREGRINA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "NAÇÃO VALQUÍRIAS",
+     "fin": "Ampliar o alcance e a efetividade das ações desenvolvidas pela instituição,",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Transformar o ambiente escolar em um espaço mais lúdico, acolhedor e estimulante, favorecendo a criatividade, a interação e o engajamento dos alunos nas atividades\npedagó",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir maior proteção, agilidade e qualidade nas intervenções",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "FULBEAS - FUNDACAO LIBERO BADARO DE ENSINO,ASSISTENCIA SOCIAL E CULTURA",
+     "fin": "Manter a qualidade das ações educacionais e sociais desenvolvidas pela Fundação",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar as oportunidades de formação profissional e o acesso ao mercado de trabalho",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SÃO JOSÉ DO RIO PRETO VIVA O CENTRO",
+     "fin": "Revitalizar e melhorar O Centro da cidade de São José do Rio Preto",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir a continuidade e o aprimoramento das atividades socioeducativas e de apoio psicossocial promovidas pela Secretaria",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "Manutenção das atividades assistenciais, administrativas e terapêuticas",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "Ampliação dos serviços especializados em oftalmologia, aumentando a capacidade de diagnóstico e tratamento,\nreduzindo o tempo de espera para consultas e cirurgias",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ESPÍRITA PAULO DE TARSO",
+     "fin": "Garantir melhores condições de permanência e aproveitamento dos estudantes durante as atividades formativas",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    }
+   ]
+  },
+  "23569": {
+   "n": 42,
+   "previsto": 3603097.74,
+   "pago": 1701340.07,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 500000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "AQUISIÇÃO DE UM VIDEOLARINGOSCÓPIO NASOFIBROSCÓPIO PARA CME - CENTRO MÉDICO DE ESPECIALIDADES",
+     "val": 400000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 300000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar o número de visitas domiciliares (6o EMAD), aprimorar a qualidade do serviço prestado, reduzir custos com remoções e assegurar um atendimento mais\nhumanizado e co",
+     "val": 200000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "ABEQ - ASSOCIAÇÃO BENEFICENTE DO EVANGELHO QUADRANGULAR",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 150000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 150000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BENEFICENTE SOLO SAGRADO (SOS)",
+     "fin": "Manutenção de serviços essenciais da instituição",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "PROJETO EDUCACIONAL PROFISSIONALIZANTE DO ADOLESCENTE (PROEPAD)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "PROEPAD - PROJETO EDUCACIONAL PROFISSIONALIZANTE DO ADOLESCENTE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 100000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "Manutenção de uma nutrição adequada",
+     "val": 90000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 90000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "AQUISIÇÃO DE DESFIBRILADORES - DEA\" DESTINADO AO SAMU/REGULAÇÃO",
+     "val": 70000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE INTEGRAÇÃO E FORTALECIMENTO VÍNCULO SOCIAL ADONAI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 67940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "CASA DE INTEGRAÇÃO E FORTALECIMENTO VÍNCULO SOCIAL ADONAI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 64000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 60000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 60000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Registro dos atendimentos realizados nas residências e melhorar trabalho interno da Unidade",
+     "val": 52940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "LAR DE BETÂNIA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "COMUNIDADE FRATERNA CANTINHO DE DEUS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Manutenção e aprimoramento das atividades esportivas, administrativas e operacionais da pasta",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Reduzir acidentes, organizar o tráfego e garantir maior segurança e conforto aos cidadãos.",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar a capacidade e agilidade do atendimento, otimizar os processos de agendamento, prontuário eletrônico e monitoramento de indicadores de saúde",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO EVANGÊLICA LAR DE BETÂNIA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO DOS AMIGOS DA CRIANCA COM CANCER OU CARDIOPATIA - AMICC",
+     "fin": "Manutenção, e continuidade aos atendimentos realizados a crianças e adolescentes em tratamento oncológico ou cardiopatias",
+     "val": 40000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 40000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO SOAR",
+     "fin": "Ampliação cultural como forma de inclusão, integração social e democratização",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ARCD - ASSOCIAÇÃO DE REABILITAÇÃO DA CRIANÇA DEFICIENTE",
+     "fin": "MANUTENÇÃO E INCREMENTO DAS ATIVIDADES DA ENTIDADE, VISANDO GARANTIR OS ATENDIMENTOS AOS USUÁRIOS DO SUS",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CAEEC - CENTRO DE ATENDIMENTO EDUCACIONAL ESPECIALIZADO E CONVIVÊNCIA - PROF. ODETE NASSIF",
+     "fin": "Desenvolvimento de atividades de convivência oferecendo fortalecimento de vínculos através de oficinas a serem realizadas todos os dias da semana no prédio do CAEEC",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 35000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30800.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO RECOMEÇAR EM AMOR",
+     "fin": "Manutenção, e continuidade aos atendimentos realizados a\npacientes oncológicos",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Para utilização dos computadores adquiridos",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 22417.64,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    }
+   ]
+  },
+  "24556": {
+   "n": 44,
+   "previsto": 3660715.44,
+   "pago": 1561551.99,
+   "itens": [
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 482849.79,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "RIO PRETO ESPORTE CLUBE",
+     "fin": "PROJETO A SER DESENVOLVIDO COM CRIANÇAS E OS ADOLESCENTES QUE FREQUENTAM A ESCOLINHA DE FUTEBOL DO RIO PRETO ESPORTE CLUBE",
+     "val": 422417.67,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Ampliação dos serviços prestados e assegurando um ambiente mais seguro, acessível e acolhedor para pessoas com deficiência visual.",
+     "val": 242940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "RIO PRETO ESPORTE CLUBE",
+     "fin": "Manutenção das atividades esportivas e sociais desenvolvidas pela entidade",
+     "val": 222940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "AMPLIAR OFERTA DE SERVIÇOS ESPECIALIZADOS",
+     "val": 200000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRTURA DAS UBSs ENG SCHMITT E TALHADO",
+     "val": 149567.88,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura e ampliar capacidade de atendimento das unidades de sáude",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura e ampliar capacidade de atendimento da unidade de sáude",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ATIVIDADES ESPORTIVAS",
+     "val": 100000.0,
+     "sit": "Impedimento Técnico sanado, recurso disponibilizado"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Realização da Copa Matsumi de Karatê, despesas da equipe de Judô/SMEL representando o município na XXIV Campeonato Brasileiro de Karatê, realização do Exame de Graduação ",
+     "val": 100000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 80000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIACAO RECREATIVA CULTURAL E CARNAVALESCA BLOCO TOCA DA CARLOTA",
+     "fin": "REFORÇAR E EXPANDIR A TRADIÇÃO DO CARNAVAL DE RUA EM SÃO JOSÉ DO RIO PRETO",
+     "val": 80000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura e ampliar capacidade de atendimento da unidade de sáude",
+     "val": 60000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 60000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO RIOPRETENSE DE PROMOCAO DO MENOR ARPROM",
+     "fin": "Execução de serviços de fomento ao emprego, geração de renda e qualificação profissional",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO EDUCA ECO",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIACAO RIOPRETENSE DE PROMOCAO DO MENOR ARPROM",
+     "fin": "Execução de serviços de fomento ao emprego, geração de renda e qualificação profissional",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ARCD - ASSOCIAÇÃO DE REABILITAÇÃO DA CRIANÇA DEFICIENTE",
+     "fin": "MANUTENÇÃO E INCREMENTO DAS ATIVIDADES DA ENTIDADE, VISANDO GARANTIR OS ATENDIMENTOS AOS USUÁRIOS DO SUS",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO COMPLEMENTAR DE SERVIÇOS DE SAÚDE NO SUS DE S.J. DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Manutenção dos serviços realizados",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar a segurança no trânsito e capacidade de prevenção de acidentes",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Treinamento e atividades para os jovens alistados no município",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SÃO JOSÉ DO RIO PRETO VIVA O CENTRO",
+     "fin": "Recuperação econômica e estrutural do Centro da Cidade",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DOS AMIGOS AUTISTAS (AMA)",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO REINTEGRAÇÃO ASSISTENCIAL (ARA)",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO EDUCACIONAL FRANCISCO DE ASSIS",
+     "fin": "Modernizar e equipar adequadamente as instalações da instituição",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 30000.0,
+     "sit": "Emenda aprovada e concluída"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "Manutenção da qualidade e humanização no atendimento",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITA-LAR NOSSA SENHORA DAS GRACAS NA PROV. DE DEUS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "Casa do Caminho Domingas Ricci do Amaral - ALBERGUE NOTURNO PROTETOR DOS POBRES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "FULBEAS - FUNDACAO LIBERO BADARO DE ENSINO,ASSISTENCIA SOCIAL E CULTURA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ENTIDADE COR & ARTE",
+     "fin": "Fomentar a cultura nordestina em nossa cidade",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO COMBONIANO DE SÃO JUDAS TADEU",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASELB - ASSOCIAÇÃO EVANGÉLICA \"LAR DE BETÂNIA\"",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 30000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "COMUNIDADE SÓ POR HOJE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO SOAR",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    }
+   ]
+  },
+  "15231": {
+   "n": 74,
+   "previsto": 3610715.38,
+   "pago": 1004497.34,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Ampliar capacidade operacional da unidade",
+     "val": 300000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA",
+     "val": 170000.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA DA UNIDADE BÁSICA DE SAÚDE DA FAMÍLIA BAIRRO SÃO FRANCISCO",
+     "val": 140000.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Valorizar a cultura popular, preservar tradições regionais e fortalecer a identidade cultural do município",
+     "val": 132940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria da mobilidade urbana e da segurança\nviária.",
+     "val": 110000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR INFRAESTRUTURA",
+     "val": 105000.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria da estrutura física e do atendimento à população.",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ABEJEM - ASSOCIAÇÃO BENEFICIENTE JERÔNIMO MENDONÇA",
+     "fin": "Manutenção de Grupos de Serviço de Convivência e Fortalecimento de Vínculos com adultos e idosos.",
+     "val": 100000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "CÁRITAS DIOCESANA DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 80000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 70000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Manutenção das ações e serviços do Instituto",
+     "val": 70000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer a estrutura física e operacional da unidade",
+     "val": 70000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BENEFICENTE JERONIMO MENDONÇA (ABEJEM)",
+     "fin": "Continuidade e o fortalecimento das ações realizadas pela instituição",
+     "val": 60000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 55000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 55000.0,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhoria da estrutura física e do atendimento à população.",
+     "val": 52940.05,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "CASA DE EURÍPEDES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 52000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ARCD - ASSOCIAÇÃO DE REABILITAÇÃO DA CRIANÇA DEFICIENTE",
+     "fin": "MANUTENÇÃO E INCREMENTO DAS ATIVIDADES DA ENTIDADE, VISANDO GARANTIR OS ATENDIMENTOS AOS USUÁRIOS DO SUS",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "FAUNA (FRANCISCO DE ASSIS UNIAO PROTETORA DOS ANIMAIS)",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASELB - ASSOCIAÇÃO EVANGÉLICA \"LAR DE BETÂNIA\"",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 48708.82,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE EURÍPEDES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 40000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BENEFICENTE DOS VINTE E CINCO",
+     "fin": "Manutenção e ampliação dos\natendimentos do Projeto Social de Hipoterapia e Equitação Terapêutica",
+     "val": 40000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Valorizar a música raiz e a preservação da cultura de Santos Reis.",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura garantindo um\nambiente de aprendizagem seguro, eficiente e motivador.",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ABVIC - AMIGOS DA HIPPO - ASSOCIAÇÃO BENEFICENTE DOS VINTE E CINCO",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 38708.82,
+     "sit": "Impedida Tecnicamente - VETADO - Lei nº 14.758/2024 - LOA 2025"
+    },
+    {
+     "ano": "2025",
+     "ben": "CÁRITAS DIOCESANA DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 36000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO PROJETO DO AMANHÃ - SOLO SAGRADO",
+     "fin": "Preservação do patrimônio e para a ampliação das condições de atendimento às famílias e indivíduos beneficiados pelos projetos da entidade",
+     "val": 35000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Realização de reparos, adequações e demais serviços necessários à manutenção, conservação e melhoria da estrutura física da unidade escolar.",
+     "val": 35000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DOS AMIGOS AUTISTAS (AMA)",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO EDUCACIONAL FRANCISCO DE ASSIS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ENTIDADE LAR MARIA JOSÉ DE JESUS",
+     "fin": "Melhorar o atendimento e a qualidade dos serviços prestados aos assistidos",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO MADRE TEREZA DE CALCUTÁ",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ESPÍRITA MEIMEI - DISCÍPULOS DO AMOR",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO RECOMEÇAR EM AMOR",
+     "fin": "Fortalecer as atividades socioeducativas\nrealizadas pela entidade",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "Corpo de Bombeiros da Policia Militar do Estado de Sao Paulo - 13º Grupamento de Bombeiros",
+     "fin": "Ampliar a capacidade operacional do Grupamento, garantindo maior eficiência, agilidade e segurança nas ocorrências.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorias estruturais e apoio à estruturação de diversas modalidades esportivas",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "FAUNA (FRANCISCO DE ASSIS UNIAO PROTETORA DOS ANIMAIS)",
+     "fin": "Garantir melhores condições de manutenção,\nalimentação e tratamento dos animais",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "PARÓQUIA N. S. CZESTOCHOWA",
+     "fin": "Manutenção, conservação e melhoria da estrutura física da unidade escolar",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Realização de reparos, adequações e demais serviços necessários à manutenção, conservação e melhoria da estrutura física da unidade escolar.",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Realização de reparos, adequações e demais serviços necessários à manutenção, conservação e melhoria da estrutura física da unidade escolar.",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer a estrutura física e operacional da unidade",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer a estrutura física e operacional da unidade",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer a estrutura física e operacional da unidade",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fortalecer a estrutura física e operacional da unidade",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR ACESSIBILIDADE AOS SERVIÇOS DE SAÚDE",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ATENDER A UNIDADE BÁSICA DE SAÚDE DA FAMILIA DO BAIRRO CIDADE JARDIM",
+     "val": 30000.0,
+     "sit": "Em Execução"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Transformar as comunidades, promovendo a sustentabilidade e o bem-estar coletivo",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MELHORAR TRÁFEGO E PREVENÇÃO DE ACIDENTES",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "COOPERLAGOS - COOPERATIVA DE COLETA SELETIVA, BENEFICIAMENTO E TRANSFORMAÇÃO DE MATERIAIS ",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Desenvolvimento da Pessoa Idosa",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CÁRITAS PAROQUIAL NOSSA SENHORA DE CZESTOCHOVA",
+     "fin": "Melhorias na Escola Amélia Balbo Sacchetin",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO DOS AMIGOS AUTISTAS (AMA)",
+     "fin": "ATENDER ÀS NECESSIDADES PEDAGÓGICAS E ADMINISTRATIVAS, OTIMIZANDO OS PROCESSOS DE IMPRESSÃO E DIGITALIZAÇÃO; CLIMATIZAR O REFEITÓRIO, PROPORCIONANDO UM AMBIENTE MAIS CONF",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ABC - ASSOCIAÇÃO BEM COMUM",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO PROJETO DO AMANHÃ - SOLO SAGRADO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "LAR MARIA JOSÉ DE DEUS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO COMBONIANO DE SÃO JUDAS TADEU",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO MADRE TEREZA DE CALCUTÁ",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO CUMPRIR SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Não realizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CÁRITAS DIOCESANA DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 29000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO ESPÍRITA MEIMEI - DISCÍPULOS DO AMOR",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 22500.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura garantindo um\nambiente de aprendizagem seguro, eficiente e motivador.",
+     "val": 22000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura garantindo um\nambiente de aprendizagem seguro, eficiente e motivador.",
+     "val": 21000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura garantindo um\nambiente de aprendizagem seguro, eficiente e motivador.",
+     "val": 9000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura garantindo um\nambiente de aprendizagem seguro, eficiente e motivador.",
+     "val": 8000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO ESPÍRITA MEIMEI - DISCÍPULOS DO AMOR",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 7500.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CASA DE EURÍPEDES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 5417.64,
+     "sit": "Finalizada"
+    }
+   ]
+  },
+  "77": {
+   "n": 67,
+   "previsto": 3610715.38,
+   "pago": 1744835.28,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "Projeção de aumento da incidência de novos casos de câncer no município de São José do Rio Preto e região, bem como pela necessidade de ampliação da capacidade de atendim",
+     "val": 300000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 152417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ARCD - ASSOCIAÇÃO DE REABILITAÇÃO DA CRIANÇA DEFICIENTE",
+     "fin": "MANUTENÇÃO E INCREMENTO DAS ATIVIDADES DA ENTIDADE, VISANDO GARANTIR OS ATENDIMENTOS AOS USUÁRIOS DO SUS",
+     "val": 120000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO RENASCER",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "APAE ASSOCIACAO DE PAIS EAMIGOS DOS EXCEPCIONAIS",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 120000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 90000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASELB - ASSOCIAÇÃO EVANGÉLICA \"LAR DE BETÂNIA\"",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Atender às necessidades de preservação da infraestrutura da corporação e bem-estar dos atiradores.",
+     "val": 50000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "LAR DE BETÂNIA",
+     "fin": "Melhoria no atendimento prestado e ampliação da capacidade de acolhimento",
+     "val": 45000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO LAR ESPERANÇA",
+     "fin": "Melhoria no atendimento prestado e ampliação da capacidade de acolhimento",
+     "val": 45000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO E OFICINA DE CARIDADE SANTA RITA DE CÁSSIA (LAR DE IDOSOS DE ENGENHEIRO SCHMITT",
+     "fin": "Melhoria no atendimento prestado e ampliação da capacidade de acolhimento",
+     "val": 45000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "LAR SAO VICENTE DE PAULO DE SAO JOSE DO RIO PRETO",
+     "fin": "Melhoria no atendimento prestado e ampliação da capacidade de acolhimento",
+     "val": 45000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BENEFICENTE DOS VINTE E CINCO",
+     "fin": "STRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO EDUCACIONAL FRANCISCO DE ASSIS - UNIDADE I",
+     "fin": "PROMOVER INTEGRAÇÃO DO USUÁRIO NO MUNDO DE TRABALHO E INDEPENDÊNCIA FINANCEIRA",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "AOA - ASSOCIAÇÃO OPERAÇÃO ALEGRIA - CASA DE ACOLHIMENTO THALES CARVALHO ZACHARIAS",
+     "fin": "Melhoria no atendimento prestado e ampliação da capacidade de acolhimento",
+     "val": 40000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIACAO LAR DE MENORES ALARME",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO EDUCACIONAL FRANCISCO DE ASSIS - UNIDADE I",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ABVIC - AMIGOS DA HIPPO - ASSOCIAÇÃO BENEFICENTE DOS VINTE E CINCO",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 40000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO DOS AMIGOS DA CRIANCA COM CANCER OU CARDIOPATIA - AMICC",
+     "fin": "Ampliação e melhoria do atendimento ofertado",
+     "val": 32940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 32940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "CENTRO SOCIAL PARQUE ESTORIL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 32417.64,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO LAR DE MENORES ALARME",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ALMA AUTISTA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DOS AMIGOS AUTISTAS (AMA)",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO BEM COMUM",
+     "fin": "Manutenção dos serviços ofertados",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNDAÇÃO BENEDICTA TERRA PIMENTEL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "COMUNIDADE FRATERNA CANTINHO DE DEUS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CAPACC - CASA DE APOIO AO PACIENTE ADULTO CARENTE COM CANCER DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "CASA DE EURÍPEDES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "CENTRO SOCIAL PARQUE ESTORIL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "COMUNIDADE SOLIDARIEDADE SOL",
+     "fin": "Melhoria no atendimento prestado e ampliação da capacidade de acolhimento",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO DAS DAMAS DE CARIDADE - LAR DE FATIMA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "FRATERNA ASSOCIAÇÃO EDUCACIONAL DO ESPIRÍTO PELA LIBERDADE, IGUALDADE E FRATERNIDADE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO EDUCACIONAL FRANCISCO DE ASSIS - UNIDADE II",
+     "fin": "PROMOVER INTEGRAÇÃO DO USUÁRIO NO MUNDO DE TRABALHO E INDEPENDÊNCIA FINANCEIRA",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "ESCOLA VIVA BEATRIZ DA CONCEIÇÃO",
+     "fin": "Reduzir conflitos e estabelecer a comunicação não violenta entre os jovens nas Escolas.",
+     "val": 30000.0,
+     "sit": "Impedimento Técnico sanado, recurso disponibilizado"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO COMBONIANO DE SÃO JUDAS TADEU",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Manutenção da unidade com atendimento eficiente aos atiradores",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "Instituto Roberto Luiz Kaiser - Roka",
+     "fin": "PARA IDENTIFICAR SINAiS DE VIOLÊNCIA E ACOLHIMENTEO DE VÍTIMAS",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIACAO RIOPRETENSE DE PROMOCAO DO MENOR ARPROM",
+     "fin": "Execução de serviços de fomento ao emprego, geração de renda e qualificação profissional",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "FULBEAS - FUNDACAO LIBERO BADARO DE ENSINO,ASSISTENCIA SOCIAL E CULTURA",
+     "fin": "Manter a qualidade das ações educacionais e sociais desenvolvidas pela Fundação",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Investimento em formação permanente impactando diretamente na qualidade do cuidado ofertado à população",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO ESPÍRITA RANCHO DE LUZ PAULINO GARCIA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2025",
+     "ben": "FULBEAS - FUNDACAO LIBERO BADARO DE ENSINO,ASSISTENCIA SOCIAL E CULTURA",
+     "fin": "Execução de serviços de fomento ao emprego, geração de renda e qualificação profissional",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIACAO RIOPRETENSE DE PROMOCAO DO MENOR ARPROM",
+     "fin": "Ampliação e modernização da infraestrutura tecnológica da instituição",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO EDUCACIONAL FRANCISCO DE ASSIS - UNIDADE II",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "COMUNIDADE SOLIDARIEDADE SOL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO ESPÍRITA RANCHO DE LUZ PAULINO GARCIA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "INSTITUTO COMBONIANO DE SÃO JUDAS TADEU",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CAPACC - CASA DE APOIO AO PACIENTE ADULTO CARENTE COM CANCER DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ESCOLA VIVA BEATRIZ DA CONCEIÇÃO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "COMUNIDADE FRATERNA CANTINHO DE DEUS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ABC - ASSOCIAÇÃO BEM COMUM",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "CASA DE EURÍPEDES",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO ALMA AUTISTA",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "FRATERNA ASSOCIAÇÃO EDUCACIONAL DO ESPIRÍTO PELA LIBERDADE, IGUALDADE E FRATERNIDADE",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    },
+    {
+     "ano": "2025",
+     "ben": "ASSOCIAÇÃO CLÍNICA DE BEBÊS DE SAO JOSE DO RIO PRETO",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Finalizada"
+    }
+   ]
+  },
+  "23571": {
+   "n": 14,
+   "previsto": 1865872.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SEM SEGREDO - ESPORTE, CULTURA, EDUCACAO E SOCIAL",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 400000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Destinados à melhoria da estrutura física da entidade",
+     "val": 300000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 250000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
+     "fin": "Ampliação dos serviços prestados e assegurando um ambiente mais seguro, acessível e acolhedor para pessoas com deficiência visual.",
+     "val": 250000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SEM SEGREDO - ESPORTE, CULTURA, EDUCACAO E SOCIAL",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 180000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "FUNDO MUNICIPAL DE SAUDE DE SAO JOSE DO RIO PRETO",
+     "fin": "MANUTENÇÃO DAS AÇÕES E SERVIÇOS DO FUNDO",
+     "val": 82932.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SEM SEGREDO - ESPORTE, CULTURA, EDUCACAO E SOCIAL",
+     "fin": "Manutenção das ações e serviços do Instituto",
+     "val": 73000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO SEM SEGREDO - ESPORTE, CULTURA, EDUCACAO E SOCIAL",
+     "fin": "MANUTENÇÃO DAS ATIVIDADES DESENVOLVIDAS",
+     "val": 70000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Melhorar infraestrutura e ampliar capacidade de atendimento da unidade de sáude",
+     "val": 50000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Garantir condições adequadas para as festividades, valorização dos artisitas locais e incentivo ás manifestações culturais tradicionais",
+     "val": 50000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "Fomentar a cultura em São José do Rio Preto.",
+     "val": 49940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E AÇÕES DA SECRETARIA PARA O FOMENTO AGROPECUÁRIO NO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    },
+    {
+     "ano": "2026",
+     "ben": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
+     "fin": "MANUTENÇÃO E AÇÕES DA SECRETARIA",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    }
+   ]
+  },
+  "27255": {
+   "n": 9,
+   "previsto": 1865880.1,
+   "pago": 0.0,
+   "itens": [
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 710000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO CONSTRUINDO HISTÓRIAS",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 602940.05,
+     "sit": "Impedimento Técnico sanado, recurso disponibilizado"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO HORA",
+     "fin": "MANUTENÇÃO E INCREMENTO DA PRESTAÇÃO DE SERVIÇOS DE SAÚDE NO SUS DE SÃO JOSÉ DO RIO PRETO",
+     "val": 222940.05,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO RECOMEÇAR EM AMOR",
+     "fin": "Continuidade e ampliação das ações que beneficiam\ndiretamente a população em situação de vulnerabilidade",
+     "val": 100000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO DE PAIS E AMIGOS DA GINASTICA RÍTMICA (APAGIR)",
+     "fin": "Manutenção das atividades esportivas e sociais desenvolvidas pela entidade",
+     "val": 70000.0,
+     "sit": "Recurso disponibilizado na respectiva dotação orçamentária para execuç"
+    },
+    {
+     "ano": "2026",
+     "ben": "ASSOCIAÇÃO RIO PRETO TAEKWONDO CLUBE",
+     "fin": "Manutenção das atividades esportivas e sociais desenvolvidas pela entidade",
+     "val": 50000.0,
+     "sit": "Impedimento Técnico sanado, recurso disponibilizado"
+    },
+    {
+     "ano": "2026",
+     "ben": "Instituto Roberto Luiz Kaiser - Roka",
+     "fin": "Manutenção de suas atividades administrativas e operacionais",
+     "val": 50000.0,
+     "sit": "Impedimento Técnico sanado, recurso disponibilizado"
+    },
+    {
+     "ano": "2026",
+     "ben": "BISPADO DE RIO PRETO BASILICA MENOR NOSSA SENHORA DA CONCEICAO APARECIDA",
+     "fin": "Valorização das manifestações culturais e o fortalecimento do convívio social e comunitário.",
+     "val": 30000.0,
+     "sit": "Impedimento Técnico Insuperável"
+    },
+    {
+     "ano": "2026",
+     "ben": "INSTITUTO VITÓRIO LUCCHESI",
+     "fin": "ESTRUTURAÇÃO DA REDE DE SERVIÇOS SOCIOASSISTENCIAIS DO SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL – SUAS DO MUNICÍPIO",
+     "val": 30000.0,
+     "sit": "Emenda aprovada, em processo de repasse dos recursos para dotação orça"
+    }
+   ]
+  }
  }
 }
