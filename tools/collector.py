@@ -164,6 +164,27 @@ def coletar_propostas(dias=45):
     print(f"  proposituras na amostra ({ini} a {fim}): {len(recs)}")
     return recs
 
+# ============ 4) CONTATOS (telefone/e-mail oficial por vereador) ============
+def coletar_contatos():
+    """Best-effort: se um perfil falhar, segue sem ele (contato é complementar)."""
+    out={}
+    for aid in IDS:
+        email=""; tel=""
+        try:
+            t = texto(get(f"https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/{aid}"))
+            emails = re.findall(r"[\w.\-]+@riopreto\.sp\.leg\.br", t)
+            for e in emails:
+                if not e.lower().startswith("camara@"): email=e; break
+            tm = re.search(r"(?:\((\d{2})\)\s*)?(3\d{3}-\d{4})", t)
+            if tm: tel = (f"({tm.group(1)}) " if tm.group(1) else "(17) ") + tm.group(2)
+        except Exception as ex:
+            print(f"  contato {aid}: erro ({ex})")
+        out[str(aid)] = {"email":email, "telefone":tel}
+        time.sleep(PAUSA)
+    tem = sum(1 for v in out.values() if v["email"] or v["telefone"])
+    print(f"  contatos com e-mail/telefone: {tem}/23")
+    return out
+
 # ============ VALIDAÇÃO (o gate) ============
 def carrega_anterior(nome):
     try: return json.load(open(os.path.join(DATA,nome),encoding="utf-8"))
@@ -196,8 +217,12 @@ def main():
     vereadores = carrega_anterior("vereadores.json")   # lista estática (comitada)
     print("1/4 contagens..."); contagens = coletar_contagens()
     print("2/4 sessões...");   presenca, votacoes = coletar_sessoes()
-    print("3/4 proposituras..."); propostas = coletar_propostas()
-    print("4/4 validando...")
+    print("3/5 proposituras..."); propostas = coletar_propostas()
+    print("4/5 contatos...")
+    try: contatos = coletar_contatos()
+    except Exception as ex:
+        print("  coleta de contatos falhou inteira:", ex); contatos = carrega_anterior("contatos.json") or {}
+    print("5/5 validando...")
     erros = valida(contagens, presenca, votacoes, propostas, vereadores)
     if erros:
         print("\n❌ VALIDAÇÃO FALHOU — NADA será publicado. Motivos:")
@@ -210,6 +235,7 @@ def main():
     dump("presenca.json", presenca)
     dump("votacoes.json", votacoes)
     dump("propostas.json", propostas)
+    if contatos: dump("contatos.json", contatos)
     dump("meta.json", {"atualizado":datetime.date.today().isoformat(),"periodo_dados":"2025-2026",
                        "fonte":"SISCAM / Câmara Municipal de São José do Rio Preto","origem":"coleta automática diária"})
     print("\n✅ Coleta válida e gravada. Pronto para reconstruir o site.")

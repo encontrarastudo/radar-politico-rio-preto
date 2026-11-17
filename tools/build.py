@@ -15,6 +15,8 @@ PRES = load("presenca.json")
 VOT = load("votacoes.json")
 PROPOSTAS = load("propostas.json")
 META = load("meta.json")
+try: CONTATOS = load("contatos.json")
+except Exception: CONTATOS = {}
 
 def esc(s): return html.escape(str(s), quote=True)
 def nrm(s):
@@ -105,6 +107,15 @@ def card(v):
 
 def fonte(label,url): return f'<a class="fonte" href="{url}" target="_blank" rel="noopener">{esc(label)} <span aria-hidden="true">↗</span></a>'
 
+def contato_html(vid):
+    c = CONTATOS.get(str(vid)) or {}
+    email=c.get("email",""); tel=c.get("telefone","")
+    linhas=[]
+    if tel: linhas.append(f'📞 <a href="tel:{re.sub(chr(92)+"D","",tel)}">{esc(tel)}</a>')
+    if email: linhas.append(f'✉️ <a href="mailto:{esc(email)}">{esc(email)}</a>')
+    if not linhas: return '<p class="muted">Contato individual não disponível nesta versão — veja no perfil oficial.</p>'
+    return '<p class="contato-vereador">'+' · '.join(linhas)+'</p>'
+
 def detalhe(v):
     vid,slug,nome,part,mesa = v["id"],v["slug"],v["nome"],v["partido"],v["mesa"]
     prof=PROF.format(id=vid); ini="".join([p[0] for p in nome.split()[:2]]).upper()
@@ -134,7 +145,8 @@ def detalhe(v):
   <header class="detalhe-head"><div class="avatar avatar-lg" aria-hidden="true">{esc(ini)}</div>
   <div><h2 id="h-{slug}">{esc(nome)}</h2><p class="detalhe-nome">{esc(v["nome_completo"])}</p>
   <div class="chips"><span class="chip chip-part">{esc(part)}</span></div>{mesa_line}</div></header>
-  <section class="bloco"><h3>Contato e perfil oficial</h3><p>{fonte("ver o perfil oficial de "+nome+" na Câmara",prof)}</p>
+  <section class="bloco"><h3>Contato e perfil oficial</h3>{contato_html(vid)}
+  <p>{fonte("ver o perfil oficial de "+nome+" na Câmara",prof)}</p>
   <p class="muted">Contato geral da Câmara: camara@riopreto.sp.leg.br · (17) 3214-7777.</p></section>
   <section class="bloco"><h3>Proposições no mandato ({PERIODO_DADOS})</h3>
   <p class="muted">Números de autoria/coautoria no sistema legislativo (SISCAM). Clique na fonte para conferir a lista completa.</p>
