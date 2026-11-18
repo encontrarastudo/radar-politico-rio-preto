@@ -462,7 +462,7 @@ comparar_html=(f'<div class="cmp-pick">'
  f'</div><div id="cmp-result" class="cmp-result"><p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p></div>')
 BUSCA_CAP=6000
 REGS_BUSCA=sorted(REGS, key=lambda r:dkey_d(r["data"]), reverse=True)[:BUSCA_CAP]
-busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"][:150],"rua":r["rua"],"bairro":r["bairro"],"ic":reg_icon(r),"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"][:150])} for r in REGS_BUSCA], ensure_ascii=False)
+busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"ic":reg_icon(r),"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"][:150])} for r in REGS_BUSCA], ensure_ascii=False)
 
 # ===== Painel "A cidade em números" =====
 from collections import Counter
@@ -524,7 +524,7 @@ for inst in EI[:10]:
        f'<span class="pp-barwrap" style="display:inline-block;width:80px;vertical-align:middle;margin-left:4px"><span class="pb-bar" style="width:{round(100*inst["total"]/imax)}%"></span></span></div></div>'
        f'<span class="rep-cta">ver quem destinou →</span></summary><ul class="lista-itens">{fund}</ul></details>')
 if not inst_cards:
-    inst_cards="".join(f'<li><span class="pb-loc">{esc(nome)}</span><b>{brl0(val)}</b></li>' for nome,val in etop[:8]) or '<p class="muted">—</p>'
+    inst_cards="".join(f'<div class="it" style="display:flex;justify-content:space-between;gap:12px;align-items:center"><span>{esc(nome)}</span><b style="color:var(--navy);white-space:nowrap">{brl0(val)}</b></div>' for nome,val in etop[:10]) or '<p class="muted">—</p>'
 em_rank=sorted(VERS, key=lambda v:-(em_v(v["id"]).get("previsto",0)))[:6]
 emvmax=(em_v(em_rank[0]["id"]).get("previsto",0) if em_rank else 1) or 1
 equem="".join(

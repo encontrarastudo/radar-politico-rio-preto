@@ -152,6 +152,10 @@ function router(){const h=location.hash||'';const m=h.match(/^#v-(.+)$/);let sho
 window.addEventListener('hashchange',router);router();
 // voltar da ficha: retorna para onde a pessoa estava
 document.addEventListener('click',e=>{const b=e.target.closest('.voltar');if(b){e.preventDefault();if(history.length>1){history.back();}else{lista.style.display='block';det.style.display='none';if(location.hash)history.replaceState(null,'',location.pathname+location.search);window.scrollTo(0,savedScroll);}}});
+// pedidos longos: recolhe e permite "ler o pedido completo"
+function setupClamps(scope){(scope||document).querySelectorAll('.it-ass:not([data-c])').forEach(a=>{if(a.clientHeight===0)return;a.dataset.c='1';if(a.scrollHeight>a.clientHeight+3){const b=document.createElement('button');b.className='it-mais';b.textContent='ler o pedido completo ›';function tog(){a.classList.toggle('expanded');b.textContent=a.classList.contains('expanded')?'ver menos ‹':'ler o pedido completo ›';}b.addEventListener('click',tog);a.addEventListener('click',tog);a.after(b);}else{a.style.cursor='default';}});}
+setupClamps();
+document.addEventListener('toggle',e=>{if(e.target&&e.target.open&&e.target.querySelectorAll)setupClamps(e.target);},true);
 // glossário sanfona: abrir um fecha os outros (reforço ao atributo name)
 document.querySelectorAll('.acc[name]').forEach(d=>d.addEventListener('toggle',()=>{if(d.open){document.querySelectorAll('.acc[name="'+d.getAttribute('name')+'"]').forEach(o=>{if(o!==d)o.open=false;});}}));
 function norm(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
@@ -167,7 +171,7 @@ function renderItens(arr){return arr.map(r=>{const loc=[r.rua,r.bairro].filter(B
 function buscarRua(){const q=norm(ri.value).trim();if(!q){rr.innerHTML='';rinfo.textContent='Digite uma rua ou bairro para começar.';return;}
   const res=BUSCA.filter(r=>r.q.includes(q));
   rinfo.textContent=res.length+(res.length===1?' pedido encontrado':' pedidos encontrados')+' para “'+ri.value.trim()+'” na amostra';
-  rr.innerHTML=res.length?renderItens(res):'<li class="it">Nada encontrado nesta amostra. O acervo completo da Câmara pode ter mais — veja a busca oficial de proposituras.</li>';}
+  rr.innerHTML=res.length?renderItens(res):'<li class="it">Nada encontrado nesta amostra. O acervo completo da Câmara pode ter mais — veja a busca oficial de proposituras.</li>';setupClamps(rr);}
 ri.addEventListener('input',buscarRua);
 const pr=new URLSearchParams(location.search).get('rua');if(pr){ri.value=pr;}buscarRua();
 // ajuda popover

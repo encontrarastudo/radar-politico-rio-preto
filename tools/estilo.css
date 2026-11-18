@@ -246,6 +246,13 @@ h2{font-weight:800}
 .em-docs-lab{font-size:.76rem;color:var(--muted);font-weight:700}
 .em-doc{font-size:.76rem;font-weight:700;background:#eaf1fb;color:#2d6384;border-radius:999px;padding:3px 10px;text-decoration:none}
 .em-doc:hover{background:#d8e6f5}
+
+/* ===== v7: texto do pedido recolhido, clique para ler tudo ===== */
+.it-ass{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer;transition:color .12s}
+.it-ass.expanded{-webkit-line-clamp:unset;overflow:visible}
+.it-ass:hover{color:var(--navy)}
+.it-mais{display:inline-block;background:none;border:none;color:var(--navy);font-weight:700;font-size:.8rem;cursor:pointer;padding:5px 0 0;font-family:inherit}
+.it-mais:hover{text-decoration:underline}
 .foto-sm{width:34px;height:34px;border-width:2px;flex:none}
 .cmp-pick{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px}
 .cmp-pick select{font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff}
