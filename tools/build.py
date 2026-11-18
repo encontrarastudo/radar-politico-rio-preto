@@ -307,6 +307,7 @@ GLOSS=[
  ("nominal","O que é votação nominal?","Quando fica registrado o voto de cada vereador, um por um. Na votação simbólica a Câmara registra só o resultado geral, sem o nome de cada um — nesses casos não dá para saber como cada um votou."),
  ("aprovados","O que é um projeto aprovado?","É um Projeto de Lei (ou Projeto de Lei Complementar) de autoria do vereador que já foi aprovado pela Câmara — ou seja, saiu do papel e virou (ou está prestes a virar) lei. Diferente da quantidade de projetos apresentados, aqui conta o que de fato foi adiante. Contamos só os projetos com situação “APROVADO” no sistema da Câmara, no mandato atual."),
  ("emendas","O que é uma emenda impositiva?","É uma fatia do orçamento que cada vereador tem direito de destinar, de forma obrigatória, a instituições (hospitais, entidades sociais, associações) ou a serviços públicos. O vereador indica o valor e o destino; a Prefeitura é obrigada a executar. Aqui mostramos o valor indicado (previsto), a quem foi destinado, para qual finalidade e quanto já foi pago. É uma das formas mais concretas de ver para onde cada vereador direciona dinheiro público."),
+ ("taxa","O que é a taxa de aprovação?","É a proporção dos projetos de lei do vereador que de fato foram aprovados: aprovados ÷ apresentados. Mede foco e qualidade — transformar proposta em lei —, não só volume. Alguém que apresenta 8 e aprova 6 (75%) aproveita melhor do que quem apresenta 60 e aprova 11 (18%). No índice, usamos uma versão suavizada dessa taxa, para não dar nota cheia a quem apresentou pouquíssimos projetos (ex.: 1 de 1)."),
  ("viagens","O que são os gastos com viagens?","É quanto de dinheiro público a Câmara pagou em diárias e despesas de deslocamento (transporte, hospedagem) de cada vereador em viagens oficiais — reuniões em São Paulo, Brasília, etc. Somamos o “Total da despesa” de cada viagem publicada no Portal da Transparência da Câmara. Em viagens de grupo, o custo é dividido igualmente entre os participantes. No ranking, gastar menos pontua mais (critério de economia)."),
  ("quantos","Quantos vereadores tem São José do Rio Preto?","A Câmara Municipal de São José do Rio Preto tem 23 vereadores no mandato de 2025 a 2028."),
 ]
@@ -407,11 +408,17 @@ def participacao(vid):
 maxpl = max((ci(C["pl"],v["id"])+ci(C["plc"],v["id"]) for v in VERS), default=1) or 1
 maxef = max((ef_aprov(v["id"]) for v in VERS), default=1) or 1
 maxgv = max((gv_total(v["id"]) for v in VERS), default=0) or 0   # maior gasto com viagens
+# Aproveitamento: aprovados ÷ apresentados, com suavização (prior) para não premiar amostra minúscula
+APROV_K = 5
+def taxa_raw(vid):
+    pl = ci(C["pl"],vid)+ci(C["plc"],vid)
+    return ef_aprov(vid)/(pl+APROV_K)
+maxtaxa = max((taxa_raw(v["id"]) for v in VERS), default=0) or 1
 # Articulação institucional: ocupar cargo na Mesa Diretora (peso pequeno)
 ARTIC_PTS={"presidente":100,"vice-presidente":70,"1º secretário":55,"1 secretario":55,
            "2º secretário":50,"3º secretário":45}
 def artic_pts(mesa): return ARTIC_PTS.get(nrm(mesa),0) if mesa else 0
-# Pesos: Efetividade 25 · Presença 20 · Participação 20 · Produção 20 · Economia 10 · Articulação 5 = 100
+# Pesos: Efetividade 25 · Aproveitamento 15 · Presença 15 · Participação 15 · Produção 15 · Economia 10 · Articulação 5 = 100
 VM=[]
 for v in VERS:
     vid=v["id"]; f=freq(vid); pl=ci(C["pl"],vid)+ci(C["plc"],vid)
@@ -420,16 +427,19 @@ for v in VERS:
     aprov = ef_aprov(vid)
     efet = round(100*aprov/maxef)          # efetividade: projetos aprovados / maior
     producao = round(100*pl/maxpl)         # produção: projetos de lei / maior
+    taxa_disp = round(100*aprov/pl) if pl else 0        # taxa real (p/ exibir)
+    aproveita = round(100*taxa_raw(vid)/maxtaxa)        # aproveitamento suavizado e normalizado (p/ índice)
     artic = artic_pts(v["mesa"])           # articulação institucional (Mesa)
     gasto = gv_total(vid)                   # gastos com viagens oficiais (R$)
     econ = round(100*(1 - gasto/maxgv)) if maxgv else 100   # economia: menos gasto = mais pontos
-    indice = round(0.25*efet + 0.20*presenca + 0.20*partic + 0.20*producao + 0.10*econ + 0.05*artic)
+    indice = round(0.25*efet + 0.15*aproveita + 0.15*presenca + 0.15*partic + 0.15*producao + 0.10*econ + 0.05*artic)
     VM.append({"id":vid,"slug":v["slug"],"nome":v["nome"],"partido":v["partido"],"mesa":v["mesa"],
                "foto":FOTO.format(id=vid),"ini":iniciais(v["nome"]),
                "presenca":presenca,"presx":f["pres"] if f else 0,"prest":f["tot"] if f else 0,
                "partic":partic,"cast":cast,"votost":totv,
                "pl":pl,"ind":ci(C["ind"],vid),"req":ci(C["req"],vid),"moc":ci(C["moc"],vid),
                "aprov":aprov,"efet":efet,"producao":producao,"artic":artic,
+               "taxa":taxa_disp,"aproveita":aproveita,
                "gasto":gasto,"viagens":gv_viagens(vid),"econ":econ,
                "inic":producao,"indice":indice})
 VM_JS=json.dumps(VM, ensure_ascii=False)
@@ -437,19 +447,21 @@ rank_ordenado=sorted(VM, key=lambda x:-x["indice"])
 def mini_foto(m):
     return (f'<span class="foto foto-sm"><img loading="lazy" src="{m["foto"]}" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span class="foto-ini" style="display:none">{esc(m["ini"])}</span></span>')
 rank_rows="".join(
-  f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-aprov="{m["aprov"]}" data-econ="{m["econ"]}" data-nome="{esc(m["nome"])}">'
+  f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-aprov="{m["aprov"]}" data-taxa="{m["taxa"]}" data-econ="{m["econ"]}" data-nome="{esc(m["nome"])}">'
   f'<td class="r-pos">{i+1}</td><td class="r-nome"><a href="#v-{m["slug"]}">{mini_foto(m)}<span>{esc(m["nome"])}<small>{esc(m["partido"])}</small></span></a></td>'
-  f'<td class="r-strong">{m["aprov"]}</td><td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td>'
+  f'<td class="r-strong">{m["aprov"]}</td><td class="r-taxa">{m["taxa"]}%</td><td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td>'
   f'<td class="r-gasto">R$ {("{:,.0f}".format(m["gasto"])).replace(",",".")}</td><td class="r-indice">{m["indice"]}</td></tr>'
   for i,m in enumerate(rank_ordenado))
 ranking_html=(f'<div class="rank-head"><label for="rank-sort">Ordenar por</label>'
  f'<select id="rank-sort"><option value="indice">Índice geral</option><option value="aprov">Projetos aprovados</option>'
+ f'<option value="taxa">Taxa de aprovação</option>'
  f'<option value="presenca">Presença</option>'
  f'<option value="partic">Participação em votações</option><option value="pl">Projetos de lei</option>'
  f'<option value="econ">Mais econômico (viagens)</option>'
  f'<option value="nome">Nome (A–Z)</option></select></div>'
  f'<div class="tab-wrap"><table class="rank-tab"><thead><tr><th>#</th><th>Vereador</th>'
  f'<th>Projetos aprovados <button class="ajuda" data-termo="aprovados" aria-label="O que é projeto aprovado?">?</button></th>'
+ f'<th>Aprovação <button class="ajuda" data-termo="taxa" aria-label="O que é taxa de aprovação?">?</button></th>'
  f'<th>Presença</th><th>Participação</th><th>Projetos de lei</th>'
  f'<th>Gastos c/ viagens <button class="ajuda" data-termo="viagens" aria-label="O que é isso?">?</button></th>'
  f'<th>Índice</th></tr></thead>'
@@ -557,9 +569,10 @@ verif_html=f'''<div class="met">
 <h3>Como calculamos o índice (ranking)</h3>
 <p>A ideia é medir várias dimensões comparáveis, não dar uma nota de “bom” ou “ruim”. Cada dimensão vai de 0 a 100 e é calculada só com dado oficial. O índice final é a média ponderada delas:</p>
 <p>• <strong>Efetividade</strong> (peso 25%): quantos projetos de lei do vereador foram <em>aprovados</em> pela Câmara, comparado a quem mais aprovou (esse vira 100). É o que de fato virou lei, não só o que foi apresentado.<br>
-• <strong>Presença</strong> (peso 20%): % de comparecimento nas sessões com chamada registrada.<br>
-• <strong>Participação em votações</strong> (peso 20%): das votações nominais, em quantas o vereador registrou voto (a favor, contra ou abstenção) — ausências contam contra; quando o presidente não vota por função, isso não entra na conta.<br>
-• <strong>Produção legislativa</strong> (peso 20%): quantidade de projetos de lei apresentados (os de conteúdo substantivo), comparada a quem mais apresentou.<br>
+• <strong>Taxa de aprovação</strong> (peso 15%): a proporção dos projetos que foram aprovados (aprovados ÷ apresentados). Premia foco e qualidade — converter proposta em lei — e não só volume. Para não dar nota cheia a quem apresentou pouquíssimos projetos, usamos uma versão <em>suavizada</em> da taxa (como se cada vereador tivesse 5 projetos “a mais” ainda não aprovados), e comparamos com quem tem a melhor taxa suavizada.<br>
+• <strong>Presença</strong> (peso 15%): % de comparecimento nas sessões, pelos relatórios mensais oficiais.<br>
+• <strong>Participação em votações</strong> (peso 15%): das votações nominais, em quantas o vereador registrou voto (a favor, contra ou abstenção) — ausências contam contra; quando o presidente não vota por função, isso não entra na conta.<br>
+• <strong>Produção legislativa</strong> (peso 15%): quantidade de projetos de lei apresentados (os de conteúdo substantivo), comparada a quem mais apresentou.<br>
 • <strong>Economia</strong> (peso 10%): gasto com viagens oficiais custeadas com dinheiro público (diárias e deslocamento) no mandato. Aqui a lógica se inverte — <strong>gastar menos pontua mais</strong>. Quem mais gastou pontua 0; quem não teve gasto de viagem pontua 100.<br>
 • <strong>Articulação institucional</strong> (peso 5%): ocupar um cargo na Mesa Diretora (Presidência, Vice, Secretarias), responsabilidade de condução dos trabalhos. Quem não está na Mesa pontua 0 aqui — é o fator de menor peso, de propósito.</p>
 <p class="muted">De propósito, o índice <strong>não usa o volume de indicações e requerimentos</strong> — eles são apresentados em massa e inchariam a conta sem medir qualidade. A dimensão de economia mede só as viagens, porque é o único gasto publicado por vereador: verba de gabinete e salários de assessores não saem separados por vereador na Câmara. {("A presença agora cobre o mandato inteiro." if PRES_FULL else "A presença ainda cobre poucas sessões.")} Use como ponto de partida, não como veredito, e confira sempre a ficha de cada um.</p>

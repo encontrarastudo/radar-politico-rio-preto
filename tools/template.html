@@ -88,7 +88,7 @@ __JSONLD__
 
   <section class="sec2" id="ranking">
     <h2>Ranking por dimensões</h2>
-    <p class="sub">Não é nota de “bom” ou “ruim”: é uma nota que combina seis fatores comparáveis — efetividade (projetos aprovados), presença, participação em votações, produção, economia (gastos com viagens) e articulação —, calculados só com dado oficial. <a href="#numeros">Veja como o índice é calculado</a> e suas limitações.</p>
+    <p class="sub">Não é nota de “bom” ou “ruim”: é uma nota que combina sete fatores comparáveis — efetividade (projetos aprovados), taxa de aprovação, presença, participação em votações, produção, economia (gastos com viagens) e articulação —, calculados só com dado oficial. <a href="#numeros">Veja como o índice é calculado</a> e suas limitações.</p>
     <div class="alerta">⚠️ O índice é uma leitura <strong>parcial</strong>: a dimensão de economia mede só os gastos com viagens (o único gasto publicado por vereador) e cada fator tem um peso. Use como ponto de partida, não como veredito.</div>
     __RANKING__
   </section>
@@ -198,7 +198,7 @@ const cmpSels=Array.from(document.querySelectorAll('.cmp-sel')),cmpRes=document.
 function fotoCmp(m){return '<span class="foto"><img loading="lazy" src="'+m.foto+'" alt="" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span class="foto-ini" style="display:none">'+esc(m.ini)+'</span></span>';}
 function renderCmp(){const sel=cmpSels.map(s=>s.value).filter(Boolean),uniq=[];sel.forEach(id=>{const m=VMbyId[id];if(m&&!uniq.find(x=>x.id===m.id))uniq.push(m);});
   if(uniq.length<2){cmpRes.innerHTML='<p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p>';return;}
-  const linhas=[['Partido',m=>esc(m.partido)+(m.mesa?' · '+esc(m.mesa):'')],['Projetos de lei aprovados',m=>'<b>'+m.aprov+'</b> <small>de '+m.pl+' apresentados</small>'],['Presença',m=>m.presenca+'% <small>('+m.presx+' de '+m.prest+' sessões)</small>'],['Participação em votações',m=>m.partic+'% <small>('+m.cast+' de '+m.votost+')</small>'],['Projetos de lei apresentados',m=>m.pl],['Indicações',m=>m.ind],['Requerimentos',m=>m.req],['Moções',m=>m.moc],['Gastos com viagens oficiais',m=>'R$ '+(m.gasto||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' <small>('+(m.viagens||0)+' viagem(ns))</small>'],['Índice geral',m=>'<b>'+m.indice+'</b>']];
+  const linhas=[['Partido',m=>esc(m.partido)+(m.mesa?' · '+esc(m.mesa):'')],['Projetos de lei aprovados',m=>'<b>'+m.aprov+'</b> <small>de '+m.pl+' apresentados</small>'],['Taxa de aprovação',m=>m.taxa+'%'],['Presença',m=>m.presenca+'% <small>('+m.presx+' de '+m.prest+' sessões)</small>'],['Participação em votações',m=>m.partic+'% <small>('+m.cast+' de '+m.votost+')</small>'],['Projetos de lei apresentados',m=>m.pl],['Indicações',m=>m.ind],['Requerimentos',m=>m.req],['Moções',m=>m.moc],['Gastos com viagens oficiais',m=>'R$ '+(m.gasto||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' <small>('+(m.viagens||0)+' viagem(ns))</small>'],['Índice geral',m=>'<b>'+m.indice+'</b>']];
   let h='<div class="tab-wrap"><table class="cmp-tab"><thead><tr><th></th>';
   uniq.forEach(m=>{h+='<th><a href="#v-'+m.slug+'">'+fotoCmp(m)+'<span>'+esc(m.nome)+'</span></a></th>';});
   h+='</tr></thead><tbody>';
