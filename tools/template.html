@@ -142,10 +142,17 @@ const GLOSS=__GLOSSJS__;
 const BUSCA=__BUSCADATA__;
 const lista=document.getElementById('lista-view'),det=document.getElementById('detalhe-view');
 const detalhes=Array.from(det.querySelectorAll('.detalhe'));
+let savedScroll=0;
 function router(){const h=location.hash||'';const m=h.match(/^#v-(.+)$/);let shown=false;
+  const wasDetail=det.style.display==='block';
   detalhes.forEach(d=>{const on=!!m&&d.id==='v-'+m[1];d.style.display=on?'block':'none';if(on)shown=true;});
-  if(m&&shown){lista.style.display='none';det.style.display='block';window.scrollTo(0,0);}else{lista.style.display='block';det.style.display='none';}}
+  if(m&&shown){if(!wasDetail)savedScroll=window.scrollY;lista.style.display='none';det.style.display='block';window.scrollTo(0,0);}
+  else{lista.style.display='block';det.style.display='none';if(wasDetail)window.scrollTo(0,savedScroll);}}
 window.addEventListener('hashchange',router);router();
+// voltar da ficha: retorna para onde a pessoa estava
+document.addEventListener('click',e=>{const b=e.target.closest('.voltar');if(b){e.preventDefault();if(history.length>1){history.back();}else{lista.style.display='block';det.style.display='none';if(location.hash)history.replaceState(null,'',location.pathname+location.search);window.scrollTo(0,savedScroll);}}});
+// glossário sanfona: abrir um fecha os outros (reforço ao atributo name)
+document.querySelectorAll('.acc[name]').forEach(d=>d.addEventListener('toggle',()=>{if(d.open){document.querySelectorAll('.acc[name="'+d.getAttribute('name')+'"]').forEach(o=>{if(o!==d)o.open=false;});}}));
 function norm(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
 // vereadores filtro
 const bv=document.getElementById('busca-v'),fp=document.getElementById('filtro-part'),ci=document.getElementById('count-info');
@@ -155,7 +162,7 @@ bv.addEventListener('input',fcards);fp.addEventListener('change',fcards);fcards(
 // busca rua
 const ri=document.getElementById('rua-input'),rr=document.getElementById('rua-result'),rinfo=document.getElementById('rua-info');
 function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function renderItens(arr){return arr.map(r=>{const loc=[r.rua,r.bairro].filter(Boolean).join(' · ');return '<li class="it"><div class="it-top"><span class="it-tipo">'+esc(r.t)+' '+esc(r.n)+'</span><span class="it-data">'+esc(r.d)+'</span></div><div class="it-ass">'+esc(r.s)+'</div>'+(loc?'<div class="it-local">📍 '+esc(loc)+'</div>':'')+'<div class="it-aut">por <strong>'+esc(r.a)+'</strong> · '+esc(r.g)+'</div></li>';}).join('');}
+function renderItens(arr){return arr.map(r=>{const loc=[r.rua,r.bairro].filter(Boolean).join(' · ');return '<li class="it"><div class="it-top"><span class="it-tipo"><span class="it-ic">'+(r.ic||'')+'</span> '+esc(r.t)+' '+esc(r.n)+'</span><span class="it-data">'+esc(r.d)+'</span></div><div class="it-ass">'+esc(r.s)+'</div>'+(loc?'<div class="it-local">📍 '+esc(loc)+'</div>':'')+'<div class="it-aut">por <strong>'+esc(r.a)+'</strong> · '+esc(r.g)+'</div></li>';}).join('');}
 function buscarRua(){const q=norm(ri.value).trim();if(!q){rr.innerHTML='';rinfo.textContent='Digite uma rua ou bairro para começar.';return;}
   const res=BUSCA.filter(r=>r.q.includes(q));
   rinfo.textContent=res.length+(res.length===1?' pedido encontrado':' pedidos encontrados')+' para “'+ri.value.trim()+'” na amostra';

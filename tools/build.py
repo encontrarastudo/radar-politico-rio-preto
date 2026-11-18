@@ -84,16 +84,25 @@ def classify(tipo, a):
     return "outros"
 def subtype(a):
     a=nrm(a)
-    if any(k in a for k in ["buraco","recape","asfalt","paviment"]): return "Asfalto e buracos"
-    if any(k in a for k in ["ilumina","lampada","luminaria","poste"]): return "Iluminação"
-    if any(k in a for k in ["rocada","limpeza","arvore","poda","supressao","mato"]): return "Limpeza e mato"
+    if any(k in a for k in ["buraco","recape","asfalt","paviment","tapa-buraco","tapa buraco","operacao tapa"]): return "Asfalto e buracos"
+    if any(k in a for k in ["ilumina","lampada","luminaria","poste","led"]): return "Iluminação"
+    if any(k in a for k in ["rocada","limpeza","arvore","poda","supressao","mato","varicao","entulho","lixo"]): return "Limpeza e mato"
     if "calcad" in a: return "Calçada"
-    if any(k in a for k in ["bueiro","boca de lobo","drenagem","galeria"]): return "Drenagem e bueiro"
+    if any(k in a for k in ["bueiro","boca de lobo","drenagem","galeria pluvial","agua pluvi","enchente","alagament"]): return "Drenagem e bueiro"
+    if any(k in a for k in ["esgoto","saneament","rede de agua","abastecimento de agua","falta de agua","vazamento","ligacao de agua","agua potavel"]): return "Água e esgoto"
     if any(k in a for k in ["estacionamento","bolsao"]): return "Estacionamento"
-    if any(k in a for k in ["lombada","redutor","semaforo","sinaliz"]): return "Trânsito"
+    if any(k in a for k in ["lombada","redutor","semaforo","sinaliz","faixa de pedestre","transito","rotatoria"]): return "Trânsito"
     if any(k in a for k in ["nivelamento","cascalho","patrol"]): return "Nivelamento de via"
-    if any(k in a for k in ["praca","parque","parquinho","academia","calistenia","campo","quadra"]): return "Praça e lazer"
+    if any(k in a for k in ["praca","parque","parquinho","academia","calistenia","campo","quadra","playground","lazer","ciclovia","pista de caminhada"]): return "Praça e lazer"
     return "Outros serviços"
+# ícones por tema (emoji, coloridos e universais)
+SUB_ICON={"Asfalto e buracos":"🛣️","Iluminação":"💡","Limpeza e mato":"🌳","Calçada":"🚶",
+ "Drenagem e bueiro":"🌧️","Água e esgoto":"🚰","Estacionamento":"🅿️","Trânsito":"🚦",
+ "Nivelamento de via":"🚧","Praça e lazer":"🛝","Outros serviços":"🔧"}
+GRUPO_EMOJI={"melhorias":"🛠️","cobrancas":"❓","homenagens":"🎖️","leis":"📜","outros":"📄"}
+def reg_icon(r):
+    if r.get("grupo")=="melhorias" and r.get("sub") in SUB_ICON: return SUB_ICON[r["sub"]]
+    return GRUPO_EMOJI.get(r.get("grupo"),"📄")
 RUA_RE=re.compile(r"\b(Rua|Avenida|Av\.?|Travessa|Pra[çc]a|Estrada(?:\s+Municipal)?|Estr\.?\s*Mun\.?|Rodovia|Alameda|Viela|Largo)\s+([A-ZÀ-Ú][\wçãáéíóúâêôà'’.\-]+(?:\s+(?:de|da|do|das|dos|e)?\s*[A-ZÀ-Ú0-9][\wçãáéíóúâêôà'’.\-]+){0,4})")
 BAIRRO_RE=re.compile(r"\b(Bairro|Vila|Jardim|Parque|Residencial|Res\.?|Est[âa]ncia|N[úu]cleo(?:\s+Habitacional)?|Conjunto|Distrito|Ch[áa]cara)\s+([A-ZÀ-Ú][\wçãáéíóúâêôà'’.\-]+(?:\s+[A-ZÀ-Ú0-9][\wçãáéíóúâêôà'’.\-]+){0,3})")
 def extrai(reg,s):
@@ -287,13 +296,13 @@ GLOSS=[
  ("viagens","O que são os gastos com viagens?","É quanto de dinheiro público a Câmara pagou em diárias e despesas de deslocamento (transporte, hospedagem) de cada vereador em viagens oficiais — reuniões em São Paulo, Brasília, etc. Somamos o “Total da despesa” de cada viagem publicada no Portal da Transparência da Câmara. Em viagens de grupo, o custo é dividido igualmente entre os participantes. No ranking, gastar menos pontua mais (critério de economia)."),
  ("quantos","Quantos vereadores tem São José do Rio Preto?","A Câmara Municipal de São José do Rio Preto tem 23 vereadores no mandato de 2025 a 2028."),
 ]
-gloss_html="".join(f'<div class="gloss-item"><h3>{esc(q)}</h3><p>{esc(a)}</p></div>' for k,q,a in GLOSS)
+gloss_html='<div class="acc-wrap">'+"".join(f'<details class="acc" name="gloss"><summary>{esc(q)}</summary><div class="acc-body"><p>{esc(a)}</p></div></details>' for k,q,a in GLOSS)+'</div>'
 gloss_js=json.dumps({k:{"q":q,"a":a} for k,q,a in GLOSS}, ensure_ascii=False)
 
 def item_html(r):
     local=" · ".join([x for x in [r["rua"],r["bairro"]] if x]); local=f'<div class="it-local">📍 {esc(local)}</div>' if local else ""
     sub=f'<span class="it-sub">{esc(r["sub"])}</span>' if r["sub"] else ""
-    return (f'<li class="it"><div class="it-top"><span class="it-tipo">{esc(r["tipo"])} {esc(r["n"])}</span><span class="it-data">{esc(r["data"])}</span></div>'
+    return (f'<li class="it"><div class="it-top"><span class="it-tipo"><span class="it-ic">{reg_icon(r)}</span> {esc(r["tipo"])} {esc(r["n"])}</span><span class="it-data">{esc(r["data"])}</span></div>'
             f'<div class="it-ass">{esc(r["assunto"])}</div>{local}<div class="it-aut">por <strong>{esc(r["autor"])}</strong> {sub}</div></li>')
 CAP=60
 GRUPO_ICON={"melhorias":"🛠️","cobrancas":"❓","homenagens":"🎖️","leis":"📜","outros":"•••"}
@@ -309,7 +318,7 @@ for k in ["melhorias","cobrancas","homenagens","leis","outros"]:
         ct=Counter(r["sub"] for r in regs if r["sub"] and r["sub"]!="Outros serviços")
         chips="".join(f'<span class="gc-chip">{esc(s)} <b>{n}</b></span>' for s,n in ct.most_common(3))
     chips_html=f'<span class="gc-chips">{chips}</span>' if chips else ""
-    grupos_html+=(f'<details class="grupo-card"><summary><span class="gc-icon" aria-hidden="true">{GRUPO_ICON[k]}</span>'
+    grupos_html+=(f'<details class="grupo-card g-{k}"><summary><span class="gc-icon" aria-hidden="true">{GRUPO_ICON[k]}</span>'
       f'<span class="gc-main"><span class="gc-nome">{esc(GRUPOS[k])}</span>'
       f'<span class="gc-cont">{len(regs)} na amostra</span>{chips_html}</span>'
       f'<span class="gc-cta">abrir ▾</span></summary><ul class="lista-itens">{itens}{extra}</ul></details>')
@@ -439,7 +448,7 @@ comparar_html=(f'<div class="cmp-pick">'
  f'</div><div id="cmp-result" class="cmp-result"><p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p></div>')
 BUSCA_CAP=6000
 REGS_BUSCA=sorted(REGS, key=lambda r:dkey_d(r["data"]), reverse=True)[:BUSCA_CAP]
-busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"][:150],"rua":r["rua"],"bairro":r["bairro"],"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"][:150])} for r in REGS_BUSCA], ensure_ascii=False)
+busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"][:150],"rua":r["rua"],"bairro":r["bairro"],"ic":reg_icon(r),"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"][:150])} for r in REGS_BUSCA], ensure_ascii=False)
 
 # ===== Painel "A cidade em números" =====
 from collections import Counter
@@ -455,7 +464,7 @@ for m in pan_rank[:6]:
       f'<b class="pq-num">{fmt(tt)}</b></a></li>')
 sub_ct=Counter(r["sub"] for r in REGS if r["grupo"]=="melhorias" and r["sub"] and r["sub"]!="Outros serviços")
 pede_max=sub_ct.most_common(1)[0][1] if sub_ct else 1
-pede_html="".join(f'<li><span class="pp-cat">{esc(k)}</span><span class="pp-barwrap"><span class="pp-bar" style="width:{round(100*n/pede_max)}%"></span></span><b>{fmt(n)}</b></li>' for k,n in sub_ct.most_common(6))
+pede_html="".join(f'<li><span class="pp-cat"><span class="pp-ic">{SUB_ICON.get(k,"🔧")}</span> {esc(k)}</span><span class="pp-barwrap"><span class="pp-bar" style="width:{round(100*n/pede_max)}%"></span></span><b>{fmt(n)}</b></li>' for k,n in sub_ct.most_common(7))
 bai_ct=Counter(r["bairro"] for r in REGS if r["bairro"])
 bai_max=bai_ct.most_common(1)[0][1] if bai_ct else 1
 bairro_html="".join(f'<li><span class="pb-loc">{esc(k)}</span><span class="pp-barwrap"><span class="pb-bar" style="width:{round(100*n/bai_max)}%"></span></span><b>{fmt(n)}</b></li>' for k,n in bai_ct.most_common(6))
@@ -475,7 +484,7 @@ recentes=sorted(REGS, key=lambda r:dkey(r["data"]), reverse=True)[:4]
 rec_html=""
 for r in recentes:
     local=" · ".join([x for x in [r["rua"],r["bairro"]] if x])
-    rec_html+=(f'<li class="pr-item"><div class="pr-top"><span class="pr-tipo">{esc(r["tipo"])} {esc(r["n"])}</span>'
+    rec_html+=(f'<li class="pr-item"><div class="pr-top"><span class="pr-tipo"><span class="pr-ic">{reg_icon(r)}</span> {esc(r["tipo"])} {esc(r["n"])}</span>'
       f'<span class="pr-data">{esc(r["data"])}</span></div>'
       f'<div class="pr-ass">{esc(r["assunto"][:150])}</div>'
       f'<div class="pr-aut">por <strong>{esc(r["autor"])}</strong>{(" · 📍 "+esc(local)) if local else ""}</div></li>')
