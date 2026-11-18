@@ -235,6 +235,17 @@ h2{font-weight:800}
 .acc[open]>summary{border-bottom:1px solid var(--line);background:#fafcfe}
 .acc-body{padding:13px 17px;font-size:.95rem;color:#2b3440}
 .acc-body p{margin:0}
+
+/* ===== v7: emendas — caminho e execução ===== */
+.emenda-caminho{background:#fff;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:12px 15px;font-size:.92rem;color:#2b3440;margin:0 0 16px}
+.emenda-h3{font-family:'Archivo',sans-serif;color:var(--navy);font-size:1.15rem;margin:0 0 2px}
+.em-obj{font-size:.86rem;color:#2b3440;margin-top:4px}
+.em-pago{color:#1a7a44;font-weight:700}
+.em-arrow{color:var(--red);font-weight:800;padding:0 2px}
+.em-docs{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.em-docs-lab{font-size:.76rem;color:var(--muted);font-weight:700}
+.em-doc{font-size:.76rem;font-weight:700;background:#eaf1fb;color:#2d6384;border-radius:999px;padding:3px 10px;text-decoration:none}
+.em-doc:hover{background:#d8e6f5}
 .foto-sm{width:34px;height:34px;border-width:2px;flex:none}
 .cmp-pick{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:16px}
 .cmp-pick select{font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff}

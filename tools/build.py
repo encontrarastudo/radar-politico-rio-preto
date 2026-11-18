@@ -197,6 +197,23 @@ def contato_html(vid):
     if not linhas: return '<p class="muted">Contato individual não disponível nesta versão — veja no perfil oficial.</p>'
     return '<p class="contato-vereador">'+' · '.join(linhas)+'</p>'
 
+DOCLAB={"plano":"plano de trabalho","juridico":"convênio/termo","contas":"prestação de contas","fotos":"fotos/evidências","outros":"outros documentos"}
+def emenda_item_html(it, origem=None, destino=None):
+    sit=f'<span class="em-sit">{esc(it.get("sit",""))}</span>' if it.get("sit") else ""
+    if destino and origem: head=f'<span class="it-tipo">👤 {esc(origem)} <span class="em-arrow">→</span> 🏛️ {esc(destino)}</span>'
+    elif destino: head=f'<span class="it-tipo">🏛️ {esc(destino)}</span>'
+    else: head=f'<span class="it-tipo">👤 {esc(origem or "—")}</span>'
+    obj=f'<div class="em-obj"><b>O que:</b> {esc(it["obj"])}</div>' if it.get("obj") else ""
+    pago=it.get("pago",0)
+    pago_s=(f' · <span class="em-pago">{brl(pago)} já pago</span>' if pago else ' · <span class="muted">não pago ainda</span>')
+    docs=it.get("docs") or {}
+    dl="".join(f'<a href="{esc(u)}" target="_blank" rel="noopener" class="em-doc">📎 {DOCLAB.get(k,k)}</a>' for k,u in docs.items() if u)
+    dl=f'<div class="em-docs"><span class="em-docs-lab">Conferir:</span> {dl}</div>' if dl else ""
+    fin=f'<div class="it-ass">{esc(it.get("fin",""))}</div>' if it.get("fin") else ""
+    return (f'<li class="it"><div class="it-top">{head}<span class="it-data">{esc(it.get("ano",""))}</span></div>'
+            f'{fin}{obj}'
+            f'<div class="it-aut"><strong>{brl(it.get("val",0))}</strong> destinados{pago_s} {sit}</div>{dl}</li>')
+
 def em_box(vid):
     e=em_v(vid); fonte_url=EM.get("meta",{}).get("fonte","https://www.riopreto.sp.gov.br/transparencia/receitas-e-repasses/emendas-parlamentares")
     if not e.get("n"):
@@ -204,11 +221,8 @@ def em_box(vid):
     itens=e.get("itens") or []
     lista=""
     for it in itens:
-        sit=f'<span class="em-sit">{esc(it.get("sit",""))}</span>' if it.get("sit") else ""
-        lista+=(f'<li class="it"><div class="it-top"><span class="it-tipo">{esc(it.get("ben","—"))}</span><span class="it-data">{esc(it.get("ano",""))}</span></div>'
-                f'<div class="it-ass">{esc(it.get("fin",""))}</div>'
-                f'<div class="it-aut"><strong>{brl(it.get("val",0))}</strong> {sit}</div></li>')
-    detalhe_lista=(f'<details class="grupo-card" style="margin-top:10px"><summary><span class="gc-main"><span class="gc-nome" style="font-size:.98rem">Ver as {e["n"]} emendas (instituição, finalidade e valor)</span></span><span class="gc-cta">abrir ▾</span></summary><ul class="lista-itens" style="padding:12px 15px">{lista}</ul></details>') if lista else \
+        lista+=emenda_item_html(it, origem=None, destino=it.get("ben","—"))
+    detalhe_lista=(f'<details class="grupo-card" style="margin-top:10px"><summary><span class="gc-main"><span class="gc-nome" style="font-size:.98rem">Ver as {e["n"]} emendas (instituição, finalidade, valor e execução)</span></span><span class="gc-cta">abrir ▾</span></summary><ul class="lista-itens" style="padding:12px 15px">{lista}</ul></details>') if lista else \
                   (f'<p class="muted" style="margin-top:8px">Detalhamento por emenda em atualização pelo robô. {fonte("ver no Portal da Transparência",fonte_url)}</p>')
     pago_line=(f' · <strong>{brl(e["pago"])}</strong> já pagos pela Prefeitura' if e.get("pago") else ' · ainda não pagas')
     return (f'<div class="efet-box"><div class="efet-num" style="color:#2d6384;font-size:1.4rem;min-width:auto">{brl0(e["previsto"])}</div>'
@@ -499,8 +513,18 @@ panorama_html=(f'<div class="pan-total"><b>{fmt(T_PROPS)}</b><span>proposituras 
 
 # ===== Emendas (seção) =====
 emeta=EM.get("meta",{}); etop=EM.get("top_beneficiarios",[])
-emax=(etop[0][1] if etop else 1) or 1
-ebars="".join(f'<li><span class="pb-loc">{esc(nome)}</span><span class="pp-barwrap"><span class="pb-bar" style="width:{round(100*val/emax)}%"></span></span><b>{brl0(val)}</b></li>' for nome,val in etop[:8])
+EI=EM.get("por_instituicao",[])
+imax=(EI[0]["total"] if EI else 1) or 1
+inst_cards=""
+for inst in EI[:10]:
+    fund="".join(emenda_item_html(f, origem=BYID.get(f.get("id"),{}).get("nome","—"), destino=None) for f in inst.get("funders",[]))
+    inst_cards+=(f'<details class="rep"><summary>'
+       f'<div class="rep-main"><span class="rep-loc">{esc(inst["nome"])}</span>'
+       f'<div class="rep-meta2"><b style="color:var(--navy)">{brl0(inst["total"])}</b> · {inst["n"]} vereador(es) '
+       f'<span class="pp-barwrap" style="display:inline-block;width:80px;vertical-align:middle;margin-left:4px"><span class="pb-bar" style="width:{round(100*inst["total"]/imax)}%"></span></span></div></div>'
+       f'<span class="rep-cta">ver quem destinou →</span></summary><ul class="lista-itens">{fund}</ul></details>')
+if not inst_cards:
+    inst_cards="".join(f'<li><span class="pb-loc">{esc(nome)}</span><b>{brl0(val)}</b></li>' for nome,val in etop[:8]) or '<p class="muted">—</p>'
 em_rank=sorted(VERS, key=lambda v:-(em_v(v["id"]).get("previsto",0)))[:6]
 emvmax=(em_v(em_rank[0]["id"]).get("previsto",0) if em_rank else 1) or 1
 equem="".join(
@@ -512,16 +536,18 @@ equem="".join(
 emendas_html=(f'<div class="pan-total"><b>{brl0(emeta.get("total_previsto",0))}</b>'
  f'<span>destinados pelos vereadores em {emeta.get("n","—")} emendas impositivas municipais ({PERIODO_DADOS})'
  f' · {brl0(emeta.get("total_pago",0))} já pagos pela Prefeitura</span></div>'
- f'<div class="pan-cols" style="grid-template-columns:1fr">'
- f'<div class="pan-col"><h3>Quem mais destinou</h3><p class="pan-base">valor previsto no mandato</p><ol class="pan-quem">{equem}</ol></div>'
- f'<div class="pan-col"><h3>Instituições mais beneficiadas</h3><p class="pan-base">por valor destinado</p><ul class="pan-bairro">{ebars}</ul></div>'
- f'</div><p class="muted" style="margin-top:10px">Abra a ficha de cada vereador para ver todas as emendas — instituição, finalidade e valor. {fonte("Fonte: Portal da Transparência da Prefeitura",emeta.get("fonte","#"))}</p>')
+ f'<p class="emenda-caminho">💸 <strong>O caminho do dinheiro:</strong> de onde saiu (vereador) → onde chegou (instituição) → para quê foi usado. Abra uma instituição para ver quais vereadores destinaram recursos; abra a ficha de um vereador para o caminho inverso, com a execução e os documentos de cada emenda.</p>'
+ f'<div class="pan-col" style="margin-bottom:16px"><h3>Quem mais destinou</h3><p class="pan-base">valor previsto no mandato</p><ol class="pan-quem">{equem}</ol></div>'
+ f'<h3 class="emenda-h3">Instituições mais beneficiadas</h3>'
+ f'<p class="pan-base" style="margin:0 0 12px">clique numa instituição para ver de quais vereadores vieram os recursos, para qual finalidade e quanto já foi pago</p>'
+ f'<div class="rep-grid">{inst_cards}</div>'
+ f'<p class="muted" style="margin-top:12px">{fonte("Fonte: Portal da Transparência da Prefeitura (execução das emendas)",emeta.get("fonte","#"))}</p>')
 
 # contagens para verificação
 tot_props = sum(ci(C[t],v["id"]) for t in C for v in VERS)
 verif_html=f'''<div class="met">
 <h3>Presença nas sessões</h3>
-{("<p>A presença cobre <strong>todas as sessões do mandato</strong> e vem dos relatórios mensais oficiais da Câmara — <em>“Comparecimento dos Vereadores às Sessões”</em> (um PDF por mês). Cada relatório lista, sessão a sessão, se cada vereador esteve Presente ou Ausente; nós somamos tudo. Falta justificada, quando aparece, é contada como ausência.</p>" if PRES_FULL else "<p>A presença vem da chamada registrada em cada sessão no sistema do Legislativo (SISCAM). Há ainda a fonte oficial independente — o relatório mensal <em>“Comparecimento dos Vereadores às Sessões”</em> (PDF da Câmara).</p>")}
+{("<p>A presença cobre <strong>todas as sessões do mandato</strong> e vem dos relatórios mensais oficiais da Câmara — <em>“Comparecimento dos Vereadores às Sessões”</em> (um PDF por mês). Cada relatório lista, sessão a sessão, se cada vereador esteve Presente ou Ausente; nós somamos tudo. <strong>O relatório oficial não separa falta justificada de falta sem justificativa</strong> — ele só marca “Presente” ou “Ausente” —, então o site mostra apenas isso; se a Câmara passar a publicar as justificativas, elas entram aqui.</p>" if PRES_FULL else "<p>A presença vem da chamada registrada em cada sessão no sistema do Legislativo (SISCAM). Há ainda a fonte oficial independente — o relatório mensal <em>“Comparecimento dos Vereadores às Sessões”</em> (PDF da Câmara).</p>")}
 <h3>Proposições</h3>
 <p>As contagens por vereador vêm da busca oficial de proposituras (mandato {PERIODO_DADOS}). Os textos nos grupos e na busca por rua são a amostra mais recente coletada.</p>
 <h3>Como agrupamos</h3>

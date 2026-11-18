@@ -347,12 +347,15 @@ def coletar_emendas():
     oi=col("Origem"); ai=col("Autoria"); ci=col("Valor Custeio (Previsto)"); ii=col("Valor Investimento (Previsto)")
     pi=col("Valor Pago"); bi=col("Beneficiário"); fi=col("OBJETIVO/FINALIDADE"); obj=col("OBJETO")
     si=col("Situação"); yi=col("Ano da indicação")
+    doc_cols={"plano":col("Plano de Trabalho (Link)"),"juridico":col("Instrumento Jurídico (Link)"),
+              "contas":col("Prestação de Contas (Link)"),"fotos":col("Fotos/Evidências (Link)"),
+              "outros":col("Outros Documentos (Link)")}
     def mid(autoria):
         key=nrm(autoria)
         for nn,i in NORM2ID.items():
             if nn in key or key in nn: return i
         return None
-    por={}; ben_tot={}; n_tot=0; prev_tot=0.0; pago_tot=0.0
+    por={}; ben_tot={}; inst_fund={}; n_tot=0; prev_tot=0.0; pago_tot=0.0
     for r in rows[1:]:
         if len(r)<=max(oi,ai,ci,ii): continue
         if nrm(r[oi])!="municipal": continue
@@ -360,21 +363,36 @@ def coletar_emendas():
         if i is None: continue
         val = brl(r[ci])+brl(r[ii]); pago = brl(r[pi]) if pi>=0 else 0.0
         ben = (r[bi].strip() if bi>=0 else "")
-        fin = (r[fi].strip() if fi>=0 else "") or (r[obj].strip() if obj>=0 else "")
+        fin = (r[fi].strip() if fi>=0 else ""); objt = (r[obj].strip() if obj>=0 else "")
         sit = (r[si].strip() if si>=0 else "")
         ano = (r[yi].strip() if yi>=0 else "")
+        docs={}
+        for key,cix in doc_cols.items():
+            if cix>=0:
+                u=(r[cix] or "").strip()
+                if u.lower().startswith("http"): docs[key]=u
+        item={"ano":ano,"ben":ben[:90],"fin":(fin or objt)[:170],"val":round(val,2),"pago":round(pago,2),"sit":sit[:70]}
+        if objt and nrm(objt)!=nrm(fin): item["obj"]=objt[:170]
+        if docs: item["docs"]=docs
         d=por.setdefault(i,{"n":0,"previsto":0.0,"pago":0.0,"itens":[]})
         d["n"]+=1; d["previsto"]=round(d["previsto"]+val,2); d["pago"]=round(d["pago"]+pago,2)
-        d["itens"].append({"ano":ano,"ben":ben[:90],"fin":fin[:170],"val":round(val,2),"sit":sit[:70]})
+        d["itens"].append(item)
         n_tot+=1; prev_tot+=val; pago_tot+=pago
-        if ben and ben!="-": ben_tot[ben]=round(ben_tot.get(ben,0.0)+val,2)
+        if ben and ben!="-":
+            ben_tot[ben]=round(ben_tot.get(ben,0.0)+val,2)
+            inst_fund.setdefault(ben,[]).append({"id":i,"val":round(val,2),"fin":(fin or objt)[:120],"sit":sit[:60],"ano":ano})
     if not por: return {}
     for d in por.values():
         d["itens"].sort(key=lambda x:-x["val"])
-    top=sorted(ben_tot.items(), key=lambda kv:-kv[1])[:10]
+    top=sorted(ben_tot.items(), key=lambda kv:-kv[1])[:12]
+    por_inst=[]
+    for nome,tot in top:
+        f=sorted(inst_fund.get(nome,[]), key=lambda x:-x["val"])
+        por_inst.append({"nome":nome,"total":round(tot,2),"n":len(f),"funders":f[:25]})
     out={"meta":{"n":n_tot,"total_previsto":round(prev_tot,2),"total_pago":round(pago_tot,2),
                  "n_beneficiarios":len(ben_tot),"fonte":EMENDAS_PORTAL},
-         "top_beneficiarios":[[k,v] for k,v in top],
+         "top_beneficiarios":[[k,v] for k,v in top[:10]],
+         "por_instituicao":por_inst,
          "por_vereador":{str(aid):por.get(aid,{"n":0,"previsto":0.0,"pago":0.0,"itens":[]}) for aid in IDS}}
     print(f"  emendas municipais: {n_tot} de {len([1 for v in por.values() if v['n']>0])} vereadores, R$ {prev_tot:,.0f} previstos")
     return out
