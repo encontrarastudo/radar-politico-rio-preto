@@ -387,8 +387,11 @@ def coletar_emendas():
     top=sorted(ben_tot.items(), key=lambda kv:-kv[1])[:12]
     por_inst=[]
     for nome,tot in top:
-        f=sorted(inst_fund.get(nome,[]), key=lambda x:-x["val"])
-        por_inst.append({"nome":nome,"total":round(tot,2),"n":len(f),"funders":f[:25]})
+        allf=inst_fund.get(nome,[])
+        f=sorted(allf, key=lambda x:-x["val"])
+        por_inst.append({"nome":nome,"total":round(tot,2),
+                         "n_vereadores":len(set(x["id"] for x in allf)),"n_emendas":len(allf),"n":len(allf),
+                         "funders":f[:30]})
     out={"meta":{"n":n_tot,"total_previsto":round(prev_tot,2),"total_pago":round(pago_tot,2),
                  "n_beneficiarios":len(ben_tot),"fonte":EMENDAS_PORTAL},
          "top_beneficiarios":[[k,v] for k,v in top[:10]],

@@ -247,6 +247,17 @@ h2{font-weight:800}
 .em-doc{font-size:.76rem;font-weight:700;background:#eaf1fb;color:#2d6384;border-radius:999px;padding:3px 10px;text-decoration:none}
 .em-doc:hover{background:#d8e6f5}
 
+/* ===== v7: cards de instituição (emendas) maiores, nome inteiro ===== */
+.inst-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
+@media(min-width:720px){.inst-grid{grid-template-columns:1fr 1fr}}
+.inst-grid .rep{align-self:start}
+.inst-grid .rep[open]{grid-column:1/-1}
+.inst-grid .rep>summary{align-items:flex-start;flex-wrap:wrap;gap:6px;min-height:auto;padding:16px}
+.inst-grid .rep-loc{white-space:normal;overflow:visible;text-overflow:clip;font-size:1.02rem;line-height:1.25;font-weight:800}
+.inst-grid .rep-main{flex:1 1 100%;min-width:0}
+.inst-grid .rep-meta2{white-space:normal;margin-top:6px;font-size:.84rem}
+.inst-grid .rep-cta{margin-top:2px}
+
 /* ===== v7: texto do pedido recolhido, clique para ler tudo ===== */
 .it-ass{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer;transition:color .12s}
 .it-ass.expanded{-webkit-line-clamp:unset;overflow:visible}

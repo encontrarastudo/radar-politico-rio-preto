@@ -518,10 +518,12 @@ imax=(EI[0]["total"] if EI else 1) or 1
 inst_cards=""
 for inst in EI[:10]:
     fund="".join(emenda_item_html(f, origem=BYID.get(f.get("id"),{}).get("nome","—"), destino=None) for f in inst.get("funders",[]))
+    nver=inst.get("n_vereadores"); nem=inst.get("n_emendas", inst.get("n",0))
+    meta=((f'{nver} vereador(es) · ' if nver else '')+f'{nem} emenda(s)')
     inst_cards+=(f'<details class="rep"><summary>'
        f'<div class="rep-main"><span class="rep-loc">{esc(inst["nome"])}</span>'
-       f'<div class="rep-meta2"><b style="color:var(--navy)">{brl0(inst["total"])}</b> · {inst["n"]} vereador(es) '
-       f'<span class="pp-barwrap" style="display:inline-block;width:80px;vertical-align:middle;margin-left:4px"><span class="pb-bar" style="width:{round(100*inst["total"]/imax)}%"></span></span></div></div>'
+       f'<div class="rep-meta2"><b style="color:var(--navy)">{brl0(inst["total"])}</b> · {meta}'
+       f'<span class="pp-barwrap" style="display:block;width:100%;max-width:220px;margin-top:6px"><span class="pb-bar" style="width:{round(100*inst["total"]/imax)}%"></span></span></div></div>'
        f'<span class="rep-cta">ver quem destinou →</span></summary><ul class="lista-itens">{fund}</ul></details>')
 if not inst_cards:
     inst_cards="".join(f'<div class="it" style="display:flex;justify-content:space-between;gap:12px;align-items:center"><span>{esc(nome)}</span><b style="color:var(--navy);white-space:nowrap">{brl0(val)}</b></div>' for nome,val in etop[:10]) or '<p class="muted">—</p>'
@@ -540,7 +542,7 @@ emendas_html=(f'<div class="pan-total"><b>{brl0(emeta.get("total_previsto",0))}<
  f'<div class="pan-col" style="margin-bottom:16px"><h3>Quem mais destinou</h3><p class="pan-base">valor previsto no mandato</p><ol class="pan-quem">{equem}</ol></div>'
  f'<h3 class="emenda-h3">Instituições mais beneficiadas</h3>'
  f'<p class="pan-base" style="margin:0 0 12px">clique numa instituição para ver de quais vereadores vieram os recursos, para qual finalidade e quanto já foi pago</p>'
- f'<div class="rep-grid">{inst_cards}</div>'
+ f'<div class="inst-grid">{inst_cards}</div>'
  f'<p class="muted" style="margin-top:12px">{fonte("Fonte: Portal da Transparência da Prefeitura (execução das emendas)",emeta.get("fonte","#"))}</p>')
 
 # contagens para verificação
