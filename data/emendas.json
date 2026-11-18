@@ -52,6 +52,8 @@
   {
    "nome": "MUNICÍPIO DE SÃO JOSÉ DO RIO PRETO",
    "total": 15807693.4,
+   "n_vereadores": 21,
+   "n_emendas": 199,
    "n": 199,
    "funders": [
     {
@@ -228,12 +230,49 @@
      "fin": "PARA MANUTENÇÃO E AÇÕES DA SECRETARIA",
      "sit": "Recurso disponibilizado na respectiva dotação orçamentária p",
      "ano": "2026"
+    },
+    {
+     "id": 46,
+     "val": 142417.65,
+     "fin": "Fortalecimento de atividades culturais de rua",
+     "sit": "Finalizada",
+     "ano": "2025"
+    },
+    {
+     "id": 23568,
+     "val": 140000.0,
+     "fin": "Aprimorar o atendimento à saúde da população.",
+     "sit": "Finalizada",
+     "ano": "2025"
+    },
+    {
+     "id": 15231,
+     "val": 140000.0,
+     "fin": "MELHORAR INFRAESTRUTURA DA UNIDADE BÁSICA DE SAÚDE DA FAMÍLIA BAIRRO SÃO FRANCISCO",
+     "sit": "Em Execução",
+     "ano": "2025"
+    },
+    {
+     "id": 46,
+     "val": 140000.0,
+     "fin": "Aumentar a participação de grupos de Rio Preto e/ou aumentar as apresentações nas periferias da cidade.",
+     "sit": "Finalizada",
+     "ano": "2025"
+    },
+    {
+     "id": 46,
+     "val": 140000.0,
+     "fin": "REFORÇAR E EXPANDIR A TRADIÇÃO DO CARNAVAL DE RUA EM SÃO JOSÉ DO RIO PRETO",
+     "sit": "Finalizada",
+     "ano": "2025"
     }
    ]
   },
   {
    "nome": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE S J R PRETO",
    "total": 4828700.34,
+   "n_vereadores": 16,
+   "n_emendas": 25,
    "n": 25,
    "funders": [
     {
@@ -416,6 +455,8 @@
   {
    "nome": "ASSOCIAÇÃO RENASCER",
    "total": 3875267.43,
+   "n_vereadores": 9,
+   "n_emendas": 13,
    "n": 13,
    "funders": [
     {
@@ -514,6 +555,8 @@
   {
    "nome": "INSTITUTO DE SAUDE ORGANIZACAO SOCIAL FACERES",
    "total": 3644080.1,
+   "n_vereadores": 8,
+   "n_emendas": 9,
    "n": 9,
    "funders": [
     {
@@ -584,6 +627,8 @@
   {
    "nome": "IRCT - INSTITUTO RIOPRETENSE DOS CEGOS TRABALHADORES",
    "total": 3016680.1,
+   "n_vereadores": 12,
+   "n_emendas": 17,
    "n": 17,
    "funders": [
     {
@@ -710,6 +755,8 @@
   {
    "nome": "ASSOCIAÇÃO CASA DE CARIDADE PÃO DA VIDA",
    "total": 1780417.64,
+   "n_vereadores": 3,
+   "n_emendas": 9,
    "n": 9,
    "funders": [
     {
@@ -780,6 +827,8 @@
   {
    "nome": "ASSOCIAÇÃO PROJETO AQUÁRIO PESCANDO VIDAS",
    "total": 1640357.69,
+   "n_vereadores": 1,
+   "n_emendas": 4,
    "n": 4,
    "funders": [
     {
@@ -815,6 +864,8 @@
   {
    "nome": "INSTITUTO HORA",
    "total": 1542880.1,
+   "n_vereadores": 8,
+   "n_emendas": 9,
    "n": 9,
    "funders": [
     {
@@ -885,6 +936,8 @@
   {
    "nome": "FUNFARME - FUNDACAO FACULDADE REGIONAL DE MEDICINA",
    "total": 1332940.05,
+   "n_vereadores": 5,
+   "n_emendas": 9,
    "n": 9,
    "funders": [
     {
@@ -955,6 +1008,8 @@
   {
    "nome": "FUNDO MUNICIPAL DE SAUDE DE SAO JOSE DO RIO PRETO",
    "total": 982932.05,
+   "n_vereadores": 3,
+   "n_emendas": 3,
    "n": 3,
    "funders": [
     {
@@ -983,6 +1038,8 @@
   {
    "nome": "HOSPITAL DR ADOLFO BEZERRA DE MENEZES",
    "total": 902940.05,
+   "n_vereadores": 11,
+   "n_emendas": 14,
    "n": 14,
    "funders": [
     {
@@ -1088,6 +1145,8 @@
   {
    "nome": "ASSOCIAÇÃO SEM SEGREDO - ESPORTE, CULTURA, EDUCACAO E SOCIAL",
    "total": 873000.0,
+   "n_vereadores": 2,
+   "n_emendas": 5,
    "n": 5,
    "funders": [
     {
