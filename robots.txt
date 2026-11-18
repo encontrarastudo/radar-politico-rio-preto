@@ -11,4 +11,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://encontrarastudo.github.io/radar-politico-rio-preto/sitemap.xml
+Sitemap: https://radarpoliticorp.com.br/sitemap.xml

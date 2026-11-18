@@ -7,7 +7,7 @@ from collections import Counter
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 OUT  = ROOT  # o site vai na raiz (GitHub Pages)
-BASE = "https://encontrarastudo.github.io/radar-politico-rio-preto"
+BASE = "https://radarpoliticorp.com.br"
 
 def load(n): return json.load(open(os.path.join(DATA, n), encoding="utf-8"))
 VERS = load("vereadores.json")
