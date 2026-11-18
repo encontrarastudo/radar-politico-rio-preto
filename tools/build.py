@@ -439,7 +439,7 @@ comparar_html=(f'<div class="cmp-pick">'
  f'</div><div id="cmp-result" class="cmp-result"><p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p></div>')
 BUSCA_CAP=6000
 REGS_BUSCA=sorted(REGS, key=lambda r:dkey_d(r["data"]), reverse=True)[:BUSCA_CAP]
-busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"])} for r in REGS_BUSCA], ensure_ascii=False)
+busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"][:150],"rua":r["rua"],"bairro":r["bairro"],"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"][:150])} for r in REGS_BUSCA], ensure_ascii=False)
 
 # ===== Painel "A cidade em números" =====
 from collections import Counter
@@ -459,6 +459,15 @@ pede_html="".join(f'<li><span class="pp-cat">{esc(k)}</span><span class="pp-barw
 bai_ct=Counter(r["bairro"] for r in REGS if r["bairro"])
 bai_max=bai_ct.most_common(1)[0][1] if bai_ct else 1
 bairro_html="".join(f'<li><span class="pb-loc">{esc(k)}</span><span class="pp-barwrap"><span class="pb-bar" style="width:{round(100*n/bai_max)}%"></span></span><b>{fmt(n)}</b></li>' for k,n in bai_ct.most_common(6))
+# quem mais aprovou projetos (projetos que viraram lei) — contraponto ao volume
+apr_rank=sorted(VM, key=lambda m:-m["aprov"])[:6]
+apr_max=(apr_rank[0]["aprov"] if apr_rank and apr_rank[0]["aprov"] else 1) or 1
+aprov_html="".join(
+  f'<li><a href="#v-{m["slug"]}">{mini_foto(m)}'
+  f'<span class="pq-id"><span class="pq-nome">{esc(m["nome"])}</span><small>{esc(m["partido"])}</small></span>'
+  f'<span class="pq-barwrap"><span class="pq-bar" style="width:{round(100*m["aprov"]/apr_max)}%"></span></span>'
+  f'<b class="pq-num">{m["aprov"]}</b></a></li>'
+  for m in apr_rank)
 def dkey(d):
     try: p=d.split("/"); return (p[2],p[1],p[0])
     except: return ("0","0","0")
@@ -474,7 +483,7 @@ panorama_html=(f'<div class="pan-total"><b>{fmt(T_PROPS)}</b><span>proposituras 
  f'<div class="pan-cols">'
  f'<div class="pan-col"><h3>Quem mais propôs</h3><p class="pan-base">no mandato inteiro</p><ol class="pan-quem">{quem_html}</ol></div>'
  f'<div class="pan-col"><h3>O que mais pedem</h3><p class="pan-base">na amostra recente de pedidos</p><ul class="pan-pede">{pede_html or "<li class=muted>—</li>"}</ul></div>'
- f'<div class="pan-col"><h3>Bairros mais citados</h3><p class="pan-base">na amostra recente de pedidos</p><ul class="pan-bairro">{bairro_html or "<li class=muted>—</li>"}</ul></div>'
+ f'<div class="pan-col"><h3>Quem mais aprovou projetos</h3><p class="pan-base">projetos que viraram lei no mandato</p><ol class="pan-quem">{aprov_html or "<li class=muted>—</li>"}</ol></div>'
  f'</div>'
  f'<div class="pan-rec"><h3>Propostas mais recentes</h3><ul class="pan-reclist">{rec_html}</ul>'
  f'<a class="pan-vermais" href="#trabalho">Ver todas as propostas por tema →</a></div>')
