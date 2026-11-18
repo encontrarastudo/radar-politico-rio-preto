@@ -1,6 +1,6 @@
 # Radar Político de Rio Preto
 
-> Site de transparência, com dados oficiais, sobre os 23 vereadores da Câmara Municipal de São José do Rio Preto (SP), mandato 2025–2028. Presença, proposições e votos, com busca por rua/bairro. Atualizado em 17 de novembro de 2026.
+> Site de transparência, com dados oficiais, sobre os 23 vereadores da Câmara Municipal de São José do Rio Preto (SP), mandato 2025–2028. Presença, proposições e votos, com busca por rua/bairro. Atualizado em 18 de novembro de 2026.
 
 ## Vereadores (mandato 2025–2028)
 - Abner Tofanelli (PSB): 28 projetos de lei, 550 indicações, 612 requerimentos, 167 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27253
