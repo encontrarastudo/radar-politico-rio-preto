@@ -143,11 +143,12 @@ const BUSCA=__BUSCADATA__;
 const lista=document.getElementById('lista-view'),det=document.getElementById('detalhe-view');
 const detalhes=Array.from(det.querySelectorAll('.detalhe'));
 let savedScroll=0;
+function jump(y){const el=document.documentElement,sb=el.style.scrollBehavior;el.style.scrollBehavior='auto';window.scrollTo(0,y);el.style.scrollBehavior=sb;}
 function router(){const h=location.hash||'';const m=h.match(/^#v-(.+)$/);let shown=false;
   const wasDetail=det.style.display==='block';
   detalhes.forEach(d=>{const on=!!m&&d.id==='v-'+m[1];d.style.display=on?'block':'none';if(on)shown=true;});
-  if(m&&shown){if(!wasDetail)savedScroll=window.scrollY;lista.style.display='none';det.style.display='block';window.scrollTo(0,0);}
-  else{lista.style.display='block';det.style.display='none';if(wasDetail)window.scrollTo(0,savedScroll);}}
+  if(m&&shown){if(!wasDetail)savedScroll=window.scrollY;lista.style.display='none';det.style.display='block';jump(0);}
+  else{lista.style.display='block';det.style.display='none';if(wasDetail)jump(savedScroll);}}
 window.addEventListener('hashchange',router);router();
 // voltar da ficha: retorna para onde a pessoa estava
 document.addEventListener('click',e=>{const b=e.target.closest('.voltar');if(b){e.preventDefault();if(history.length>1){history.back();}else{lista.style.display='block';det.style.display='none';if(location.hash)history.replaceState(null,'',location.pathname+location.search);window.scrollTo(0,savedScroll);}}});
