@@ -502,13 +502,23 @@ def coletar_frequencia():
                         d["sessoes"].append({"data":data,"status":st})
     if not freq: return {}
     por={}
+    ANOS=set(mandato_anos())
     for aid in IDS:
         d=freq.get(aid,{"p":0,"f":0,"sessoes":[]})
-        def chave(s):
-            x=s.get("data","") or ""
-            return (x[6:10],x[3:5],x[0:2])
-        d["sessoes"].sort(key=chave, reverse=True)
-        por[str(aid)]={"presencas":d["p"],"faltas":d["f"],"total":d["p"]+d["f"],"sessoes":d["sessoes"]}
+        # dedup por data: cada sessão conta UMA vez; descarta datas vazias/corrompidas
+        vistos={}
+        for s in d["sessoes"]:
+            dt=(s.get("data") or "").strip()
+            if not re.match(r"\d{2}/\d{2}/\d{4}$", dt): continue   # lixo (vazio/parcial)
+            if dt[6:10] not in ANOS: continue                      # ano inválido (ex.: 2062)
+            st=s.get("status")
+            if dt not in vistos or (st=="P" and vistos[dt]!="P"):   # presença ganha de falta em conflito de parse
+                vistos[dt]=st
+        def chave(dt): return (dt[6:10],dt[3:5],dt[0:2])
+        sess=[{"data":dt,"status":vistos[dt]} for dt in sorted(vistos, key=chave, reverse=True)]
+        p=sum(1 for v in vistos.values() if v=="P")
+        fl=sum(1 for v in vistos.values() if v in ("F","J"))
+        por[str(aid)]={"presencas":p,"faltas":fl,"total":p+fl,"sessoes":sess}
     out={"meta":{"fonte":f"{SELEG}/ContaPublica/Listar/1267","n_meses":len(meses)},"por_vereador":por}
     print(f"  frequência do mandato: {sum(v['total'] for v in por.values())} registros em {len(meses)} meses")
     return out
