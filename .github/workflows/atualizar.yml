@@ -1,9 +1,10 @@
 name: Atualizar site (coleta diária)
 
-# Roda todo dia de madrugada (04:19 no horário de Brasília) e também sob demanda.
+# Roda todo dia de madrugada e também sob demanda.
+# Minuto "quebrado" (:43) e hora de baixo tráfego para reduzir o atraso da fila do GitHub Actions.
 on:
   schedule:
-    - cron: "19 7 * * *"   # 07:19 UTC = 04:19 BRT
+    - cron: "43 6 * * *"   # 06:43 UTC = 03:43 BRT (madrugada, fora de pico)
   workflow_dispatch: {}
 
 permissions:
