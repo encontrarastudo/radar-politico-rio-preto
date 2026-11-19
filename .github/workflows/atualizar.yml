@@ -5,7 +5,20 @@ name: Atualizar site (coleta diária)
 on:
   schedule:
     - cron: "43 6 * * *"   # 06:43 UTC = 03:43 BRT (madrugada, fora de pico)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "1 para varrer o histórico (backfill)"
+        required: false
+        default: ""
+      dias:
+        description: "Janela em dias (padrão 150)"
+        required: false
+        default: ""
+      max_pag:
+        description: "Páginas por tipo (padrão 90)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -17,7 +30,11 @@ concurrency:
 jobs:
   atualizar:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
+    env:
+      PROPOSTAS_BACKFILL: ${{ github.event.inputs.backfill }}
+      PROPOSTAS_DIAS: ${{ github.event.inputs.dias }}
+      PROPOSTAS_MAX_PAG: ${{ github.event.inputs.max_pag }}
     steps:
       - name: Baixar o repositório
         uses: actions/checkout@v4

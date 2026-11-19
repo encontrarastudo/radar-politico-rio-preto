@@ -193,14 +193,42 @@ def parse_records(html, label):
         out.append([m.group(1).strip(), m.group(2), m.group(3), m.group(4).strip()[:80], re.sub(r"\s+"," ",m.group(5)).strip()[:320]])
     return out
 
-def coletar_propostas(dias=150):
+def _carrega_propostas_arquivo():
+    """Arquivo cumulativo já coletado (para não perder proposituras antigas)."""
+    try:
+        with open(os.path.join(DATA, "propostas.json"), encoding="utf-8") as f:
+            d = json.load(f)
+        return [r for r in d if isinstance(r, list) and len(r) >= 5]
+    except Exception:
+        return []
+
+def _dkey_prop(data_br):
+    m = re.match(r"(\d{2})/(\d{2})/(\d{4})", data_br or "")
+    return (m.group(3)+m.group(2)+m.group(1)) if m else "00000000"
+
+def coletar_propostas(dias=None, max_pag=None):
+    # Acumulativo: começa do que já foi coletado e só acrescenta o que falta.
+    # Controlado por variáveis de ambiente (dia a dia usa os padrões):
+    #   PROPOSTAS_DIAS (janela em dias, padrão 150) · PROPOSTAS_MAX_PAG (páginas/tipo, padrão 90)
+    #   PROPOSTAS_BACKFILL=1 (varre fundo, sem parar cedo) · PROPOSTAS_TETO (teto do arquivo, padrão 15000)
+    def _envint(nome, padrao):
+        v = (os.environ.get(nome) or "").strip()
+        try: return int(v) if v else padrao
+        except ValueError: return padrao
+    dias = dias if dias is not None else _envint("PROPOSTAS_DIAS", 150)
+    max_pag = max_pag if max_pag is not None else _envint("PROPOSTAS_MAX_PAG", 90)
+    backfill = (os.environ.get("PROPOSTAS_BACKFILL") or "").strip() == "1"
+    teto = _envint("PROPOSTAS_TETO", 15000)
     hoje = datetime.date.today()
     ini = (hoje - datetime.timedelta(days=dias)).strftime("%d/%m/%Y")
     fim = hoje.strftime("%d/%m/%Y")
-    recs=[]; seen=set()
-    for k,code in TIPOS.items():
-        pagina=1
-        while pagina<=90:
+    arq = {}
+    for r in _carrega_propostas_arquivo():
+        arq[r[0]+r[1]] = r
+    antes = len(arq)
+    for k, code in TIPOS.items():
+        pagina = 1
+        while pagina <= max_pag:
             url=(f"{SIS}/Documentos/Pesquisa?Pesquisa=Avancada&id=78&pagina={pagina}&Modulo=8&Documento={code}"
                  f"&Numeracao=Documento&DataInicial={ini}&DataFinal={fim}&Situacao=0&Classificacao=0"
                  f"&TipoAutor=Todos&AutoriaId=0&Iniciativa=Nenhum&NoTexto=false")
@@ -209,10 +237,13 @@ def coletar_propostas(dias=150):
             novos=0
             for r in rr:
                 key=r[0]+r[1]
-                if key not in seen: seen.add(key); recs.append(r); novos+=1
-            if novos==0: break
+                if key not in arq: novos+=1
+                arq[key]=r
+            # dia a dia: para ao alcançar o que já está arquivado; backfill: varre fundo
+            if novos==0 and not backfill: break
             pagina+=1; time.sleep(PAUSA)
-    print(f"  proposituras na amostra ({ini} a {fim}): {len(recs)}")
+    recs=sorted(arq.values(), key=lambda r:_dkey_prop(r[2]), reverse=True)[:teto]
+    print(f"  proposituras acumuladas: {len(recs)} (arquivo antes: {antes}; janela {ini}–{fim}, até {max_pag} pág/tipo, backfill={backfill})")
     return recs
 
 # ============ 4) CONTATOS (telefone/e-mail oficial por vereador) ============
