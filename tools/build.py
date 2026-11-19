@@ -326,8 +326,8 @@ for k in ["melhorias","cobrancas","homenagens","leis","outros"]:
     regs=POR_GRUPO[k]
     if not regs and k=="outros": continue
     mostra=regs[:CAP]
-    itens="".join(item_html(r) for r in mostra) or "<li class='it'>Sem itens nesta amostra.</li>"
-    extra=f'<li class="it muted">+ {len(regs)-CAP} outros na amostra — use a busca por rua/bairro acima.</li>' if len(regs)>CAP else ""
+    itens="".join(item_html(r) for r in mostra) or "<li class='it'>Sem itens recentes.</li>"
+    extra=f'<li class="it muted">+ {len(regs)-CAP} outros pedidos recentes — use a busca por rua/bairro acima.</li>' if len(regs)>CAP else ""
     chips=""
     if k=="melhorias":
         ct=Counter(r["sub"] for r in regs if r["sub"] and r["sub"]!="Outros serviços")
@@ -335,7 +335,7 @@ for k in ["melhorias","cobrancas","homenagens","leis","outros"]:
     chips_html=f'<span class="gc-chips">{chips}</span>' if chips else ""
     grupos_html+=(f'<details class="grupo-card g-{k}"><summary><span class="gc-icon" aria-hidden="true">{GRUPO_ICON[k]}</span>'
       f'<span class="gc-main"><span class="gc-nome">{esc(GRUPOS[k])}</span>'
-      f'<span class="gc-cont">{len(regs)} na amostra</span>{chips_html}</span>'
+      f'<span class="gc-cont">{len(regs)} recentes</span>{chips_html}</span>'
       f'<span class="gc-cta">abrir ▾</span></summary><ul class="lista-itens">{itens}{extra}</ul></details>')
 grupos_html+='</div>'
 def periodo(items):
@@ -361,10 +361,10 @@ for loc,items in bairros_rank[:15]:
        f'<div class="rep-meta2">{tag}{" · " if tag else ""}{nver} vereador(es) · {esc(periodo(items))}</div></div>'
        f'<span class="rep-cta">ver →</span></summary>'
        f'<ul class="lista-itens">{"".join(item_html(i) for i in items2)}</ul></details>')
-if not bairro_cards: bairro_cards='<p class="muted">Sem bairros identificados na amostra atual.</p>'
+if not bairro_cards: bairro_cards='<p class="muted">Sem bairros identificados nos pedidos recentes.</p>'
 # --- Solicitações recentes (pedidos de melhoria/cobrança, mais novos primeiro) ---
 recs_tab=sorted([r for r in REGS if r["grupo"] in ("melhorias","cobrancas")], key=lambda i:dkey_d(i["data"]), reverse=True)[:30]
-recentes_cards="".join(item_html(r) for r in recs_tab) or '<li class="it muted">Sem solicitações recentes na amostra.</li>'
+recentes_cards="".join(item_html(r) for r in recs_tab) or '<li class="it muted">Sem solicitações recentes.</li>'
 bairros_html=(
  '<div class="tabs" role="tablist">'
  '<button class="tab-btn active" data-tab="t-bairros" role="tab" aria-selected="true">Por bairro</button>'
@@ -517,7 +517,7 @@ for r in recentes:
 panorama_html=(f'<div class="pan-total"><b>{fmt(T_PROPS)}</b><span>proposituras dos 23 vereadores no mandato ({PERIODO_DADOS})</span></div>'
  f'<div class="pan-cols">'
  f'<div class="pan-col"><h3>Quem mais propôs</h3><p class="pan-base">no mandato inteiro</p><ol class="pan-quem">{quem_html}</ol></div>'
- f'<div class="pan-col"><h3>O que mais pedem</h3><p class="pan-base">na amostra recente de pedidos</p><ul class="pan-pede">{pede_html or "<li class=muted>—</li>"}</ul></div>'
+ f'<div class="pan-col"><h3>O que mais pedem</h3><p class="pan-base">nos pedidos mais recentes</p><ul class="pan-pede">{pede_html or "<li class=muted>—</li>"}</ul></div>'
  f'<div class="pan-col"><h3>Quem mais aprovou projetos</h3><p class="pan-base">projetos que viraram lei no mandato</p><ol class="pan-quem">{aprov_html or "<li class=muted>—</li>"}</ol></div>'
  f'</div>'
  f'<div class="pan-rec"><h3>Propostas mais recentes</h3><ul class="pan-reclist">{rec_html}</ul>'
@@ -563,7 +563,7 @@ verif_html=f'''<div class="met">
 <h3>Presença nas sessões</h3>
 {("<p>A presença cobre <strong>todas as sessões do mandato</strong> e vem dos relatórios mensais oficiais da Câmara — <em>“Comparecimento dos Vereadores às Sessões”</em> (um PDF por mês). Cada relatório lista, sessão a sessão, se cada vereador esteve Presente ou Ausente; nós somamos tudo. <strong>O relatório oficial não separa falta justificada de falta sem justificativa</strong> — ele só marca “Presente” ou “Ausente” —, então o site mostra apenas isso; se a Câmara passar a publicar as justificativas, elas entram aqui.</p>" if PRES_FULL else "<p>A presença vem da chamada registrada em cada sessão no sistema do Legislativo (SISCAM). Há ainda a fonte oficial independente — o relatório mensal <em>“Comparecimento dos Vereadores às Sessões”</em> (PDF da Câmara).</p>")}
 <h3>Proposições</h3>
-<p>As contagens por vereador vêm da busca oficial de proposituras (mandato {PERIODO_DADOS}). Os textos nos grupos e na busca por rua são a amostra mais recente coletada.</p>
+<p>As contagens por vereador vêm da busca oficial de proposituras (mandato {PERIODO_DADOS}). Os textos nos grupos e na busca por rua cobrem as proposituras mais recentes; as contagens por vereador são completas (todo o mandato).</p>
 <h3>Como agrupamos</h3>
 <p>A mesma regra vale para todos: Moção → Homenagem; Projeto de Lei → Proposta de lei; Indicação/Requerimento são lidos pelo assunto (congratulação/pesar → Homenagens; pedido de informação → Perguntas e cobranças; serviço no bairro → Pedidos de melhoria; o resto → Outros).</p>
 <h3>Como calculamos o índice (ranking)</h3>
@@ -581,9 +581,9 @@ verif_html=f'''<div class="met">
 naoconf_html='''<ul class="aviso-lista">
 <li><strong>Partido de alguns vereadores pode divergir entre fontes oficiais</strong> (lista da Câmara x relatório mensal). Usamos a lista do portal da Câmara; a diferença pode refletir troca de partido.</li>
 <li><strong>Presença:</strong> confirmada no nível da chamada apenas nas sessões com o bloco preenchido no SISCAM. O histórico completo depende do relatório mensal oficial (PDF) ou da coleta automática diária.</li>
-<li><strong>Textos das proposições:</strong> amostra recente. As contagens totais por vereador são completas.</li>
+<li><strong>Textos das proposições:</strong> cobrem as mais recentes (usadas na busca por rua/bairro e nos agrupamentos). As contagens totais por vereador são completas, de todo o mandato.</li>
 <li><strong>Contato, foto e verba de gabinete por vereador:</strong> coletados quando disponíveis; onde faltar, o card leva ao perfil oficial.</li>
-<li><strong>Repetições:</strong> calculadas sobre a amostra atual.</li>
+<li><strong>Repetições:</strong> calculadas sobre as proposituras recentes.</li>
 </ul>'''
 
 CSS = open(os.path.join(os.path.dirname(__file__), "estilo.css"), encoding="utf-8").read()

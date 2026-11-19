@@ -21,9 +21,9 @@ __JSONLD__
 <body>
 <a href="#conteudo" class="skip">Pular para o conteúdo</a>
 <header class="top"><div class="wrap">
-  <p class="brand"><span class="ao-vivo" aria-hidden="true"></span> Radar Político de Rio Preto</p>
-  <h1>O que cada vereador de São José do Rio Preto faz</h1>
-  <p class="lead">Presença, proposições e votos dos 23 vereadores, só com dados oficiais. Digite sua rua ou bairro e veja o que foi pedido para lá — e por quem. Cada número tem link para a fonte oficial.</p>
+  <p class="brand"><span class="radar" aria-hidden="true"></span><span class="nm">Radar Político de Rio Preto</span></p>
+  <h1>Acompanhe o mandato dos 23 vereadores</h1>
+  <p class="lead">Fiscalize de perto nossos representantes e saiba em tempo real as propostas para a cidade, sua região e até mesmo o seu bairro.</p>
   __SALARIO__
   __TILES__
   <p class="freshness">🟢 Conferido automaticamente na Câmara · última atualização em <strong>__ATUALIZADO__</strong>.</p>
@@ -39,7 +39,7 @@ __JSONLD__
 
   <section class="sec2" id="panorama">
     <h2>A cidade em números</h2>
-    <p class="sub">Um retrato rápido do que a Câmara produziu: quem mais propôs, o que a população mais pede e os bairros que mais aparecem. Os pedidos por tema e bairro vêm da amostra recente de proposituras.</p>
+    <p class="sub">Um retrato rápido do que a Câmara produziu: quem mais propôs, o que a população mais pede e os bairros que mais aparecem. Os pedidos por tema e bairro consideram as proposituras mais recentes — as contagens por vereador são completas.</p>
     __PANORAMA__
   </section>
 
@@ -55,13 +55,13 @@ __JSONLD__
 
   <section class="sec2" id="bairros">
     <h2>Bairros com mais pedidos</h2>
-    <p class="sub">Os bairros que mais aparecem nas solicitações da amostra recente. Mais menções <strong>não significam o mesmo problema</strong> — são pedidos diferentes sobre o mesmo bairro. Abra cada um e leia o que foi pedido, e por quem.</p>
+    <p class="sub">Os bairros que mais aparecem nas solicitações mais recentes. Mais menções <strong>não significam o mesmo problema</strong> — são pedidos diferentes sobre o mesmo bairro. Abra cada um e leia o que foi pedido, e por quem.</p>
     __BAIRROS__
   </section>
 
   <section class="sec2" id="trabalho">
     <h2>O trabalho da Câmara</h2>
-    <p class="sub">As proposituras da amostra, agrupadas por tipo em linguagem simples. Abra cada grupo e leia uma por uma. <a href="#numeros">Veja a regra de agrupamento</a>.</p>
+    <p class="sub">As proposituras mais recentes, agrupadas por tipo em linguagem simples. Abra cada grupo e leia uma por uma. <a href="#numeros">Veja a regra de agrupamento</a>.</p>
     __GRUPOS__
   </section>
 
@@ -108,7 +108,7 @@ __JSONLD__
     <h2>De onde vêm os números</h2>
     <p class="sub">Tudo é público e vem das fontes oficiais da Câmara. Veja como medimos — e onde conferimos.</p>
     __VERIF__
-    <h3 style="margin-top:18px">O que ainda é amostra ou não foi confirmado</h3>
+    <h3 style="margin-top:18px">Alcance dos dados e o que não foi confirmado</h3>
     __NAOCONF__
     <p class="muted" style="margin-top:12px">Fontes: <a href="https://riopreto.siscam.com.br/sessoes" target="_blank" rel="noopener">sessões (SISCAM)</a> · <a href="https://riopreto.siscam.com.br/index/78/8" target="_blank" rel="noopener">proposituras (SISCAM)</a> · <a href="https://www.riopreto.sp.leg.br/ContaPublica/Listar/1267" target="_blank" rel="noopener">relatório mensal de presença (Câmara)</a> · <a href="https://www.riopreto.sp.leg.br/Vereador" target="_blank" rel="noopener">vereadores e Mesa (Câmara)</a>.</p>
   </section>
@@ -170,8 +170,8 @@ function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':
 function renderItens(arr){return arr.map(r=>{const loc=[r.rua,r.bairro].filter(Boolean).join(' · ');return '<li class="it"><div class="it-top"><span class="it-tipo"><span class="it-ic">'+(r.ic||'')+'</span> '+esc(r.t)+' '+esc(r.n)+'</span><span class="it-data">'+esc(r.d)+'</span></div><div class="it-ass">'+esc(r.s)+'</div>'+(loc?'<div class="it-local">📍 '+esc(loc)+'</div>':'')+'<div class="it-aut">por <strong>'+esc(r.a)+'</strong> · '+esc(r.g)+'</div></li>';}).join('');}
 function buscarRua(){const q=norm(ri.value).trim();if(!q){rr.innerHTML='';rinfo.textContent='Digite uma rua ou bairro para começar.';return;}
   const res=BUSCA.filter(r=>r.q.includes(q));
-  rinfo.textContent=res.length+(res.length===1?' pedido encontrado':' pedidos encontrados')+' para “'+ri.value.trim()+'” na amostra';
-  rr.innerHTML=res.length?renderItens(res):'<li class="it">Nada encontrado nesta amostra. O acervo completo da Câmara pode ter mais — veja a busca oficial de proposituras.</li>';setupClamps(rr);}
+  rinfo.textContent=res.length+(res.length===1?' pedido encontrado':' pedidos encontrados')+' para “'+ri.value.trim()+'” nos pedidos mais recentes';
+  rr.innerHTML=res.length?renderItens(res):'<li class="it">Nada encontrado nos pedidos mais recentes. O acervo completo da Câmara pode ter mais — veja a busca oficial de proposituras.</li>';setupClamps(rr);}
 ri.addEventListener('input',buscarRua);
 const pr=new URLSearchParams(location.search).get('rua');if(pr){ri.value=pr;}buscarRua();
 // ajuda popover

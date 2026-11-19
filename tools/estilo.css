@@ -438,3 +438,29 @@ nav.secnav a{white-space:nowrap;text-decoration:none;color:#eef5fa;font-weight:8
   padding:8px 15px;border-radius:999px;transition:background .15s,color .15s}
 nav.secnav a:hover,nav.secnav a:focus{background:rgba(255,255,255,.15);color:#fff}
 nav.secnav a.on{background:var(--red);color:#fff}
+
+/* ===== v8: wordmark + radar animado ===== */
+header.top .brand{
+  display:inline-flex;align-items:center;gap:12px;margin:0 0 14px;
+  font-family:'Archivo',sans-serif;font-size:1.42rem;font-weight:900;
+  letter-spacing:.004em;text-transform:none;opacity:1;color:var(--navy);line-height:1}
+header.top .brand .nm{line-height:1.05}
+.radar{position:relative;flex:none;width:32px;height:32px;border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%,
+      transparent 0 2.5px, rgba(193,23,32,.50) 2.5px 3.6px,
+      transparent 3.6px 8px, rgba(193,23,32,.30) 8px 9.1px,
+      transparent 9.1px 13.5px, rgba(193,23,32,.22) 13.5px 14.6px, transparent 14.6px);
+  border:1.6px solid rgba(193,23,32,.42);overflow:hidden;
+  box-shadow:0 2px 7px rgba(12,50,74,.18), inset 0 0 7px rgba(193,23,32,.10)}
+.radar::before{content:"";position:absolute;inset:-2px;border-radius:50%;
+  background:conic-gradient(from 0deg,
+    rgba(193,23,32,.58) 0deg, rgba(193,23,32,.14) 34deg, transparent 72deg 360deg);
+  animation:radar-sweep 2.4s linear infinite;transform-origin:50% 50%}
+.radar::after{content:"";position:absolute;top:50%;left:50%;width:3px;height:3px;margin:-1.5px 0 0 -1.5px;
+  border-radius:50%;background:var(--red);
+  box-shadow:0 0 0 0 rgba(193,23,32,.55);animation:radar-blip 2.4s ease-out infinite}
+@keyframes radar-sweep{to{transform:rotate(360deg)}}
+@keyframes radar-blip{0%,58%{box-shadow:0 0 0 0 rgba(193,23,32,.55)}80%{box-shadow:0 0 0 8px rgba(193,23,32,0)}100%{box-shadow:0 0 0 0 rgba(193,23,32,0)}}
+@media(max-width:520px){header.top .brand{font-size:1.2rem;gap:10px}.radar{width:28px;height:28px}}
+@media(prefers-reduced-motion:reduce){.radar::before,.radar::after{animation:none}}
