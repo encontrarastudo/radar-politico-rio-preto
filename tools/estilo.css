@@ -464,3 +464,16 @@ header.top .brand .nm{line-height:1.05}
 @keyframes radar-blip{0%,58%{box-shadow:0 0 0 0 rgba(193,23,32,.55)}80%{box-shadow:0 0 0 8px rgba(193,23,32,0)}100%{box-shadow:0 0 0 0 rgba(193,23,32,0)}}
 @media(max-width:520px){header.top .brand{font-size:1.2rem;gap:10px}.radar{width:28px;height:28px}}
 @media(prefers-reduced-motion:reduce){.radar::before,.radar::after{animation:none}}
+
+/* ===== v9: banner alinhado + ranking sem rolagem ===== */
+.pan-total{align-items:center}
+.rank-tab{font-size:.88rem}
+.rank-tab th,.rank-tab td{padding:9px 7px}
+.rank-tab thead th{white-space:normal;font-size:.68rem;line-height:1.18}
+.rank-tab td.r-gasto{font-size:.82rem}
+@media(max-width:600px){
+  .rank-tab .col-part,.rank-tab .col-pl{display:none}
+  .rank-tab{font-size:.82rem}
+  .rank-tab th,.rank-tab td{padding:8px 5px}
+  .rank-tab .r-nome small{font-size:.68rem}
+}

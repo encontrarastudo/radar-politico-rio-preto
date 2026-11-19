@@ -104,7 +104,7 @@ def reg_icon(r):
     if r.get("grupo")=="melhorias" and r.get("sub") in SUB_ICON: return SUB_ICON[r["sub"]]
     return GRUPO_EMOJI.get(r.get("grupo"),"📄")
 RUA_RE=re.compile(r"\b(Rua|Avenida|Av\.?|Travessa|Pra[çc]a|Estrada(?:\s+Municipal)?|Estr\.?\s*Mun\.?|Rodovia|Alameda|Viela|Largo)\s+([A-ZÀ-Ú][\wçãáéíóúâêôà'’.\-]+(?:\s+(?:de|da|do|das|dos|e)?\s*[A-ZÀ-Ú0-9][\wçãáéíóúâêôà'’.\-]+){0,4})")
-BAIRRO_RE=re.compile(r"\b(Bairro|Vila|Jardim|Parque|Residencial|Res\.?|Est[âa]ncia|N[úu]cleo(?:\s+Habitacional)?|Conjunto|Distrito|Ch[áa]cara)\s+([A-ZÀ-Ú][\wçãáéíóúâêôà'’.\-]+(?:\s+[A-ZÀ-Ú0-9][\wçãáéíóúâêôà'’.\-]+){0,3})")
+BAIRRO_RE=re.compile(r"\b(Bairro|Vila|Jardim|Parque|Residencial|Res\.?|Est[âa]ncia|N[úu]cleo(?:\s+Habitacional)?|Conjunto|Distrito|Ch[áa]cara|Setor|Zona|Regi[ãa]o|Loteamento|Cidade\s+Jardim)\s+([A-ZÀ-Ú][\wçãáéíóúâêôà'’.\-]+(?:\s+[A-ZÀ-Ú0-9][\wçãáéíóúâêôà'’.\-]+){0,3})")
 def extrai(reg,s):
     m=reg.search(s)
     return re.sub(r"\s+"," ",(m.group(1)+" "+m.group(2))).strip(" .,–-") if m else ""
@@ -449,7 +449,7 @@ def mini_foto(m):
 rank_rows="".join(
   f'<tr data-indice="{m["indice"]}" data-presenca="{m["presenca"]}" data-partic="{m["partic"]}" data-pl="{m["pl"]}" data-aprov="{m["aprov"]}" data-taxa="{m["taxa"]}" data-econ="{m["econ"]}" data-nome="{esc(m["nome"])}">'
   f'<td class="r-pos">{i+1}</td><td class="r-nome"><a href="#v-{m["slug"]}">{mini_foto(m)}<span>{esc(m["nome"])}<small>{esc(m["partido"])}</small></span></a></td>'
-  f'<td class="r-strong">{m["aprov"]}</td><td class="r-taxa">{m["taxa"]}%</td><td>{m["presenca"]}%</td><td>{m["partic"]}%</td><td>{m["pl"]}</td>'
+  f'<td class="r-strong">{m["aprov"]}</td><td class="r-taxa">{m["taxa"]}%</td><td>{m["presenca"]}%</td><td class="col-part">{m["partic"]}%</td><td class="col-pl">{m["pl"]}</td>'
   f'<td class="r-gasto">R$ {("{:,.0f}".format(m["gasto"])).replace(",",".")}</td><td class="r-indice">{m["indice"]}</td></tr>'
   for i,m in enumerate(rank_ordenado))
 ranking_html=(f'<div class="rank-head"><label for="rank-sort">Ordenar por</label>'
@@ -460,10 +460,10 @@ ranking_html=(f'<div class="rank-head"><label for="rank-sort">Ordenar por</label
  f'<option value="econ">Mais econômico (viagens)</option>'
  f'<option value="nome">Nome (A–Z)</option></select></div>'
  f'<div class="tab-wrap"><table class="rank-tab"><thead><tr><th>#</th><th>Vereador</th>'
- f'<th>Projetos aprovados <button class="ajuda" data-termo="aprovados" aria-label="O que é projeto aprovado?">?</button></th>'
+ f'<th>Aprovados <button class="ajuda" data-termo="aprovados" aria-label="O que é projeto aprovado?">?</button></th>'
  f'<th>Aprovação <button class="ajuda" data-termo="taxa" aria-label="O que é taxa de aprovação?">?</button></th>'
- f'<th>Presença</th><th>Participação</th><th>Projetos de lei</th>'
- f'<th>Gastos c/ viagens <button class="ajuda" data-termo="viagens" aria-label="O que é isso?">?</button></th>'
+ f'<th>Presença</th><th class="col-part">Partic.</th><th class="col-pl">Proj. de lei</th>'
+ f'<th>Gastos viagens <button class="ajuda" data-termo="viagens" aria-label="O que é isso?">?</button></th>'
  f'<th>Índice</th></tr></thead>'
  f'<tbody id="rank-body">{rank_rows}</tbody></table></div>')
 cmp_opts="".join(f'<option value="{v["id"]}">{esc(v["nome"])} ({esc(v["partido"])})</option>' for v in VERS)
@@ -474,7 +474,7 @@ comparar_html=(f'<div class="cmp-pick">'
  f'</div><div id="cmp-result" class="cmp-result"><p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p></div>')
 BUSCA_CAP=6000
 REGS_BUSCA=sorted(REGS, key=lambda r:dkey_d(r["data"]), reverse=True)[:BUSCA_CAP]
-busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"ic":reg_icon(r),"q":(r["ruaN"]+" "+r["bairroN"]+" "+r["txtN"][:150])} for r in REGS_BUSCA], ensure_ascii=False)
+busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"ic":reg_icon(r)} for r in REGS_BUSCA], ensure_ascii=False)
 
 # ===== Painel "A cidade em números" =====
 from collections import Counter

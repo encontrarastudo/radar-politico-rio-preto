@@ -164,6 +164,7 @@ document.addEventListener('toggle',e=>{if(e.target&&e.target.open&&e.target.quer
 // glossário sanfona: abrir um fecha os outros (reforço ao atributo name)
 document.querySelectorAll('.acc[name]').forEach(d=>d.addEventListener('toggle',()=>{if(d.open){document.querySelectorAll('.acc[name="'+d.getAttribute('name')+'"]').forEach(o=>{if(o!==d)o.open=false;});}}));
 function norm(s){return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
+BUSCA.forEach(function(r){r.q=norm((r.rua||'')+' '+(r.bairro||'')+' '+(r.s||''));});
 // vereadores filtro
 const bv=document.getElementById('busca-v'),fp=document.getElementById('filtro-part'),ci=document.getElementById('count-info');
 const cards=Array.from(document.querySelectorAll('#grid .card'));
@@ -173,12 +174,14 @@ bv.addEventListener('input',fcards);fp.addEventListener('change',fcards);fcards(
 const ri=document.getElementById('rua-input'),rr=document.getElementById('rua-result'),rinfo=document.getElementById('rua-info');
 function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 function renderItens(arr){return arr.map(r=>{const loc=[r.rua,r.bairro].filter(Boolean).join(' · ');return '<li class="it"><div class="it-top"><span class="it-tipo"><span class="it-ic">'+(r.ic||'')+'</span> '+esc(r.t)+' '+esc(r.n)+'</span><span class="it-data">'+esc(r.d)+'</span></div><div class="it-ass">'+esc(r.s)+'</div>'+(loc?'<div class="it-local">📍 '+esc(loc)+'</div>':'')+'<div class="it-aut">por <strong>'+esc(r.a)+'</strong> · '+esc(r.g)+'</div></li>';}).join('');}
-function buscarRua(){const q=norm(ri.value).trim();if(!q){rr.innerHTML='';rinfo.textContent='Digite uma rua ou bairro para começar.';return;}
+function buscarRuaNow(){const q=norm(ri.value).trim();if(q.length<2){rr.innerHTML='';rinfo.textContent='Digite ao menos 2 letras da rua ou bairro.';return;}
   const res=BUSCA.filter(r=>r.q.includes(q));
+  const CAP=60,shown=res.slice(0,CAP);
   rinfo.textContent=res.length+(res.length===1?' pedido encontrado':' pedidos encontrados')+' para “'+ri.value.trim()+'” nos pedidos mais recentes';
-  rr.innerHTML=res.length?renderItens(res):'<li class="it">Nada encontrado nos pedidos mais recentes. O acervo completo da Câmara pode ter mais — veja a busca oficial de proposituras.</li>';setupClamps(rr);}
+  rr.innerHTML=res.length?(renderItens(shown)+(res.length>CAP?'<li class="it muted">Mostrando os '+CAP+' primeiros de '+res.length+'. Refine a busca (ex.: nome da rua) para ver menos.</li>':'')):'<li class="it">Nada encontrado nos pedidos mais recentes. O acervo completo da Câmara pode ter mais — veja a busca oficial de proposituras.</li>';setupClamps(rr);}
+let _bt;function buscarRua(){clearTimeout(_bt);_bt=setTimeout(buscarRuaNow,170);}
 ri.addEventListener('input',buscarRua);
-const pr=new URLSearchParams(location.search).get('rua');if(pr){ri.value=pr;}buscarRua();
+const pr=new URLSearchParams(location.search).get('rua');if(pr){ri.value=pr;}buscarRuaNow();
 // ajuda popover
 const pop=document.getElementById('pop'),pt=document.getElementById('pop-t'),pb=document.getElementById('pop-b'),bd=document.getElementById('backdrop');
 function abrir(k){const g=GLOSS[k];if(!g)return;pt.textContent=g.q;pb.textContent=g.a;pop.classList.add('open');bd.classList.add('open');document.getElementById('pop-close').focus();}
