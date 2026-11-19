@@ -472,7 +472,7 @@ comparar_html=(f'<div class="cmp-pick">'
  f'<select class="cmp-sel" data-i="1" aria-label="Segundo vereador"><option value="">Escolha para comparar…</option>{cmp_opts}</select>'
  f'<select class="cmp-sel" data-i="2" aria-label="Terceiro vereador (opcional)"><option value="">(opcional) um terceiro…</option>{cmp_opts}</select>'
  f'</div><div id="cmp-result" class="cmp-result"><p class="muted">Escolha ao menos dois vereadores acima para ver lado a lado.</p></div>')
-BUSCA_CAP=6000
+BUSCA_CAP=15000
 REGS_BUSCA=sorted(REGS, key=lambda r:dkey_d(r["data"]), reverse=True)[:BUSCA_CAP]
 busca_data=json.dumps([{"g":GRUPOS[r["grupo"]],"t":r["tipo"],"n":r["n"],"d":r["data"],"a":r["autor"],"s":r["assunto"],"rua":r["rua"],"bairro":r["bairro"],"ic":reg_icon(r)} for r in REGS_BUSCA], ensure_ascii=False)
 
@@ -604,11 +604,14 @@ page = (TPL.replace("__TITLE__",esc(TITLE)).replace("__DESC__",esc(DESC)).replac
  .replace("__JSONLD__",jsonld_html).replace("__CSS__",CSS).replace("__ATUALIZADO__",ATUALIZADO)
  .replace("__BAIRROS__",bairros_html).replace("__GRUPOS__",grupos_html).replace("__OPTIONS__",options)
  .replace("__CARDS__",cards_html).replace("__GLOSS__",gloss_html).replace("__VERIF__",verif_html)
- .replace("__DETALHES__",detalhes_html).replace("__GLOSSJS__",gloss_js).replace("__BUSCADATA__",busca_data)
+ .replace("__DETALHES__",detalhes_html).replace("__GLOSSJS__",gloss_js)
  .replace("__NAOCONF__",naoconf_html).replace("__TILES__",tiles_html)
  .replace("__RANKING__",ranking_html).replace("__COMPARAR__",comparar_html).replace("__VMJS__",VM_JS)
  .replace("__PANORAMA__",panorama_html).replace("__EMENDAS__",emendas_html).replace("__SALARIO__",salario_html))
 open(os.path.join(OUT,"index.html"),"w",encoding="utf-8").write(page)
+# índice de busca separado (carregado sob demanda pelo cliente)
+open(os.path.join(OUT,"busca.json"),"w",encoding="utf-8").write(busca_data)
+print(f"busca.json: {os.path.getsize(os.path.join(OUT,'busca.json'))} bytes, {len(REGS_BUSCA)} registros")
 
 # robots / sitemap / llms
 open(os.path.join(OUT,"robots.txt"),"w",encoding="utf-8").write(
