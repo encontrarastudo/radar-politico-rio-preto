@@ -104,7 +104,7 @@ def reg_icon(r):
     if r.get("grupo")=="melhorias" and r.get("sub") in SUB_ICON: return SUB_ICON[r["sub"]]
     return GRUPO_EMOJI.get(r.get("grupo"),"📄")
 RUA_RE=re.compile(r"\b(Rua|Avenida|Av\.?|Travessa|Pra[çc]a|Estrada(?:\s+Municipal)?|Estr\.?\s*Mun\.?|Rodovia|Alameda|Viela|Largo)\s+([A-ZÀ-Ú][\wçãáéíóúâêôà'’.\-]+(?:\s+(?:de|da|do|das|dos|e)?\s*[A-ZÀ-Ú0-9][\wçãáéíóúâêôà'’.\-]+){0,4})")
-BAIRRO_RE=re.compile(r"\b(Bairro|Vila|Jardim|Parque|Residencial|Res\.?|Est[âa]ncia|N[úu]cleo(?:\s+Habitacional)?|Conjunto|Distrito|Ch[áa]cara|Setor|Zona|Regi[ãa]o|Loteamento|Cidade\s+Jardim)\s+([A-ZÀ-Ú][\wçãáéíóúâêôà'’.\-]+(?:\s+[A-ZÀ-Ú0-9][\wçãáéíóúâêôà'’.\-]+){0,3})")
+BAIRRO_RE=re.compile(r"\b(Bairro|Vila|Jardim|Parque|Residencial|Res\.?|Est[âa]ncia|N[úu]cleo(?:\s+Habitacional)?|Conjunto|Distrito|Ch[áa]cara|Loteamento)\s+([A-ZÀ-Ú][\wçãáéíóúâêôà'’.\-]+(?:\s+[A-ZÀ-Ú0-9][\wçãáéíóúâêôà'’.\-]+){0,3})")
 def extrai(reg,s):
     m=reg.search(s)
     return re.sub(r"\s+"," ",(m.group(1)+" "+m.group(2))).strip(" .,–-") if m else ""
@@ -114,6 +114,9 @@ REGS=[]
 for p in PROPOSTAS:
     tipo,n,data,autor,assunto = p
     g=classify(tipo,assunto); rua=extrai(RUA_RE,assunto); bairro=extrai(BAIRRO_RE,assunto)
+    if bairro:
+        bairro=re.sub(r"^Bairro\s+","",bairro).strip(" .,–-")   # mescla o prefixo genérico "Bairro X" com "X"
+        if "competente" in nrm(bairro): bairro=""               # descarta falso positivo burocrático
     REGS.append({"grupo":g,"tipo":tipo,"n":n,"data":data,"autor":autor.title() if autor.isupper() else autor,
                  "assunto":assunto,"rua":rua,"bairro":bairro,"sub":subtype(assunto) if g=="melhorias" else "",
                  "ruaN":nrm(rua),"bairroN":nrm(bairro),"txtN":nrm(assunto+" "+autor)})
