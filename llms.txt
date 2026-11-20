@@ -1,28 +1,28 @@
 # Radar Político de Rio Preto
 
-> Site de transparência, com dados oficiais, sobre os 23 vereadores da Câmara Municipal de São José do Rio Preto (SP), mandato 2025–2028. Presença, proposições e votos, com busca por rua/bairro. Atualizado em 19 de novembro de 2026.
+> Site de transparência, com dados oficiais, sobre os 23 vereadores da Câmara Municipal de São José do Rio Preto (SP), mandato 2025–2028. Presença, proposições e votos, com busca por rua/bairro. Atualizado em 20 de novembro de 2026.
 
 ## Vereadores (mandato 2025–2028)
-- Abner Tofanelli (PSB): 28 projetos de lei, 550 indicações, 612 requerimentos, 167 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27253
-- Alex de Carvalho (PSB): 18 projetos de lei, 218 indicações, 602 requerimentos, 22 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27258
-- Alexandre Montenegro (PL): 53 projetos de lei, 1688 indicações, 1087 requerimentos, 44 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27250
-- Anderson Branco (Progressistas): 5 projetos de lei, 392 indicações, 426 requerimentos, 6 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/19428
-- Bruno Marinho (PSB): 6 projetos de lei, 787 indicações, 598 requerimentos, 6 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23565
-- Bruno Moura (PL): 22 projetos de lei, 804 indicações, 645 requerimentos, 11 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23566
-- Celso Peixão (MDB): 10 projetos de lei, 1166 indicações, 761 requerimentos, 26 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/71
-- Felipe Alcalá (PL): 62 projetos de lei, 774 indicações, 756 requerimentos, 73 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27249
-- Francisco Junior (União Brasil): 7 projetos de lei, 2018 indicações, 645 requerimentos, 2 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/73
-- Jean Dornelas (MDB): 56 projetos de lei, 1084 indicações, 1062 requerimentos, 159 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/19430
-- João Paulo Rillo (PT): 14 projetos de lei, 171 indicações, 711 requerimentos, 81 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/46
-- Jonathan Santos (Republicanos, 2º Secretário): 16 projetos de lei, 1234 indicações, 615 requerimentos, 66 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27252
-- Jorge Menezes (PSD): 16 projetos de lei, 285 indicações, 436 requerimentos, 10 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/53
-- Júlio Donizete (PSD): 14 projetos de lei, 978 indicações, 606 requerimentos, 6 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23568
-- Klebinho Kizumba (PL): 14 projetos de lei, 88 indicações, 166 requerimentos, 65 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27256
-- Luciano Julião (PL, Presidente): 24 projetos de lei, 1122 indicações, 715 requerimentos, 120 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27257
-- Márcia Caldas (PL, 3º Secretário): 15 projetos de lei, 1631 indicações, 1106 requerimentos, 77 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27251
-- Odélio Chaves (Podemos): 11 projetos de lei, 1359 indicações, 652 requerimentos, 21 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23569
-- Paulo Pauléra (Progressistas, Vice-Presidente): 51 projetos de lei, 708 indicações, 779 requerimentos, 369 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/24556
-- Pedro Roberto (Republicanos): 7 projetos de lei, 542 indicações, 666 requerimentos, 43 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/15231
-- Renato Pupo (Avante): 24 projetos de lei, 377 indicações, 941 requerimentos, 76 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/77
-- Rossini Diniz (MDB): 4 projetos de lei, 551 indicações, 390 requerimentos, 0 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23571
-- Tadeu de Lima (União Brasil): 15 projetos de lei, 250 indicações, 802 requerimentos, 14 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27255
+- Abner Tofanelli (PSB): 28 projetos de lei, 550 indicações, 614 requerimentos, 167 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27253
+- Alex de Carvalho (PSB): 18 projetos de lei, 218 indicações, 604 requerimentos, 22 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27258
+- Alexandre Montenegro (PL): 53 projetos de lei, 1688 indicações, 1089 requerimentos, 44 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27250
+- Anderson Branco (Progressistas): 5 projetos de lei, 392 indicações, 428 requerimentos, 6 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/19428
+- Bruno Marinho (PSB): 6 projetos de lei, 787 indicações, 600 requerimentos, 6 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23565
+- Bruno Moura (PL): 22 projetos de lei, 804 indicações, 647 requerimentos, 11 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23566
+- Celso Peixão (MDB): 10 projetos de lei, 1167 indicações, 763 requerimentos, 26 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/71
+- Felipe Alcalá (PL): 64 projetos de lei, 793 indicações, 758 requerimentos, 73 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27249
+- Francisco Junior (União Brasil): 7 projetos de lei, 2033 indicações, 647 requerimentos, 2 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/73
+- Jean Dornelas (MDB): 56 projetos de lei, 1084 indicações, 1064 requerimentos, 159 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/19430
+- João Paulo Rillo (PT): 14 projetos de lei, 171 indicações, 713 requerimentos, 81 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/46
+- Jonathan Santos (Republicanos, 2º Secretário): 16 projetos de lei, 1234 indicações, 617 requerimentos, 66 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27252
+- Jorge Menezes (PSD): 16 projetos de lei, 286 indicações, 438 requerimentos, 10 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/53
+- Júlio Donizete (PSD): 14 projetos de lei, 978 indicações, 608 requerimentos, 6 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23568
+- Klebinho Kizumba (PL): 14 projetos de lei, 90 indicações, 168 requerimentos, 65 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27256
+- Luciano Julião (PL, Presidente): 24 projetos de lei, 1122 indicações, 717 requerimentos, 120 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27257
+- Márcia Caldas (PL, 3º Secretário): 15 projetos de lei, 1634 indicações, 1108 requerimentos, 77 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27251
+- Odélio Chaves (Podemos): 11 projetos de lei, 1381 indicações, 653 requerimentos, 21 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23569
+- Paulo Pauléra (Progressistas, Vice-Presidente): 51 projetos de lei, 708 indicações, 782 requerimentos, 370 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/24556
+- Pedro Roberto (Republicanos): 7 projetos de lei, 544 indicações, 669 requerimentos, 43 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/15231
+- Renato Pupo (Avante): 24 projetos de lei, 377 indicações, 936 requerimentos, 76 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/77
+- Rossini Diniz (MDB): 4 projetos de lei, 551 indicações, 392 requerimentos, 0 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/23571
+- Tadeu de Lima (União Brasil): 15 projetos de lei, 250 indicações, 807 requerimentos, 14 moções. Perfil: https://www.riopreto.sp.leg.br/Consulta/vereadores/Vereador/27255
